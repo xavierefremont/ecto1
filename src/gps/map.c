@@ -6,7 +6,7 @@
  * @param height of the map
  * @return the new map
  */
-Map createMap(int width, int heigth) {
+map createMap(int width, int heigth) {
   return NULL;
 }
 
@@ -14,7 +14,7 @@ Map createMap(int width, int heigth) {
  * Initializes the map, i.e fill the plan in
  * @param map pointer to initialize
  */
-void initMap(struct Map*) {
+void initMap(struct map*) {
 
 }
 
@@ -23,7 +23,7 @@ void initMap(struct Map*) {
  * @param car position ouf ourselves
  * @param rival1, rival2 position of the others
  */
-void setPosition(Position car, Position rival1, Position rival2) {
+void setPosition(position car, position rival1, position rival2) {
 
 }
 
@@ -32,6 +32,6 @@ void setPosition(Position car, Position rival1, Position rival2) {
  * speed and acceleration
  * @param the new map
  */
-void sendToGPS(struct Map) {
+void sendToGPS(struct pap) {
 
 }
