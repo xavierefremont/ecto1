@@ -1,0 +1,15 @@
+car struct car {
+    int fuel;
+    int fuelPresumed;
+    position before;
+    int nbBoost
+    int vitesse;
+}
+
+
+	1. calcul du carburant actuel
+	   
+	   fuel + fuel presumed si voiture bouge
+	   fuel -1 si voiture pas bougé
+	2. calcul du carburant possible
+	   calculatePresumedFuel(struct car) = delta...() (return negatif)
