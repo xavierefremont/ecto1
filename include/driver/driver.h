@@ -17,25 +17,13 @@
 #include <string.h>
 
 
-/**
- * Initialize the game by reading map and car datas
- * @param car : the game car
- * @param map : the track map
- */
+
 void initGame(car* car, map* map);
 
-/**
- * Initialize the round by reading current position
- * @param car : the game car
- * @param map : the track map
- */
+
 void initRound(car* car, map* map);
 
-/**
- * Calculate the acceleration and send it to the race program
- * @param car : the game car
- * @param map : the track map
- */
+
 void playRound(car* car, map* map);
 
 
