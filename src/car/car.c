@@ -1,6 +1,12 @@
-//
-// Created by julien on 18/04/18.
-//
+/**
+ * @author Xavière FREMONT & Julien CHEVRON
+ * @version 0.0.1 / 21/04/2018
+ */
+
+/**
+ * @file car.c
+ * @brief Car file : everything dealing with car state and its speed
+ */
 
 #include "../../include/car/car.h"
 

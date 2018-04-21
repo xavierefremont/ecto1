@@ -1,6 +1,12 @@
-//
-// Created by julien on 18/04/18.
-//
+/**
+ * @author Xavière FREMONT & Julien CHEVRON
+ * @version 0.0.1 / 21/04/2018
+ */
+
+/**
+ * @file car.h
+ * @brief Header of car file
+ */
 
 #ifndef GRANDPRIX2018_3_0_3_CAR_H
 #define GRANDPRIX2018_3_0_3_CAR_H
