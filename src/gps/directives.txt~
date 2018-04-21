@@ -1,0 +1,10 @@
+map : tableau dynamique avec la taille de la map T1
+      1.1 lecture map taille 
+      1.2 creation avec malloc
+
+      2.1 lecture map entière
+      2.2remplissage vide (+ voiture au point de départ)
+
+      3.1 recupère coordonnées
+      3.2 maj de la map
+      3.3 envoie map au gps
