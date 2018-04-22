@@ -1,3 +1,13 @@
+/**
+ * @author Xavière FREMONT & Julien CHEVRON
+ * @version 0.0.1 / 21/04/2018
+ */
+
+/**
+ * @file map.c
+ * @brief Map file : everything concerning the track map
+ */
+
 #include "../../include/map.h"
 
 /**
