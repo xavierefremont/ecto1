@@ -20,9 +20,7 @@ struct car{
  * @param pointer on Car structure to have the presumed fuel, the previous position and then change the fuel
  * @param Map structure to get the current position
  */
-void currentFuel(struct car* car, struct map map) {
-
-}
+void currentFuel(struct car* car, struct map map);
 
 /**
  * Calculates the fuel wich would be used if the motion is done
@@ -30,13 +28,6 @@ void currentFuel(struct car* car, struct map map) {
  * the value is négative
  * @param Car structure 
  */
-void calculatePresumedFuel(struct car car) {
-  //modified the function using a car structure
-    int valeur = accX * accX + accY * accY;
-    valeur += (int)(sqrt(velX * velX + velY * velY) * 3.0 / 2.0);
-    if (dansSable)
-        valeur += 1;
-    //  -valeur : insert in the car structure;
-}
+void calculatePresumedFuel(struct car car);
 
 #endif //GRANDPRIX2018_3_0_3_CAR_H

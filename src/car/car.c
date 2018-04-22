@@ -7,10 +7,16 @@
 /**
  * Calculates the current fuel, remaining after the move
  * @param pointer on Car structure to have the presumed fuel, the previous position and then change the fuel
- * @param Map structure to get the current position
+ * @param Map structure to get the current position //a changer pour avoir la position actuelle de manière plus simple
  */
 void currentFuel(struct Car* car, struct Map map) {
 
+  if(//position actuel!= car->previousPosition) {
+    car->fuel = car->fuel + car->presumedFuel;
+  } else {
+    car->fuel = car->fuel - 1;
+  }
+  
 }
 
 /**
