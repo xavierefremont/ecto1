@@ -4,25 +4,20 @@
  */
 
 /**
- * @file driver.h
+ * @file map.h
  * @brief Header of map file
  */
 
 #ifndef __MAP_H
 #define __MAP_H
 
-typedef struct position position;
-typedef struct map map;
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-struct position {
-  int x;
-  int y;
-};
+#include "../../include/structs.h"
 
-typedef struct map {
-  position size;
-  char** plan;
-}map;
 
 /**
  * Creates a structure map initializing the size sent by the driver
@@ -30,13 +25,13 @@ typedef struct map {
  * @param height of the map
  * @return the new map
  */
-map createMap(int width, int heigth);
+map* createMap(int width, int heigth);
 
 /**
  * Initializes the map, i.e fill the plan in
  * @param map pointer to initialize
  */
-void initMap(struct map*);
+void initMap(map* map);
 
 /**
  * Set int the map the current position of the three cars
@@ -50,6 +45,7 @@ void setPosition(position car, position rival1, position rival2);
  * speed and acceleration
  * @param the new map
  */
-void sendToGPS(struct map);
+void sendToGPS(map* map);
+
 
 #endif //__MAP_H

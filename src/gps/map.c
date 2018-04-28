@@ -8,7 +8,7 @@
  * @brief Map file : everything concerning the track map
  */
 
-#include "../../include/map.h"
+#include "../../include/gps/map.h"
 
 /**
  * Creates a structure map initializing the size sent by the driver
@@ -16,15 +16,16 @@
  * @param height of the map
  * @return the new map
  */
-map createMap(int width, int heigth) {
-  return NULL;
+struct map* createMap(int width, int heigth) {
+  map* map;
+  return map;
 }
 
 /**
  * Initializes the map, i.e fill the plan in
  * @param map pointer to initialize
  */
-void initMap(struct map*) {
+void initMap(map* map) {
 
 }
 
@@ -34,7 +35,7 @@ void initMap(struct map*) {
  * @param rival1, rival2 position of the others
  */
 void setPosition(position car, position rival1, position rival2) {
-
+  printf("ECJO");
 }
 
 /**
@@ -42,6 +43,6 @@ void setPosition(position car, position rival1, position rival2) {
  * speed and acceleration
  * @param the new map
  */
-void sendToGPS(struct pap) {
+void sendToGPS(map* map) {
 
 }

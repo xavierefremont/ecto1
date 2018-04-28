@@ -8,27 +8,25 @@
  * @brief Header of car file
  */
 
-#ifndef GRANDPRIX2018_3_0_3_CAR_H
-#define GRANDPRIX2018_3_0_3_CAR_H
+#ifndef _CAR_H
+#define _CAR_H
 
-typedef struct car car;
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-struct car{
-  position previousPosition;
-  int currentSpeed;
-  int fuel;
-  int presumedFuel;
-  int nbrBoosts;
-};
+#include "../../include/structs.h"
+
+car* initCar(int fuel);
+
 
 /**
  * Calculates the current fuel, remaining after the move
  * @param pointer on Car structure to have the presumed fuel, the previous position and then change the fuel
  * @param Map structure to get the current position
  */
-void currentFuel(struct car* car, struct map map) {
-
-}
+void currentFuel(car* car, map* map);
 
 /**
  * Calculates the fuel wich would be used if the motion is done
@@ -36,13 +34,6 @@ void currentFuel(struct car* car, struct map map) {
  * the value is négative
  * @param Car structure 
  */
-void calculatePresumedFuel(struct car car) {
-  //modified the function using a car structure
-    int valeur = accX * accX + accY * accY;
-    valeur += (int)(sqrt(velX * velX + velY * velY) * 3.0 / 2.0);
-    if (dansSable)
-        valeur += 1;
-    //  -valeur : insert in the car structure;
-}
+void calculatePresumedFuel(car* car);
 
-#endif //GRANDPRIX2018_3_0_3_CAR_H
+#endif //_CAR_H

@@ -11,11 +11,13 @@
 #ifndef __GPS_H
 #define __GPS_H
 
-typedef struct position position;
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-struct position{
-    int x;
-    int y;
-};
+#include "../../include/structs.h"
+
+vector calculateVector(car* car, map* map);
 
 #endif //__GPS_H

@@ -9,3 +9,10 @@
  */
 
 #include "../../include/gps/gps.h"
+
+vector calculateVector(car* car, map* map){
+    vector v;
+    v.x = 1;
+    v.y = 1;
+    return v;
+}

@@ -8,9 +8,16 @@
  * @brief Driver file, deal with all interaction between the race program and the driver program
  */
 
-#include "../../include/car/car.h"
-#include "../../include/map/map.h"
+
 #include "../../include/driver/driver.h"
+#include "../../include/gps/map.h"
+#include "../../include/car/car.h"
+#include "../../include/gps/gps.h"
+
+/**
+ * Buffer that contain all action to be sent to the main program
+ */
+static char action[100];
 
 /**
  * Initialize the game by reading map and car datas
@@ -25,8 +32,9 @@ void initGame(car* car, map* map){
     /* Read the map size and the start fuel */
     fscanf(stdin, "%d %d %d", &x, &y, &fuel);
 
-    initMap(map, x, y);
-    initCar(car, fuel);
+    map = createMap(x, y);
+    initMap(map);
+    car = initCar(fuel);
 
 }
 
@@ -37,14 +45,21 @@ void initGame(car* car, map* map){
  */
 void initRound(car* car, map* map){
 
-    char c;
+    position carPosition;
+    position rival1Position;
+    position rival2Position;
 
-    /*read current cars position*/
-    while (fread(&c, sizeof(char), 1, stdin) == 1 && c != '\n') {
-        //modif position courrant voiture
-        //modif position adversaire
-        //verif deplacement précédent
-    }
+    /* Read current cars position */
+    fscanf(stdin, "%d %d\t%d %d\t%d %d\n",
+           &carPosition.x, &carPosition.y,
+           &rival1Position.x, &rival1Position.y,
+           &rival2Position.x, &rival2Position.y);
+
+    /* Set car position into the map*/
+    setPosition(carPosition, rival1Position, rival2Position);
+    car->currentPosition = carPosition;
+
+    //TODO : Verif deplacement ok
 
 }
 
@@ -55,9 +70,22 @@ void initRound(car* car, map* map){
  */
 void playRound(car* car, map* map){
 
-    //Vector* v;
-    // v = calculateVector(struct car*);
-    //envoi v a stdout
-    //modif des données de déplacement
+    /* Calculate the acceleration vector */
+    vector v;
+    v = calculateVector(car, map);
+
+    /* Send */
+    sprintf(action, "%d %d", v.x, v.y);
+    sendDatas();
+
+}
+
+/**
+ * Send datas through stdout
+ */
+void sendDatas(){
+
+    fprintf(stdout, "%s\n", action);
+    memset(action, 0, sizeof(action));
 
 }

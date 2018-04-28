@@ -16,6 +16,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "../../include/structs.h"
 
 
 void initGame(car* car, map* map);
@@ -25,6 +26,9 @@ void initRound(car* car, map* map);
 
 
 void playRound(car* car, map* map);
+
+
+void sendDatas();
 
 
 #endif //__DRIVER_H
