@@ -1,6 +1,13 @@
-//
-// Created by julien on 28/04/18.
-//
+/**
+ * @author Xavière FREMONT
+ * @author Julien CHEVRON
+ * @version 0.0.1 / 28/04/2018
+ */
+
+/**
+ * @file structs.h
+ * @brief Header containing all structures used in the program
+ */
 
 #ifndef _STRUCTS_H
 #define _STRUCTS_H

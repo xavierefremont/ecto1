@@ -1,6 +1,7 @@
 /**
- * @author Xavière FREMONT & Julien CHEVRON
- * @version 0.0.1 / 21/04/2018
+ * @author Xavière FREMONT
+ * @author Julien CHEVRON
+ * @version 0.0.2 / 28/04/2018
  */
 
 /**
@@ -35,10 +36,11 @@ void initMap(map* map);
 
 /**
  * Set int the map the current position of the three cars
+ * @param map pointer in which the positions will be set
  * @param car position ouf ourselves
  * @param rival1, rival2 position of the others
  */
-void setPosition(position car, position rival1, position rival2);
+void setPosition(map* map, position car, position rival1, position rival2);
 
 /**
  * Send to the GPS the structure of the map changed to estimate

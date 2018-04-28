@@ -1,6 +1,7 @@
 /**
- * @author Xavière FREMONT & Julien CHEVRON
- * @version 0.0.1 / 21/04/2018
+ * @author Xavière FREMONT
+ * @author Julien CHEVRON
+ * @version 0.0.2 / 28/04/2018
  */
 
 /**
@@ -11,35 +12,21 @@
 #include "../../include/car/car.h"
 
 /**
-<<<<<<< HEAD
  * Initialize a car structure
  * @param pointer on Car structure to initialize
  * @param the fuel value
  */
-car* initCar(int fuel){
-    car* car;
-    int a;
+car* initCar(int fuel) {
+    car *car;
     return car;
-=======
- * Initialize a new car using starts' datas
- */
-void initCar(car* car ) {
-
-  
->>>>>>> 024f95e8f10323bef9a7dcfdbbd2872f65248034
+    //TODO : Malloc de car et assignation fuel
 }
 
 /**
  * Calculates the current fuel, remaining after the move
  * @param pointer on Car structure to have the presumed fuel, the previous position and then change the fuel
-<<<<<<< HEAD
- * @param Map structure to get the current position
  */
-void currentFuel(car* car, map* map) {
-=======
-  */
 void currentFuel(car* car) {
->>>>>>> 024f95e8f10323bef9a7dcfdbbd2872f65248034
 
   if(car->currentPosition != car->previousPosition) {
     car->fuel = car->fuel + car->presumedFuel;
@@ -55,19 +42,12 @@ void currentFuel(car* car) {
  * the value is négative
  * @param Car structure 
  */
-<<<<<<< HEAD
 void calculatePresumedFuel(car* car) {
     int accX = 0;
     int accY = 0;
     int velX = 0;
     int velY = 0;
     int dansSable = 0;
-
-    //modified the function using a car structure
-=======
-void calculatePresumedFuel(car car) {
-  //modified the function using a car structure
->>>>>>> 024f95e8f10323bef9a7dcfdbbd2872f65248034
     int valeur = accX * accX + accY * accY;
     valeur += (int)(sqrt(velX * velX + velY * velY) * 3.0 / 2.0);
     if (dansSable)
@@ -80,8 +60,8 @@ void calculatePresumedFuel(car car) {
  * @param car 
  * @return 1 if current and previous positions are equals, 0 either
  */
-int positionEquals(car car) {
+int positionEquals(car* car) {
 
-  return (car.currentPosition.x == car.previousPosition.x && car.currentPosition.y == car.previousPosition.y);
+  return (car->currentPosition.x == car->previousPosition.x && car->currentPosition.y == car->previousPosition.y);
   
 }
