@@ -25,7 +25,7 @@
  * @param the start car fuel value
  * @return pointer on the created Car structure
  */
-car* initCar(int fuel);
+car* createCar(int fuel);
 
 /**
  * Calculates the current fuel, remaining after the move
@@ -48,7 +48,15 @@ void calculatePresumedFuel(car* car);
  * @param car 
  * @return 1 if current and previous positions are equals, 0 either
  */
-int positionEquals(car car);
+int verificatePosition(car* car);
+
+/**
+ * Determines if two position are equals
+ * @param first position
+ * @param second position
+ * @return 1 if both positions are equals, 0 either
+ */
+int areEqualsPosition(position p1, position p2);
 
 #endif //_CAR_H
 

@@ -22,17 +22,16 @@
 
 /**
  * Creates a structure map initializing the size sent by the driver
- * @param width of the map
- * @param height of the map
+ * @param the map size in a position structure
  * @return the new map
  */
-map* createMap(int width, int heigth);
+map* createMap(position mapSize);
 
 /**
  * Initializes the map, i.e fill the plan in
  * @param map pointer to initialize
  */
-void initMap(map* map);
+void generateMap(map* map);
 
 /**
  * Set int the map the current position of the three cars

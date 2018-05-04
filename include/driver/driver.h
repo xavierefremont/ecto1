@@ -20,16 +20,28 @@
 #include "../../include/structs.h"
 
 
-void initGame(car* car, map* map);
+void initGame(position* mapSize, int* fuel);
+
+
+map* initMap(position mapSize);
+
+
+car* initCar(int fuel);
 
 
 void initRound(car* car, map* map);
 
 
-void playRound(car* car, map* map);
+vector playRound(car* car, map* map);
 
 
-void sendDatas();
+void updateGame(car* car, map* map, vector acceleration);
+
+
+void sendDatas(vector acceleration);
+
+
+void readChar();
 
 
 #endif //__DRIVER_H

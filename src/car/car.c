@@ -16,10 +16,24 @@
  * @param pointer on Car structure to initialize
  * @param the fuel value
  */
-car* initCar(int fuel) {
-    car *car;
+car* createCar(int fuel) {
+
+    position a;
+    a.x = 1;
+    a.y = 1;
+    car *car = NULL;
+    car = (struct car*) malloc(sizeof(struct car));
+    if(car == NULL){
+        return NULL;
+    }
+    car->fuel = fuel;
+    car->previousPosition = a;
+    car->currentPosition = a;
+    car->currentSpeed = NULL;
+    car->presumedFuel = 0;
+    car->nbrBoosts = 5;
     return car;
-    //TODO : Malloc de car et assignation fuel
+
 }
 
 /**
@@ -28,7 +42,7 @@ car* initCar(int fuel) {
  */
 void currentFuel(car* car) {
 
-  if(car->currentPosition != car->previousPosition) {
+  if(!areEqualsPosition(car->currentPosition, car->previousPosition)) {
     car->fuel = car->fuel + car->presumedFuel;
   } else {
     car->fuel = car->fuel - 1;
@@ -43,6 +57,7 @@ void currentFuel(car* car) {
  * @param Car structure 
  */
 void calculatePresumedFuel(car* car) {
+
     int accX = 0;
     int accY = 0;
     int velX = 0;
@@ -53,6 +68,7 @@ void calculatePresumedFuel(car* car) {
     if (dansSable)
         valeur += 1;
     //  -valeur : insert in the car structure;
+
 }
 
 /**
@@ -60,8 +76,20 @@ void calculatePresumedFuel(car* car) {
  * @param car 
  * @return 1 if current and previous positions are equals, 0 either
  */
-int positionEquals(car* car) {
+int verificatePosition(car* car) {
 
-  return (car->currentPosition.x == car->previousPosition.x && car->currentPosition.y == car->previousPosition.y);
+  return areEqualsPosition(car->previousPosition, car->currentPosition);
   
+}
+
+/**
+ * Determines if two position are equals
+ * @param first position
+ * @param second position
+ * @return 1 if both positions are equals, 0 either
+ */
+int areEqualsPosition(position p1, position p2){
+
+    return (p1.x == p2.x && p1.y == p2.y);
+
 }

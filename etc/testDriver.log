@@ -1,0 +1,97 @@
+=====> START TESTDRIVER <=====
+ ---> INIT GAME DONE (x : 32, y : 16, fuel : 35) 
+ ---> INIT MAP DONE 
+	 -> x : 32, y : 16 
+	 -> map : 
+................................
+................................
+................................
+................................
+..#########################==...
+..#########################==...
+..#########################==...
+..#########################==...
+..#########################==...
+..#########################==...
+..#########################==...
+................................
+................................
+................................
+................................
+................................
+ ---> INIT CAR DONE 
+	 -> fuel : 35 
+=====> START RACE <=====
+ ---> Tour 1 
+	 -> position (3,5)  
+	 -> supposed acceleration (1,0)  
+ ---> Tour 2 
+	 -> position (3,5)  
+	 -> supposed acceleration (0,0)  
+ ---> Tour 3 
+	 -> position (4,5)  
+	 -> supposed acceleration (0,0)  
+ ---> Tour 4 
+	 -> position (5,5)  
+	 -> supposed acceleration (0,0)  
+ ---> Tour 5 
+	 -> position (6,5)  
+	 -> supposed acceleration (0,0)  
+ ---> Tour 6 
+	 -> position (7,5)  
+	 -> supposed acceleration (0,0)  
+ ---> Tour 7 
+	 -> position (8,5)  
+	 -> supposed acceleration (0,0)  
+ ---> Tour 8 
+	 -> position (9,5)  
+	 -> supposed acceleration (0,0)  
+ ---> Tour 9 
+	 -> position (10,5)  
+	 -> supposed acceleration (0,0)  
+ ---> Tour 10 
+	 -> position (11,5)  
+	 -> supposed acceleration (0,0)  
+ ---> Tour 11 
+	 -> position (12,5)  
+	 -> supposed acceleration (0,0)  
+ ---> Tour 12 
+	 -> position (13,5)  
+	 -> supposed acceleration (0,0)  
+ ---> Tour 13 
+	 -> position (14,5)  
+	 -> supposed acceleration (0,0)  
+ ---> Tour 14 
+	 -> position (15,5)  
+	 -> supposed acceleration (0,0)  
+ ---> Tour 15 
+	 -> position (16,5)  
+	 -> supposed acceleration (0,0)  
+ ---> Tour 16 
+	 -> position (17,5)  
+	 -> supposed acceleration (0,0)  
+ ---> Tour 17 
+	 -> position (18,5)  
+	 -> supposed acceleration (0,0)  
+ ---> Tour 18 
+	 -> position (19,5)  
+	 -> supposed acceleration (0,0)  
+ ---> Tour 19 
+	 -> position (20,5)  
+	 -> supposed acceleration (0,0)  
+ ---> Tour 20 
+	 -> position (21,5)  
+	 -> supposed acceleration (0,0)  
+ ---> Tour 21 
+	 -> position (22,5)  
+	 -> supposed acceleration (0,0)  
+ ---> Tour 22 
+	 -> position (23,5)  
+	 -> supposed acceleration (0,0)  
+ ---> Tour 23 
+	 -> position (24,5)  
+	 -> supposed acceleration (0,0)  
+ ---> Tour 24 
+	 -> position (25,5)  
+	 -> supposed acceleration (0,0)  
+ ---> Tour 25 

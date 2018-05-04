@@ -32,6 +32,7 @@ test: $(BINDIR)$(EXEC)
 $(BINDIR)$(EXEC): $(OBJDIR)$(EXEC).o $(OBJDIR)driver.o $(OBJDIR)car.o $(OBJDIR)map.o $(OBJDIR)gps.o
 	@$(CC) $^ -I $(ROOT)include/driver -o $@ $(LDFLAGS)
 	@echo  "\t$(CEXEC)$(EXEC)$(CNONE) Compiled in $(CDIR)$(BINDIR:$(ROOT)%=%)$(CNONE)"
+	@mv $(BINDIR)$(EXEC) $(ROOT)/../drivers;
 
 
 $(OBJDIR)$(EXEC).o: $(TESTSDIR)$(EXEC).c

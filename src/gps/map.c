@@ -17,18 +17,44 @@
  * @param height of the map
  * @return the new map
  */
-map* createMap(int width, int heigth) {
-  map* map;
-  return map;
-  //TODO : Calloc de map et assignation x et y dans la structure
+map* createMap(position mapSize) {
+
+  map* map = NULL;
+  map = (struct map*) malloc(sizeof(struct map));
+  if(map){
+    map->size.x = mapSize.x;
+    map->size.y = mapSize.y;
+    map->plan = (char**) calloc(mapSize.y, sizeof(char*));
+    for(int i=0;i<mapSize.y;i++)
+      map->plan[i] = (char *) calloc(mapSize.x, sizeof(char));
+    if(map->plan){
+      return map;
+    }
+  }
+
+  return NULL;
+
 }
 
 /**
  * Initializes the map, i.e fill the plan in
  * @param map pointer to initialize
  */
-void initMap(map* map) {
-  //TODO : Lecture de la map sur stdin et remplissage tableau
+void generateMap(map* map) {
+
+  char read;
+  int i;
+  int j = 0;
+
+  /* Read the map from stdin and fill the track into an array*/
+  for (i = 0; i < map->size.y; i++) {
+    while (fread(&read, sizeof(char), 1, stdin) == 1 && read != '\n'){
+      map->plan[i][j] = read;
+      j++;
+    }
+    j = 0;
+  }
+
 }
 
 /**

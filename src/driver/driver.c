@@ -20,22 +20,49 @@
  */
 static char action[100];
 
+//Remove next line (just for tests)
+static int debug = 0;
+
+
 /**
  * Initialize the game by reading map and car datas
- * @param car : the game car
- * @param map : the track map
+ * @param a pointer to a structure position containing the map size
+ * @param a pointer to the start fuel amount
  */
-void initGame(car* car, map* map){
+void initGame(position* mapSize, int* fuel){
 
-    int x, y;
-    int fuel;
+    char c;
 
     /* Read the map size and the start fuel */
-    fscanf(stdin, "%d %d %d", &x, &y, &fuel);
+    fscanf(stdin, "%d %d %d", &mapSize->x, &mapSize->y, fuel);
 
-    map = createMap(x, y);
-    initMap(map);
-    car = initCar(fuel);
+    /* Read datas until the line end */
+    while (fread(&c, sizeof(char), 1, stdin) == 1 && c != '\n');
+
+}
+
+/**
+ * Initialize the map by sending all datas to the map file
+ * @param the structure position containing the map size
+ * @return the map created
+ */
+map* initMap(position mapSize){
+
+    map* map = createMap(mapSize);
+    generateMap(map);
+    return map;
+
+}
+
+/**
+ * Initialize the car by sending all datas to the car file
+ * @param the structure position containing the map size
+ * @return the map created
+ */
+car* initCar(int fuel){
+
+    car* car = createCar(fuel);
+    return car;
 
 }
 
@@ -56,11 +83,12 @@ void initRound(car* car, map* map){
            &rival1Position.x, &rival1Position.y,
            &rival2Position.x, &rival2Position.y);
 
+
     /* Set car position into the map*/
-    setPosition(carPosition, rival1Position, rival2Position);
+    //setPosition(map, carPosition, rival1Position, rival2Position);
     car->currentPosition = carPosition;
 
-    //TODO : Verif deplacement ok
+    //TODO : Check if the previous move was done and handle moves issues
 
 }
 
@@ -68,25 +96,49 @@ void initRound(car* car, map* map){
  * Calculate the acceleration and send it to the race program
  * @param car : the game car
  * @param map : the track map
+ * @return the acceleration vector to send
  */
-void playRound(car* car, map* map){
+vector playRound(car* car, map* map){
 
     /* Calculate the acceleration vector */
-    vector v;
-    v = calculateVector(car, map);
+    vector acceleration;
+    //v = calculateVector(car, map);
 
-    /* Send */
-    sprintf(action, "%d %d", v.x, v.y);
-    sendDatas();
+    //Remove next block (just for tests)
+    if(debug == 0){
+        acceleration.x = 1;
+        debug++;
+    }else{
+        acceleration.x = 0;
+    }
+    acceleration.y = 0;
+
+    return acceleration;
 
 }
 
 /**
- * Send datas through stdout
+ * Update the car and the map according to the acceleration
+ * @param car : the game car
+ * @param map : the game map
+ * @param acceleration : the acceleration vector
  */
-void sendDatas(){
+void updateGame(car* car, map* map, vector acceleration){
 
-    fprintf(stdout, "%s\n", action);
-    memset(action, 0, sizeof(action));
+    //todo : Update the car presumed position and fuel by sending datas to the car file
+    //todo : Update the map by sending new presumed position to the map file
 
 }
+
+
+/**
+ * Send datas through stdout
+ */
+void sendDatas(vector acceleration){
+
+    sprintf(action, "%d %d", acceleration.x, acceleration.y);
+    fprintf(stdout, "%s\n", action);
+    fflush(stdout);
+
+}
+
