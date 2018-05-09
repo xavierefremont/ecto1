@@ -1,6 +1,7 @@
 /**
- * @author Xavière FREMONT & Julien CHEVRON
- * @version 0.0.1 / 21/04/2018
+ * @author Xavière FREMONT
+ * @author Julien CHEVRON
+ * @version 0.0.2 / 28/04/2018
  */
 
 /**
@@ -11,20 +12,37 @@
 #include "../../include/car/car.h"
 
 /**
- * Initialize a new car using starts' datas
+ * Initialize a car structure
+ * @param pointer on Car structure to initialize
+ * @param the fuel value
  */
-void initCar(car* car ) {
+car* createCar(int fuel) {
 
-  
+    position a;
+    a.x = 1;
+    a.y = 1;
+    car *car = NULL;
+    car = (struct car*) malloc(sizeof(struct car));
+    if(car == NULL){
+        return NULL;
+    }
+    car->fuel = fuel;
+    car->previousPosition = a;
+    car->currentPosition = a;
+    car->currentSpeed = NULL;
+    car->presumedFuel = 0;
+    car->nbrBoosts = 5;
+    return car;
+
 }
 
 /**
  * Calculates the current fuel, remaining after the move
  * @param pointer on Car structure to have the presumed fuel, the previous position and then change the fuel
-  */
+ */
 void currentFuel(car* car) {
 
-  if(car->currentPosition != car->previousPosition) {
+  if(!areEqualsPosition(car->currentPosition, car->previousPosition)) {
     car->fuel = car->fuel + car->presumedFuel;
   } else {
     car->fuel = car->fuel - 1;
@@ -38,13 +56,19 @@ void currentFuel(car* car) {
  * the value is négative
  * @param Car structure 
  */
-void calculatePresumedFuel(car car) {
-  //modified the function using a car structure
+void calculatePresumedFuel(car* car) {
+
+    int accX = 0;
+    int accY = 0;
+    int velX = 0;
+    int velY = 0;
+    int dansSable = 0;
     int valeur = accX * accX + accY * accY;
     valeur += (int)(sqrt(velX * velX + velY * velY) * 3.0 / 2.0);
     if (dansSable)
         valeur += 1;
     //  -valeur : insert in the car structure;
+
 }
 
 /**
@@ -52,8 +76,20 @@ void calculatePresumedFuel(car car) {
  * @param car 
  * @return 1 if current and previous positions are equals, 0 either
  */
-int positionEquals(car car) {
+int verificatePosition(car* car) {
 
-  return (car.currentPosition.x == car.previousPosition.x && car.currentPosition.y == car.previousPosition.y);
+  return areEqualsPosition(car->previousPosition, car->currentPosition);
   
+}
+
+/**
+ * Determines if two position are equals
+ * @param first position
+ * @param second position
+ * @return 1 if both positions are equals, 0 either
+ */
+int areEqualsPosition(position p1, position p2){
+
+    return (p1.x == p2.x && p1.y == p2.y);
+
 }
