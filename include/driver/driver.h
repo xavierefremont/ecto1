@@ -1,6 +1,7 @@
 /**
- * @author Xavière FREMONT & Julien CHEVRON
- * @version 0.0.1 / 21/04/2018
+ * @author Xavière FREMONT
+ * @author Julien CHEVRON
+ * @version 0.0.2 / 28/04/2018
  */
 
 /**
@@ -16,15 +17,31 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "../../include/structs.h"
 
 
-void initGame(car* car, map* map);
+void initGame(position* mapSize, int* fuel);
+
+
+map* initMap(position mapSize);
+
+
+car* initCar(int fuel);
 
 
 void initRound(car* car, map* map);
 
 
-void playRound(car* car, map* map);
+vector playRound(car* car, map* map);
+
+
+void updateGame(car* car, map* map, vector acceleration);
+
+
+void sendDatas(vector acceleration);
+
+
+void readChar();
 
 
 #endif //__DRIVER_H

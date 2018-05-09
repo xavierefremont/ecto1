@@ -10,8 +10,12 @@ CNONE = \033[0m
 
 all:
 	@for dir in $(SUBDIR) ; do make -s -C $$dir ; done
-	@mv bin/driver.out ../drivers/
-	@echo "$(CDIR)driver.out$(CNONE) moved in $(CDIR)doc$(CNONE)"
+	@make -s -C $(SRCDIR);
+	@mv bin/ecto1 ../drivers/
+	@echo "$(CDIR)ecto1$(CNONE) moved in $(CDIR)drivers$(CNONE)"
+
+tests:
+	@for dir in $(SUBDIR) ; do make test -s -C $$dir ; done
 
 doc:
 	@doxygen Doxyfile

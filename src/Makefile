@@ -5,11 +5,10 @@ CFLAGS = -W -Wall -pedantic
 LDFLAGS = -lm
 
 #DIRECTORIES
-ROOT = ../../
+ROOT = ../
 BINDIR = $(ROOT)bin/
 SRCDIR = $(ROOT)src/
 OBJDIR = $(ROOT)obj/
-TESTSDIR = $(ROOT)src/tests/
 
 #SOURCES & BINARIES
 SRC  = $(wildcard *.c)
@@ -17,7 +16,7 @@ OBJ  = $(SRC:%.c=$(OBJDIR)%.o)
 OTHOBJ = $(wildcard $(OBJDIR)*.o)
 
 #MAIN'S SOURCES
-EXEC = testCar
+EXEC = ecto1
 
 #DISPLAY
 CEXEC = \033[0;32m
@@ -25,23 +24,29 @@ CDIR = \033[0;36m
 CNONE = \033[0m
 CFILE = \033[0;34m
 
-all: $(OBJ)
+all: $(BINDIR)$(EXEC)
 
-test: $(BINDIR)$(EXEC)
-
-$(BINDIR)$(EXEC): $(OBJDIR)$(EXEC).o $(OBJDIR)car.o
-	@$(CC) $^ -I $(ROOT)include/car -o $@ $(LDFLAGS)
+$(BINDIR)$(EXEC): $(OBJDIR)$(EXEC).o $(OBJDIR)driver.o $(OBJDIR)car.o $(OBJDIR)map.o $(OBJDIR)gps.o
+	@$(CC) $^ -o $@ $(LDFLAGS)
 	@echo  "\t$(CEXEC)$(EXEC)$(CNONE) Compiled in $(CDIR)$(BINDIR:$(ROOT)%=%)$(CNONE)"
 
 
-$(OBJDIR)$(EXEC).o: $(TESTSDIR)$(EXEC).c
-	@$(CC) -o $@ -I $(ROOT)include/car -c $< $(CFLAGS) $(LDFLAGS)
+$(OBJDIR)$(EXEC).o: $(SRCDIR)$(EXEC).c
+	@$(CC) -o $@ -I $(ROOT)include/driver -c $< $(CFLAGS) $(LDFLAGS)
 	@echo "$(CFILE)$(@:$(OBJDIRMAIN)%=%)$(CNONE) from $(CFILE)$<$(CNONE)"
 
 
-$(OBJDIR)car.o: $(SRCDIR)car/car.c
-	@$(CC) -o $@ -I $(ROOT)include/car -c $< $(CFLAGS) $(LDFLAGS)
-	@echo "$(CFILE)$(@:$(OBJDIRMAIN)%=%)$(CNONE) from $(CFILE)$<$(CNONE)"
+$(OBJDIR)driver.o:
+	@make -s -C $(SRCDIR)/driver;
+
+$(OBJDIR)car.o:
+	@make -s -C $(SRCDIR)/car;
+
+$(OBJDIR)map.o:
+	@make -s -C $(SRCDIR)/gps;
+
+$(OBJDIR)gps.o:
+	@make -s -C $(SRCDIR)/gps;
 
 clean:
 	@rm -rf $(OBJDIRMAIN)*.o *~
