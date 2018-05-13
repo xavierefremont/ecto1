@@ -9,32 +9,12 @@
  * @brief Car file : everything dealing with car state and its speed
  */
 
+#include "../../include/util/ArrayList.h"
 #include "../../include/car/car.h"
+#include "../../include/gps/map.h"
+#include "../../include/gps/gps.h"
 
-/**
- * Initialize a car structure
- * @param pointer on Car structure to initialize
- * @param the fuel value
- */
-car* createCar(int fuel) {
 
-    position a;
-    a.x = 1;
-    a.y = 1;
-    car *car = NULL;
-    car = (struct car*) malloc(sizeof(struct car));
-    if(car == NULL){
-        return NULL;
-    }
-    car->fuel = fuel;
-    car->previousPosition = a;
-    car->currentPosition = a;
-    car->currentSpeed = NULL;
-    car->presumedFuel = 0;
-    car->nbrBoosts = 5;
-    return car;
-
-}
 
 /**
  * Calculates the current fuel, remaining after the move
@@ -86,8 +66,8 @@ int verifyPosition(car* car) {
  * @param second position
  * @return 1 if both positions are equals, 0 either
  */
-int areEqualsPosition(position p1, position p2){
+int areEqualsPosition(position* p1, position* p2){
 
-    return (p1.x == p2.x && p1.y == p2.y);
+    return (p1->x == p2->x && p1->y == p2->y);
 
 }

@@ -1,7 +1,0 @@
-car struct car {
-    int fuel;
-    position before;
-}
-
-	1. calcul du carburant possible
-	2. calcul du carburant actuel

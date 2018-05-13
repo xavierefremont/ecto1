@@ -10,6 +10,7 @@
  */
 
 
+#include "../../include/util/ArrayList.h"
 #include "../../include/driver/driver.h"
 #include "../../include/gps/map.h"
 #include "../../include/car/car.h"
@@ -29,12 +30,12 @@ static int debug = 0;
  * @param a pointer to a structure position containing the map size
  * @param a pointer to the start fuel amount
  */
-void initGame(position* mapSize, int* fuel){
+void initGame(int* x, int* y, int* fuel){
 
     char c;
 
     /* Read the map size and the start fuel */
-    fscanf(stdin, "%d %d %d", &mapSize->x, &mapSize->y, fuel);
+    fscanf(stdin, "%d %d %d", x, y, fuel);
 
     /* Read datas until the line end */
     while (fread(&c, sizeof(char), 1, stdin) == 1 && c != '\n');
@@ -46,7 +47,7 @@ void initGame(position* mapSize, int* fuel){
  * @param the structure position containing the map size
  * @return the map created
  */
-map* initMap(position mapSize){
+map* initMap(vector* mapSize){
 
     map* map = createMap(mapSize);
     generateMap(map);
@@ -73,20 +74,30 @@ car* initCar(int fuel){
  */
 void initRound(car* car, map* map){
 
-    position carPosition;
-    position rival1Position;
-    position rival2Position;
+    position* carPosition;
+    position* rival1Position;
+    position* rival2Position;
+    int ax, ay, bx, by, cx, cy;
 
     /* Read current cars position */
     fscanf(stdin, "%d %d\t%d %d\t%d %d\n",
-           &carPosition.x, &carPosition.y,
-           &rival1Position.x, &rival1Position.y,
-           &rival2Position.x, &rival2Position.y);
+           &ax, &ay,
+           &bx, &by,
+           &cx, &cy);
+
+    carPosition = createPosition(ax, ay);
+    rival1Position = createPosition(bx, by);
+    rival2Position = createPosition(cx, cy);
 
 
     /* Set car position into the map*/
-    //setPosition(map, carPosition, rival1Position, rival2Position);
+    setPosition(map, carPosition, rival1Position, rival2Position);
     car->currentPosition = carPosition;
+
+    //Do the verification somewhere else
+    if(areEqualsPosition(car->currentPosition, car->previousPosition)){
+        car->currentSpeed = createVector(0,0);
+    }
 
     //TODO : Check if the previous move was done and handle moves issues
 
@@ -98,20 +109,13 @@ void initRound(car* car, map* map){
  * @param map : the track map
  * @return the acceleration vector to send
  */
-vector playRound(car* car, map* map){
+vector* playRound(car* car, map* map){
 
     /* Calculate the acceleration vector */
-    vector acceleration;
-    //v = calculateVector(car, map);
+    vector* acceleration;
+    acceleration = calculateVector(car, map);
 
-    //Remove next block (just for tests)
-    if(debug == 0){
-        acceleration.x = 1;
-        debug++;
-    }else{
-        acceleration.x = 0;
-    }
-    acceleration.y = 0;
+    //TODO : Maybe verificate before sending datas
 
     return acceleration;
 
@@ -123,10 +127,14 @@ vector playRound(car* car, map* map){
  * @param map : the game map
  * @param acceleration : the acceleration vector
  */
-void updateGame(car* car, map* map, vector acceleration){
+void updateGame(car* car, map* map, vector* acceleration){
 
     //todo : Update the car presumed position and fuel by sending datas to the car file
     //todo : Update the map by sending new presumed position to the map file
+
+    car->currentSpeed->x = car->currentSpeed->x + acceleration->x;
+    car->currentSpeed->y = car->currentSpeed->y + acceleration->y;
+    car->previousPosition = car->currentPosition;
 
 }
 
@@ -134,11 +142,12 @@ void updateGame(car* car, map* map, vector acceleration){
 /**
  * Send datas through stdout
  */
-void sendDatas(vector acceleration){
+void sendDatas(vector* acceleration){
 
-    sprintf(action, "%d %d", acceleration.x, acceleration.y);
+    sprintf(action, "%d %d", acceleration->x, acceleration->y);
     fprintf(stdout, "%s\n", action);
     fflush(stdout);
 
 }
+
 

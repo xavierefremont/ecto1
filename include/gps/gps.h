@@ -17,8 +17,14 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../../include/structs.h"
+#include "../../include/util/structs.h"
 
-vector calculateVector(car* car, map* map);
+vector* calculateVector(car* car, map* map);
+
+float getVectorNorm(vector* v);
+
+ArrayList getPossibleMoves(FILE* info, car* car, map* map);
+
+
 
 #endif //__GPS_H

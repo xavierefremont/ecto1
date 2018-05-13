@@ -17,15 +17,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../../include/structs.h"
+#include "../../include/util/structs.h"
 
-
-/**
- * Initialize a new car using starts' datas
- * @param the start car fuel value
- * @return pointer on the created Car structure
- */
-car* createCar(int fuel);
 
 /**
  * Calculates the current fuel, remaining after the move
@@ -56,7 +49,7 @@ int verifyPosition(car* car);
  * @param second position
  * @return 1 if both positions are equals, 0 either
  */
-int areEqualsPosition(position p1, position p2);
+int areEqualsPosition(position* p1, position* p2);
 
 #endif //_CAR_H
 
