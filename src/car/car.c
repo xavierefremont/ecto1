@@ -67,8 +67,6 @@ void calculatePresumedFuel(car* car) {
     valeur += (int)(sqrt(velX * velX + velY * velY) * 3.0 / 2.0);
     if (dansSable)
         valeur += 1;
-    //  -valeur : insert in the car structure;
-
 }
 
 /**
@@ -76,7 +74,7 @@ void calculatePresumedFuel(car* car) {
  * @param car 
  * @return 1 if current and previous positions are equals, 0 either
  */
-int verificatePosition(car* car) {
+int verifyPosition(car* car) {
 
   return areEqualsPosition(car->previousPosition, car->currentPosition);
   

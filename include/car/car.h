@@ -48,7 +48,7 @@ void calculatePresumedFuel(car* car);
  * @param car 
  * @return 1 if current and previous positions are equals, 0 either
  */
-int verificatePosition(car* car);
+int verifyPosition(car* car);
 
 /**
  * Determines if two position are equals

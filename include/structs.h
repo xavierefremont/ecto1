@@ -29,8 +29,10 @@ struct position {
 };
 
 typedef struct map {
-    position size;
-    char** plan;
+  position size;
+  char** plan;
+  position rival1;
+  position rival2;
 };
 
 struct car{

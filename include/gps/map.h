@@ -34,12 +34,11 @@ map* createMap(position mapSize);
 void generateMap(map* map);
 
 /**
- * Set int the map the current position of the three cars
+ * Set in the map the current position of the rivals' cars
  * @param map pointer in which the positions will be set
- * @param car position ouf ourselves
  * @param rival1, rival2 position of the others
  */
-void setPosition(map* map, position car, position rival1, position rival2);
+void setPosition(map* map,  position rival1, position rival2);
 
 /**
  * Send to the GPS the structure of the map changed to estimate

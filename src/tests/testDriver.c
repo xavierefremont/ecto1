@@ -40,6 +40,8 @@ int main(){
     position mapSize;
     int fuel;
     int tour = 1;
+ 
+    int verifyPosition;
 
     info = fopen("ecto1/etc/testDriver.log", "w");
     debug_print("=====> START TESTDRIVER <=====\n");
