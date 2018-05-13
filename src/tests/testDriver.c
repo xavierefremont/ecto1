@@ -15,6 +15,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 
 FILE* info;
@@ -35,27 +36,28 @@ int main(){
 
     map* map = NULL;
     car* car = NULL;
-    vector acceleration;
+    vector* acceleration;
 
-    position mapSize;
-    int fuel;
+    vector* mapSize;
+    int fuel, x, y;
     int tour = 1;
 
     info = fopen("ecto1/etc/testDriver.log", "w");
     debug_print("=====> START TESTDRIVER <=====\n");
 
-    initGame(&mapSize, &fuel);
-    fprintf(info, " ---> INIT GAME DONE (x : %d, y : %d, fuel : %d) \n", mapSize.x, mapSize.y, fuel);
+    initGame(&x, &y, &fuel);
+    mapSize = createVector(x, y);
+    fprintf(info, " ---> INIT GAME DONE (x : %d, y : %d, fuel : %d) \n", mapSize->x, mapSize->y, fuel);
     fflush(info);
 
     map = initMap(mapSize);
     debug_print(" ---> INIT MAP DONE \n");
-    fprintf(info, "\t -> x : %d, y : %d \n", map->size.x, map->size.y);
+    fprintf(info, "\t -> x : %d, y : %d \n", map->size->x, map->size->y);
     fflush(info);
     fprintf(info, "\t -> map : \n");
     fflush(info);
-    for(int i=0; i < map->size.y; i++){
-        for(int j=0; j < map->size.x; j++){
+    for(int i=0; i < map->size->y; i++){
+        for(int j=0; j < map->size->x; j++){
             fprintf(info, "%c", map->plan[i][j]);
             fflush(info);
         }
@@ -72,15 +74,23 @@ int main(){
 
     while (!feof(stdin)) {
 
+        clock_t begin = clock();
+
         fprintf(info, " ---> Tour %d \n", tour);
         fflush(info);
         initRound(car, map);
-        fprintf(info, "\t -> position (%d,%d)  \n", car->currentPosition.x, car->currentPosition.y);
+        fprintf(info, "\t -> position (%d,%d)  \n", car->currentPosition->x, car->currentPosition->y);
         fflush(info);
         acceleration = playRound(car, map);
-        fprintf(info, "\t -> supposed acceleration (%d,%d)  \n", acceleration.x, acceleration.y);
+        fprintf(info, "\t -> supposed acceleration (%d,%d)  \n", acceleration->x, acceleration->y);
         fflush(info);
         sendDatas(acceleration);
+
+        clock_t end = clock();
+        double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+
+        fprintf(info, "\t -> Tour over : %f s \n", time_spent);
+        fflush(info);
         tour++;
 
     }

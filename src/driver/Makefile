@@ -1,15 +1,17 @@
 .PHONY: clean
 
-CC = gcc
-CFLAGS = -W -Wall -pedantic
-LDFLAGS = -lm
-
 #DIRECTORIES
 ROOT = ../../
 BINDIR = $(ROOT)bin/
 SRCDIR = $(ROOT)src/
 OBJDIR = $(ROOT)obj/
+LIBDIR = $(ROOT)lib/
 TESTSDIR = $(ROOT)src/tests/
+
+#COMPILERS MACRO
+CC = gcc
+CFLAGS = -W -Wall -pedantic
+LDFLAGS = -L$(LIBDIR) -lEcto1 -lm
 
 #SOURCES & BINARIES
 SRC  = $(wildcard *.c)

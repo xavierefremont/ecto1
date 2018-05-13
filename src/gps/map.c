@@ -9,32 +9,12 @@
  * @brief Map file : everything concerning the track map
  */
 
+#include "../../include/util/ArrayList.h"
 #include "../../include/gps/map.h"
+#include "../../include/gps/gps.h"
+#include "../../include/car/car.h"
 
-/**
- * Creates a structure map initializing the size sent by the driver
- * @param width of the map
- * @param height of the map
- * @return the new map
- */
-map* createMap(position mapSize) {
 
-  map* map = NULL;
-  map = (struct map*) malloc(sizeof(struct map));
-  if(map){
-    map->size.x = mapSize.x;
-    map->size.y = mapSize.y;
-    map->plan = (char**) calloc(mapSize.y, sizeof(char*));
-    for(int i=0;i<mapSize.y;i++)
-      map->plan[i] = (char *) calloc(mapSize.x, sizeof(char));
-    if(map->plan){
-      return map;
-    }
-  }
-
-  return NULL;
-
-}
 
 /**
  * Initializes the map, i.e fill the plan in
@@ -47,7 +27,7 @@ void generateMap(map* map) {
   int j = 0;
 
   /* Read the map from stdin and fill the track into an array*/
-  for (i = 0; i < map->size.y; i++) {
+  for (i = 0; i < map->size->y; i++) {
     while (fread(&read, sizeof(char), 1, stdin) == 1 && read != '\n'){
       map->plan[i][j] = read;
       j++;
@@ -57,13 +37,14 @@ void generateMap(map* map) {
 
 }
 
+
 /**
  * Set int the map the current position of the three cars
  * @param map pointer in which the positions will be set
  * @param car position ouf ourselves
  * @param rival1, rival2 position of the others
  */
-void setPosition(map* map, position car, position rival1, position rival2) {
+void setPosition(map* map, position* car, position* rival1, position* rival2) {
   //TODO : Mettre les voitures dans la map
 }
 
@@ -73,5 +54,41 @@ void setPosition(map* map, position car, position rival1, position rival2) {
  * @param the new map
  */
 void sendToGPS(map* map) {
+
+}
+
+
+int isCorrectPosition(map* map, position* target){
+
+  if(isPositionInMap(map, target)){
+    if(isPositionFree(map, target)){
+      return 1;
+    }
+  }
+
+  return 0;
+
+}
+
+
+int isPositionInMap(map* map, position* target){
+
+  if(target->x < map->size->x && target->x > 0 && target->y < map->size->y && target->y > 0){
+    return 1;
+  }else{
+    return 0;
+  }
+
+}
+
+
+int isPositionFree(map* map, position* target){
+
+  if(map->plan[target->y][target->x] == '#' || map->plan[target->y][target->x] == '~'){
+    //TODO : Check on the map structure if a car is in the position
+    return 1;
+  }
+
+  return 0;
 
 }

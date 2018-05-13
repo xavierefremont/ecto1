@@ -2,13 +2,19 @@
 
 CC = gcc
 CFLAGS = -W -Wall -pedantic
-LDFLAGS = -lm
+LDFLAGS = -lm -lCCollections
 
 #DIRECTORIES
 ROOT = ../
 BINDIR = $(ROOT)bin/
 SRCDIR = $(ROOT)src/
+LIBDIR = $(ROOT)lib/
 OBJDIR = $(ROOT)obj/
+
+#COMPILERS MACRO
+CC = gcc
+CFLAGS = -W -Wall -pedantic
+LDFLAGS = -L$(LIBDIR) -lEcto1 -lm
 
 #SOURCES & BINARIES
 SRC  = $(wildcard *.c)

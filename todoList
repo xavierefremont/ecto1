@@ -1,0 +1,5 @@
+//TODO : Change all vector and position to pointer
+//TODO : Create function for creating new Position and Vector
+//TODO : Set FILE* to function for tests
+//TODO : Djikstra algo
+//TODO : First round doesn't work (datas send not recognized)

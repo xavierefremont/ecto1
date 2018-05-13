@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int main(){
+
+  struct ArrayList a = newArrayList(sizeof(int));
+
+  return 0;
+  
+}

@@ -1,0 +1,10 @@
+typedef struct ArrayList{
+  int a;
+}ArrayList;
+
+struct ArrayList newArrayList(){
+
+  struct ArrayList a;
+  return a;
+
+}

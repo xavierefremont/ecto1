@@ -2,7 +2,7 @@
 
 #DIRECTORIES
 SRCDIR = src/
-SUBDIR = $(addprefix $(SRCDIR), car gps driver)
+SUBDIR = $(addprefix $(SRCDIR), util car gps driver)
 
 #COLORS
 CDIR = \033[0;36m

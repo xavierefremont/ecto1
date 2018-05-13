@@ -17,13 +17,13 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../../include/structs.h"
+#include "../../include/util/structs.h"
 
 
-void initGame(position* mapSize, int* fuel);
+void initGame(int* x, int* y, int* fuel);
 
 
-map* initMap(position mapSize);
+map* initMap(vector* mapSize);
 
 
 car* initCar(int fuel);
@@ -32,13 +32,13 @@ car* initCar(int fuel);
 void initRound(car* car, map* map);
 
 
-vector playRound(car* car, map* map);
+vector* playRound(car* car, map* map);
 
 
-void updateGame(car* car, map* map, vector acceleration);
+void updateGame(car* car, map* map, vector* acceleration);
 
 
-void sendDatas(vector acceleration);
+void sendDatas(vector* acceleration);
 
 
 void readChar();
