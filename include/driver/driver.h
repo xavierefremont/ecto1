@@ -17,7 +17,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../../include/util/structs.h"
+#include "../structs.h"
 
 
 void initGame(int* x, int* y, int* fuel);

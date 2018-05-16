@@ -16,15 +16,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <limits.h>
+#include <time.h>
 
-#include "../../include/util/structs.h"
+#include "../../include/structs.h"
+
+vector* createVector(int x, int y);
 
 vector* calculateVector(car* car, map* map);
 
 float getVectorNorm(vector* v);
 
-ArrayList getPossibleMoves(FILE* info, car* car, map* map);
+ArrayList getPossibleMoves(vector* speed, position* current, map* map);
 
+ArrayList getAllArrivals(map* map);
+
+ArrayList calculateDijkstra(map* map, car* car);
 
 
 #endif //__GPS_H

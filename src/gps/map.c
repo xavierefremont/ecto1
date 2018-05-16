@@ -15,6 +15,26 @@
 #include "../../include/car/car.h"
 
 
+map* createMap(vector* mapSize) {
+
+  map* map = NULL;
+  map = (struct map*) malloc(sizeof(struct map));
+  if(map){
+    map->size = mapSize;
+    map->plan = (char**) calloc(mapSize->y, sizeof(char*));
+    for(int i=0;i<mapSize->y;i++)
+      map->plan[i] = (char *) calloc(mapSize->x, sizeof(char));
+    if(map->plan){
+      map->rival1 = NULL;
+      map->rival2 = NULL;
+      return map;
+    }
+  }
+
+  return NULL;
+
+}
+
 
 /**
  * Initializes the map, i.e fill the plan in
@@ -37,6 +57,15 @@ void generateMap(map* map) {
 
 }
 
+position* createPosition(int x, int y){
+
+  position* p = malloc(sizeof(struct position));
+  p->x = x;
+  p->y = y;
+
+  return p;
+
+}
 
 /**
  * Set in the map the current position of the rivals' cars

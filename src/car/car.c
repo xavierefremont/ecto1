@@ -17,6 +17,29 @@
 
 
 /**
+ * Initialize a car structure
+ * @param pointer on Car structure to initialize
+ * @param the fuel value
+ */
+car* createCar(int fuel) {
+
+    car *car = NULL;
+    car = (struct car*) malloc(sizeof(struct car));
+    if(car == NULL){
+        return NULL;
+    }
+    car->fuel = fuel;
+    car->previousPosition = NULL;
+    car->currentPosition = NULL;
+    car->currentSpeed = NULL;
+    car->presumedFuel = 0;
+    car->nbrBoosts = 5;
+
+    return car;
+
+}
+
+/**
  * Calculates the current fuel, remaining after the move
  * @param pointer on Car structure to have the presumed fuel, the previous position and then change the fuel
  */
