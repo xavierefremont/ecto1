@@ -14,7 +14,19 @@
 #include "../../include/gps/gps.h"
 #include "../../include/car/car.h"
 
-
+/**
+ * Create a new postion structure pointer
+ * @param x
+ * @param y
+ * @return the pointer of the created structure
+ */
+position* createPosition(int x, int y, char roadType) {
+	position* p = (position*)malloc(sizeof(struct Position));
+	p->x = x;
+	p->y = y;
+	p->type = roadType;
+	return p;
+}
 
 /**
  * Initializes the map, i.e fill the plan in

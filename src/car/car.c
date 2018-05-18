@@ -37,7 +37,7 @@ void currentFuel(car* car) {
  * @param Car structure 
  */
 void calculatePresumedFuel(car* car) {
-
+//TODO modify values using vectors
     int accX = 0;
     int accY = 0;
     int velX = 0;

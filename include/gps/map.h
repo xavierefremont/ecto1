@@ -66,6 +66,6 @@ int isPositionFree(map* map, position* target);
  * @param y
  * @return the pointer of the created structure
  */
-position* createPosition(int x, int y);
+position* createPosition(int x, int y, char roadType);
 
 #endif //__MAP_H

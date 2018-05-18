@@ -26,6 +26,7 @@ struct vector{
 struct position {
     int x;
     int y;
+    char type;
 };
 
 typedef struct map {

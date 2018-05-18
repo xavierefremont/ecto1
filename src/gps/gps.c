@@ -40,7 +40,7 @@ ArrayList getPossibleMoves(vector* speed, position* current, map* map){
 
     ArrayList possibleMoves = newArrayList(sizeof(position));
 
-    position* p1 = createPosition(current->x + speed->x, current->y + speed->y);
+    position* p1 = createPosition(current->x + speed->x, current->y + speed->y, NULL);
 
     if(isCorrectPosition(map, p1)){
         ArrayListAppend(possibleMoves, p1);
@@ -48,7 +48,7 @@ ArrayList getPossibleMoves(vector* speed, position* current, map* map){
         free(p1);
     }
 
-    position* p2 = createPosition(current->x + speed->x + 1, current->y + speed->y);
+    position* p2 = createPosition(current->x + speed->x + 1, current->y + speed->y, NULL);
 
     if(isCorrectPosition(map, p2)){
         ArrayListAppend(possibleMoves, p2);
@@ -56,7 +56,7 @@ ArrayList getPossibleMoves(vector* speed, position* current, map* map){
         free(p2);
     }
 
-    position* p3 = createPosition(current->x + speed->x + 1, current->y + speed->y + 1);
+    position* p3 = createPosition(current->x + speed->x + 1, current->y + speed->y + 1, NULL);
 
     if(isCorrectPosition(map, p3)){
         ArrayListAppend(possibleMoves, p3);
@@ -64,7 +64,7 @@ ArrayList getPossibleMoves(vector* speed, position* current, map* map){
         free(p3);
     }
 
-    position* p4 = createPosition(current->x + speed->x + 1, current->y + speed->y - 1);
+    position* p4 = createPosition(current->x + speed->x + 1, current->y + speed->y - 1, NULL);
 
     if(isCorrectPosition(map, p4)){
         ArrayListAppend(possibleMoves, p4);
@@ -72,7 +72,7 @@ ArrayList getPossibleMoves(vector* speed, position* current, map* map){
         free(p4);
     }
 
-    position* p5 = createPosition(current->x + speed->x - 1, current->y + speed->y);
+    position* p5 = createPosition(current->x + speed->x - 1, current->y + speed->y, NULL);
 
     if(isCorrectPosition(map, p5)){
         ArrayListAppend(possibleMoves, p5);
@@ -80,7 +80,7 @@ ArrayList getPossibleMoves(vector* speed, position* current, map* map){
         free(p5);
     }
 
-    position* p6 = createPosition(current->x + speed->x - 1, current->y + speed->y + 1);
+    position* p6 = createPosition(current->x + speed->x - 1, current->y + speed->y + 1, NULL);
 
     if(isCorrectPosition(map, p6)){
         ArrayListAppend(possibleMoves, p6);
@@ -88,7 +88,7 @@ ArrayList getPossibleMoves(vector* speed, position* current, map* map){
         free(p6);
     }
 
-    position* p7 = createPosition(current->x + speed->x - 1, current->y + speed->y - 1);
+    position* p7 = createPosition(current->x + speed->x - 1, current->y + speed->y - 1, NULL);
 
     if(isCorrectPosition(map, p7)){
         ArrayListAppend(possibleMoves, p7);
@@ -110,7 +110,7 @@ ArrayList getAllArrivals(map* map){
     for(y=0; y<map->size->y; y++){
         for(x=0; x<map->size->x; x++){
             if(map->plan[y][x] == '='){
-                position* p = createPosition(x, y);
+                position* p = createPosition(x, y, NULL);
                 ArrayListAppend(arrivals, p);
             }
         }
@@ -143,7 +143,7 @@ ArrayList calculateDijkstra(map* map, car* car){
         distance[y] = malloc(sizeof(int) * map->size->x);
         previous[y] = malloc(sizeof(position*) * map->size->x);
         for (x = 0; x < map->size->x; x++) {
-            p = createPosition(x, y);
+            p = createPosition(x, y, NULL);
             previous[y][x] = NULL;
             if(areEqualsPosition(car->currentPosition, p)){
                 distance[y][x] = 0;
