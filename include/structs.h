@@ -30,20 +30,21 @@ struct position {
 };
 
 typedef struct map {
-  position size;
+  position* size;
   char** plan;
-  position rival1;
-  position rival2;
+  position* rival1;
+  position* rival2;
 };
 
 struct car{
-    position previousPosition;
-    position currentPosition;
-    int currentSpeed;
+    position* previousPosition;
+    position* currentPosition;
+    vector* currentSpeed;
     int fuel;
     int presumedFuel;
     int nbrBoosts;
 };
+
 
 
 #endif //_STRUCTS_H

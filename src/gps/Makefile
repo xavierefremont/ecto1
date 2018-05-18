@@ -11,7 +11,7 @@ TESTSDIR = $(ROOT)src/tests/
 #COMPILERS MACRO
 CC = gcc
 CFLAGS = -W -Wall -pedantic
-LDFLAGS = -L$(LIBDIR) -lEcto1 -lm
+LDFLAGS = -L$(LIBDIR) -lCCollection -lm
 
 #SOURCES & BINARIES
 SRC  = $(wildcard *.c)

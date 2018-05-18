@@ -17,8 +17,15 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../../include/util/structs.h"
+#include "../../include/structs.h"
 
+
+/**
+ * Initialize a new car using starts' datas
+ * @param the start car fuel value
+ * @return pointer on the created Car structure
+ */
+car* createCar(int fuel);
 
 /**
  * Calculates the current fuel, remaining after the move

@@ -17,14 +17,26 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../../include/util/structs.h"
+#include "../../include/structs.h"
 
+
+/**
+ * Creates a structure map initializing the size sent by the driver
+ * @param width of the map
+ * @param height of the map
+ * @return the new map
+ */
+map* createMap(vector* mapSize);
 
 /**
  * Initializes the map, i.e fill the plan in
  * @param map pointer to initialize
  */
 void generateMap(map* map);
+
+
+position* createPosition(int x, int y);
+
 
 /**
  * Set in the map the current position of the rivals' cars

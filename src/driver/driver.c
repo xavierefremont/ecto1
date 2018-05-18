@@ -91,7 +91,7 @@ void initRound(car* car, map* map){
 
 
     /* Set car position into the map*/
-    setPosition(map, carPosition, rival1Position, rival2Position);
+    setPosition(map, rival1Position, rival2Position);
     car->currentPosition = carPosition;
 
     //Do the verification somewhere else

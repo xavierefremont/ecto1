@@ -16,6 +16,21 @@
 #include "../../include/gps/gps.h"
 
 
+vector* createVector(int x, int y){
+
+    vector* v = NULL;
+    v = malloc(sizeof(struct vector));
+    if(v == NULL){
+        return NULL;
+    }
+    v->x = x;
+    v->y = y;
+
+    return v;
+
+}
+
+
 vector* calculateVector(car* car, map* map){
 
     //remove next line, just for tests

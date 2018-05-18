@@ -34,7 +34,7 @@ int main(){
 
     map* map = NULL;
 
-    position mapSize;
+    position* mapSize;
  
 
     info = fopen("ecto1/etc/testMap.log", "w");
@@ -45,7 +45,7 @@ int main(){
     map = createMap(mapSize);
     if(map) {
 	debug_print(" ---> CREATE MAP DONE \n");
-    	fprintf(info, "\t -> x : %d, mapSize.x : %d\t y : %d mapSize.y : %d\n", map->size.x, mapSize->x, map->size.y, mapSize->y);
+    	fprintf(info, "\t -> x : %d, mapSize.x : %d\t y : %d mapSize.y : %d\n", map->size->x, mapSize->x, map->size->y, mapSize->y);
     	fflush(info);
     } else {
 	debug_print(" ---> CREATE MAP ERROR\n");
