@@ -120,9 +120,11 @@ int isPositionFree(map* map, position* target){
      map->plan[target->y][target->x] == '~' ||
      map->plan[target->y][target->x] == '='){
     //TODO : Check on the map structure if a car is in the position
-    return 1;
+	if ( !areEqualsPosition(target, map->rival1) ||
+	     !areEqualsPosition(taget, map->rival2)) {
+	  return 1;
+	}
   }
-
   return 0;
 
 }

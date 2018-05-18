@@ -35,9 +35,6 @@ map* createMap(vector* mapSize);
 void generateMap(map* map);
 
 
-position* createPosition(int x, int y);
-
-
 /**
  * Set in the map the current position of the rivals' cars
  * @param map pointer in which the positions will be set

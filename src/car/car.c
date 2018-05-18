@@ -59,17 +59,18 @@ void currentFuel(car* car) {
  * the value is négative
  * @param Car structure 
  */
-void calculatePresumedFuel(car* car) {
-//TODO modify values using vectors
-    int accX = 0;
-    int accY = 0;
-    int velX = 0;
-    int velY = 0;
-    int dansSable = 0;
-    int valeur = accX * accX + accY * accY;
-    valeur += (int)(sqrt(velX * velX + velY * velY) * 3.0 / 2.0);
-    if (dansSable)
-        valeur += 1;
+void calculatePresumedFuel(car* car, vector acc, vector spe) {
+  //TODO dans sable
+  int accX = acc.x;
+  int accY = acc.y;
+  int velX = spe.x;
+  int velY = spe.y;
+  int dansSable = 0;
+  int valeur = accX * accX + accY * accY;
+  valeur += (int)(sqrt(velX * velX + velY * velY) * 3.0 / 2.0);
+  if (dansSable)
+    valeur += 1;
+  car->presumedFuel = car->fuel - valeur;
 }
 
 /**
