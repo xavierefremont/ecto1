@@ -23,7 +23,7 @@
 
 vector* createVector(int x, int y);
 
-vector* calculateVector(car* car, map* map);
+vector* calculateVector(car* car, position* des);
 
 float getVectorNorm(vector* v);
 

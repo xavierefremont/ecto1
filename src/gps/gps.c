@@ -30,15 +30,17 @@ vector* createVector(int x, int y){
 
 }
 
+vector* calculateVector(car* car, position* dest){
+  int xMove = dest->col - car->currentPosition->col;
+  int yMove = dest->row - car->currentPosition->col;
+  
+  vector* vMove = createVector(xMove, yMove);
 
-vector* calculateVector(car* car, map* map){
+  int xSpeed = xMove->x - car->currentSpeed->x;
+  int ySpead = yMove->x - car->currentSpead->y;
+  vector* vSpeed = createVector(xMove, yMove);
 
-    //remove next line, just for tests
-    vector* v = createVector(1,0);
-
-    return v;
-    //TODO : Calculer le vecteur avec un graphe et un algo
-
+  return vSpeed;
 }
 
 
