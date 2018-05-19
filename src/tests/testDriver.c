@@ -9,7 +9,11 @@
  */
 
 
+#include "../../include/util/ArrayList.h"
 #include "../../include/driver/driver.h"
+#include "../../include/gps/gps.h"
+#include "../../include/gps/map.h"
+#include "../../include/car/car.h"
 
 #include <math.h>
 #include <stdio.h>
@@ -41,16 +45,17 @@ int main(){
     vector* mapSize;
     int fuel, x, y;
     int tour = 1;
- 
+
     int verifyPosition;
 
-    info = fopen("ecto1/etc/testDriver.log", "w");
+    info = fopen("ecto1/etc/testDriver2.log", "w");
     debug_print("=====> START TESTDRIVER <=====\n");
 
     initGame(&x, &y, &fuel);
     mapSize = createVector(x, y);
     fprintf(info, " ---> INIT GAME DONE (x : %d, y : %d, fuel : %d) \n", mapSize->x, mapSize->y, fuel);
     fflush(info);
+    debug_print("=====> ICI <=====\n");
 
     map = initMap(mapSize);
     debug_print(" ---> INIT MAP DONE \n");
@@ -60,7 +65,7 @@ int main(){
     fflush(info);
     for(int i=0; i < map->size->y; i++){
         for(int j=0; j < map->size->x; j++){
-            fprintf(info, "%c", map->plan[i][j]);
+            fprintf(info, "%c", map->plan[i][j]->type);
             fflush(info);
         }
         fprintf(info, "\n");
@@ -80,7 +85,7 @@ int main(){
 
         fprintf(info, " ---> Tour %d \n", tour);
         fflush(info);
-        initRound(car, map);
+        initRound(info, car, map);
         fprintf(info, "\t -> position (%d,%d)  \n", car->currentPosition->x, car->currentPosition->y);
         fflush(info);
         acceleration = playRound(car, map);

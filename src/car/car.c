@@ -59,12 +59,12 @@ void currentFuel(car* car) {
  * the value is négative
  * @param Car structure 
  */
-void calculatePresumedFuel(car* car, vector acc, vector spe) {
+void calculatePresumedFuel(car* car, vector* acc, vector* spe) {
   //TODO dans sable
-  int accX = acc.x;
-  int accY = acc.y;
-  int velX = spe.x;
-  int velY = spe.y;
+  int accX = acc->x;
+  int accY = acc->y;
+  int velX = spe->x;
+  int velY = spe->y;
   int dansSable = 0;
   int valeur = accX * accX + accY * accY;
   valeur += (int)(sqrt(velX * velX + velY * velY) * 3.0 / 2.0);
@@ -91,7 +91,12 @@ int verifyPosition(car* car) {
  * @return 1 if both positions are equals, 0 either
  */
 int areEqualsPosition(position* p1, position* p2){
-
+    if(!p1 || !p2){
+        return 0;
+    }
+    if(p1 == p2){
+        return 1;
+    }
     return (p1->x == p2->x && p1->y == p2->y);
 
 }

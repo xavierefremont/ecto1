@@ -18,10 +18,11 @@
  * Create a new postion structure pointer
  * @param x
  * @param y
+ * @param the road type
  * @return the pointer of the created structure
  */
 position* createPosition(int x, int y, char roadType) {
-	position* p = (position*)malloc(sizeof(struct Position));
+	position* p = (position*)malloc(sizeof(struct position));
 	p->x = x;
 	p->y = y;
 	p->type = roadType;
@@ -34,9 +35,9 @@ map* createMap(vector* mapSize) {
   map = (struct map*) malloc(sizeof(struct map));
   if(map){
     map->size = mapSize;
-    map->plan = (char**) calloc(mapSize->y, sizeof(char*));
+    map->plan = (position***) calloc(mapSize->y, sizeof(position**));
     for(int i=0;i<mapSize->y;i++)
-      map->plan[i] = (char *) calloc(mapSize->x, sizeof(char));
+      map->plan[i] = (position **) calloc(mapSize->x, sizeof(position*));
     if(map->plan){
       map->rival1 = NULL;
       map->rival2 = NULL;
@@ -57,25 +58,17 @@ void generateMap(map* map) {
   char read;
   int i;
   int j = 0;
+  position* p = NULL;
 
   /* Read the map from stdin and fill the track into an array*/
   for (i = 0; i < map->size->y; i++) {
     while (fread(&read, sizeof(char), 1, stdin) == 1 && read != '\n'){
-      map->plan[i][j] = read;
+      p = createPosition(i, j, read);
+      map->plan[i][j] = p;
       j++;
     }
     j = 0;
   }
-
-}
-
-position* createPosition(int x, int y){
-
-  position* p = malloc(sizeof(struct position));
-  p->x = x;
-  p->y = y;
-
-  return p;
 
 }
 
@@ -116,15 +109,22 @@ int isPositionInMap(map* map, position* target){
 
 int isPositionFree(map* map, position* target){
 
-  if(map->plan[target->y][target->x] == '#' ||
-     map->plan[target->y][target->x] == '~' ||
-     map->plan[target->y][target->x] == '='){
-    //TODO : Check on the map structure if a car is in the position
+  if(map->plan[target->y][target->x]->type == '#' ||
+     map->plan[target->y][target->x]->type == '~' ||
+     map->plan[target->y][target->x]->type == '='){
 	if ( !areEqualsPosition(target, map->rival1) ||
-	     !areEqualsPosition(taget, map->rival2)) {
+	     !areEqualsPosition(target, map->rival2)) {
 	  return 1;
 	}
   }
+  return 0;
+
+}
+
+
+int isMoveCorrect(position* source, position* target){
+
+
   return 0;
 
 }

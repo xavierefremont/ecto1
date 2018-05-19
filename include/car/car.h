@@ -38,9 +38,11 @@ void currentFuel(car* car);
  * Calculates the fuel wich would be used if the motion is done
  * it calculation is realized before trying the motion in the race
  * the value is négative
- * @param Car structure 
+ * @param Car structure
+ * @param acceleration vector
+ * @param speed vector
  */
-void calculatePresumedFuel(car* car);
+void calculatePresumedFuel(car* car, vector* acc, vector* spe);
 
 
 /**

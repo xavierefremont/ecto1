@@ -85,19 +85,22 @@ void initRound(car* car, map* map){
            &bx, &by,
            &cx, &cy);
 
-    carPosition = createPosition(ax, ay);
-    rival1Position = createPosition(bx, by);
-    rival2Position = createPosition(cx, cy);
+    carPosition = map->plan[ax][ay];
+    rival1Position = map->plan[bx][by];
+    rival2Position = map->plan[cx][cy];
 
 
     /* Set car position into the map*/
     setPosition(map, rival1Position, rival2Position);
     car->currentPosition = carPosition;
 
+
     //Do the verification somewhere else
     if(areEqualsPosition(car->currentPosition, car->previousPosition)){
         car->currentSpeed = createVector(0,0);
     }
+
+
 
     //TODO : Check if the previous move was done and handle moves issues
 
