@@ -63,13 +63,13 @@ void generateMap(map* map) {
   position* p = NULL;
 
   /* Read the map from stdin and fill the track into an array*/
-  for (row = 0; row < map->size->row; row++) {
+  for (row = 0; row < map->size->y; row++) {
     while (fread(&read, sizeof(char), 1, stdin) == 1 && read != '\n'){
       p = createPosition(col, row, read);
       map->plan[row][col] = p;
       col++;
     }
-    x = 0;
+    col = 0;
   }
 
 }
@@ -112,7 +112,7 @@ int isPositionInMap(map* map, position* target){
 int isPositionFree(map* map, position* target){
 
     printf("D : %d %d %c\n", target->col, target->row, target->type);
-    printf("E : %d %d %c\n", map->plan[target->row][target->col]->x, map->plan[target->row][target->col]->y, map->plan[target->row][target->col]->type);
+    printf("E : %d %d %c\n", map->plan[target->row][target->col]->col, map->plan[target->row][target->col]->row, map->plan[target->row][target->col]->type);
 
   if(map->plan[target->row][target->col]->type == '#' ||
      map->plan[target->row][target->col]->type == '~' ||
