@@ -86,14 +86,14 @@ int main(){
 
     car = createCar(50);
     car->currentPosition = map->plan[3][5];
-    printf("%d %d\n", car->currentPosition->x, car->currentPosition->y);
+    printf("%d %d\n", car->currentPosition->col, car->currentPosition->row);
     car->currentSpeed = createVector(0,0);
 
     path = calculateDijkstra(map, car);
 
     for(i=0; i<ArrayListGetLength(path); i++){
         p = (position*) ArrayListGet(path, i);
-        map->plan[p->y][p->x]->type = '-';
+        map->plan[p->row][p->col]->type = '-';
     }
 
     displayMap(map);
