@@ -86,7 +86,7 @@ int main(){
         fprintf(info, " ---> Tour %d \n", tour);
         fflush(info);
         initRound(car, map);
-        fprintf(info, "\t -> position (%d,%d)  \n", car->currentPosition->x, car->currentPosition->y);
+        fprintf(info, "\t -> position (%d,%d)  \n", car->currentPosition->col, car->currentPosition->row);
         fflush(info);
         acceleration = playRound(car, map);
         fprintf(info, "\t -> supposed acceleration (%d,%d)  \n", acceleration->x, acceleration->y);

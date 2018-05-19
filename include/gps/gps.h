@@ -17,6 +17,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <limits.h>
+#include <float.h>
 #include <time.h>
 
 #include "../../include/structs.h"
@@ -34,6 +35,8 @@ ArrayList getAllArrivals(map* map);
 ArrayList calculateDijkstra(map* map, car* car);
 
 void destroyVector(vector* v);
+
+int calcul(position* p, position* p2);
 
 
 #endif //__GPS_H

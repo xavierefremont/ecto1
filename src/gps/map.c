@@ -87,10 +87,8 @@ void setPosition(map* map, position* rival1, position* rival2) {
 
 int isCorrectPosition(map* map, position* target){
 
-  if(isPositionInMap(map, target)){
-    if(isPositionFree(map, target)){
-      return 1;
-    }
+  if(isPositionFree(map, target)){
+    return 1;
   }
 
   return 0;
@@ -98,25 +96,10 @@ int isCorrectPosition(map* map, position* target){
 }
 
 
-int isPositionInMap(map* map, position* target){
-
-  if(target->col < map->size->x && target->col > 0 && target->row < map->size->y && target->row > 0){
-    return 1;
-  }else{
-    return 0;
-  }
-
-}
-
-
 int isPositionFree(map* map, position* target){
 
-    printf("D : %d %d %c\n", target->col, target->row, target->type);
-    printf("E : %d %d %c\n", map->plan[target->row][target->col]->col, map->plan[target->row][target->col]->row, map->plan[target->row][target->col]->type);
-
-  if(map->plan[target->row][target->col]->type == '#' ||
-     map->plan[target->row][target->col]->type == '~' ||
-     map->plan[target->row][target->col]->type == '='){
+  if(target->type == '#' || target->type == '~' || target->type == '='
+     || target->type == '1' || target->type == '2' || target->type == '3'){
 	if ( !areEqualsPosition(target, map->rival1) ||
 	     !areEqualsPosition(target, map->rival2)) {
 	  return 1;

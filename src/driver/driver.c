@@ -115,8 +115,14 @@ void initRound(car* car, map* map){
 vector* playRound(car* car, map* map){
 
     /* Calculate the acceleration vector */
-    vector* acceleration;
-    acceleration = calculateVector(car, map);
+    vector* acceleration = NULL;
+    ArrayList moves = NULL;
+    position* p = NULL;
+
+    moves = calculateDijkstra(map, car);
+    p = (position*) ArrayListGet(moves, 0);
+
+    acceleration = calculateVector(car, p);
 
     //TODO : Maybe verificate before sending datas
 
