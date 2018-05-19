@@ -40,7 +40,7 @@ void currentFuel(car* car);
  * the value is négative
  * @param Car structure 
  */
-void calculatePresumedFuel(car* car);
+void calculatePresumedFuel(car* car, vector acc, vector spe);
 
 
 /**
