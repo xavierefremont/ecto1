@@ -60,5 +60,11 @@ int verifyPosition(car* car);
  */
 int areEqualsPosition(position* p1, position* p2);
 
+/**
+ * Destroy a car structure
+ * @param the car to destroy
+ */
+void destroyCar(car* car);
+
 #endif //_CAR_H
 
