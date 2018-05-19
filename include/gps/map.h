@@ -78,4 +78,19 @@ int isPositionFree(map* map, position* target);
  */
 position* createPosition(int x, int y, char roadType);
 
+
+/**
+ * Destroy a map structure
+ * @param the map to destroy
+ */
+void destroyMap(map* map);
+
+
+/**
+ * Destroy a position structure
+ * @param the position to destroy
+ */
+void destroyPosition(position* p);
+
+
 #endif //__MAP_H

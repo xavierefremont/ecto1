@@ -22,11 +22,13 @@
  * @return the pointer of the created structure
  */
 position* createPosition(int x, int y, char roadType) {
+
 	position* p = (position*)malloc(sizeof(struct position));
 	p->x = x;
 	p->y = y;
 	p->type = roadType;
 	return p;
+
 }
 
 map* createMap(vector* mapSize) {
@@ -56,18 +58,18 @@ map* createMap(vector* mapSize) {
 void generateMap(map* map) {
 
   char read;
-  int i;
-  int j = 0;
+  int x = 0;
+  int y;
   position* p = NULL;
 
   /* Read the map from stdin and fill the track into an array*/
-  for (i = 0; i < map->size->y; i++) {
+  for (y = 0; y < map->size->y; y++) {
     while (fread(&read, sizeof(char), 1, stdin) == 1 && read != '\n'){
-      p = createPosition(i, j, read);
-      map->plan[i][j] = p;
-      j++;
+      p = createPosition(y, x, read);
+      map->plan[y][x] = p;
+      x++;
     }
-    j = 0;
+    x = 0;
   }
 
 }
@@ -109,6 +111,9 @@ int isPositionInMap(map* map, position* target){
 
 int isPositionFree(map* map, position* target){
 
+    printf("D : %d %d %c\n", target->x, target->y, target->type);
+    printf("E : %d %d %c\n", map->plan[target->y][target->x]->x, map->plan[target->y][target->x]->y, map->plan[target->y][target->x]->type);
+
   if(map->plan[target->y][target->x]->type == '#' ||
      map->plan[target->y][target->x]->type == '~' ||
      map->plan[target->y][target->x]->type == '='){
@@ -124,7 +129,35 @@ int isPositionFree(map* map, position* target){
 
 int isMoveCorrect(position* source, position* target){
 
-
   return 0;
 
 }
+
+
+void destroyMap(map* map){
+
+  int x, y;
+  map->rival1 = NULL;
+  map->rival2 = NULL;
+
+  for(y=0; y<map->size->y; y++){
+    for(x=0; x<map->size->x; x++){
+      destroyPosition(map->plan[y][x]);
+    }
+  }
+
+  free(map->plan);
+
+}
+
+
+/**
+ * Destroy a position structure
+ * @param the position to destroy
+ */
+void destroyPosition(position* p){
+
+  free(p);
+
+}
+

@@ -10,7 +10,9 @@
 
 #include "../../include/util/ArrayList.h"
 #include "../../include/driver/driver.h"
+#include "../../include/gps/map.h"
 #include "../../include/gps/gps.h"
+#include "../../include/car/car.h"
 
 #include <math.h>
 #include <stdio.h>
@@ -39,7 +41,7 @@ map* readMapFromFile(FILE* fp){
     int a;
     for (int i = 0; i < map->size->y; i++) {
         while (fread(&read, sizeof(char), 1, fp) == 1 && read != '\n'){
-            map->plan[i][j] = read;
+            map->plan[i][j] = createPosition(i, j, read);
             j++;
         }
         j = 0;
@@ -54,7 +56,7 @@ map* readMapFromFile(FILE* fp){
 void displayMap(map* map){
     for(int i = 0; i < map->size->y; i++){
         for(int j = 0; j < map->size->x; j++){
-            printf("%c", map->plan[i][j]);
+            printf("%c", map->plan[i][j]->type);
         }
         printf("\n");
     }
@@ -83,14 +85,15 @@ int main(){
     displayMap(map);
 
     car = createCar(50);
-    car->currentPosition = createPosition(4,7);
+    car->currentPosition = map->plan[3][5];
+    printf("%d %d\n", car->currentPosition->x, car->currentPosition->y);
     car->currentSpeed = createVector(0,0);
 
     path = calculateDijkstra(map, car);
 
     for(i=0; i<ArrayListGetLength(path); i++){
         p = (position*) ArrayListGet(path, i);
-        map->plan[p->y][p->x] = '-';
+        map->plan[p->y][p->x]->type = '-';
     }
 
     displayMap(map);

@@ -10,9 +10,10 @@
  */
 
 #include "../../include/util/ArrayList.h"
-#include "../../include/car/car.h"
 #include "../../include/gps/map.h"
 #include "../../include/gps/gps.h"
+#include "../../include/car/car.h"
+
 
 
 
@@ -98,4 +99,11 @@ int areEqualsPosition(position* p1, position* p2){
     }
     return (p1->x == p2->x && p1->y == p2->y);
 
+}
+
+void destroyCar(car* car){
+    car->currentPosition = NULL;
+    car->currentSpeed = NULL;
+    car->previousPosition = NULL;
+    free(car);
 }

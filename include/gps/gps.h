@@ -33,5 +33,7 @@ ArrayList getAllArrivals(map* map);
 
 ArrayList calculateDijkstra(map* map, car* car);
 
+void destroyVector(vector* v);
+
 
 #endif //__GPS_H
