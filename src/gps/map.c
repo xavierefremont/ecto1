@@ -24,8 +24,8 @@
 position* createPosition(int col, int row, char roadType) {
 
 	position* p = (position*)malloc(sizeof(struct position));
-	p->col = x;
-	p->row = y;
+	p->col = col;
+	p->row = row;
 	p->type = roadType;
 	return p;
 

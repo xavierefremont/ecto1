@@ -185,13 +185,13 @@ ArrayList calculateDijkstra(map* map, car* car){
         neighbors = getPossibleMoves(car->currentSpeed, p, map);
         printf("(%d %d %c) poss moves : \n", p->col, p->row, p->type);
         for(i=0; i<ArrayListGetLength(neighbors); i++){
-            printf("\t(%d %d) with dist %d : \n", pNeighbor->x, pNeighbor->y, distance[pNeighbor->y][pNeighbor->x]);
+            printf("\t(%d %d) with dist %d : \n", pNeighbor->col, pNeighbor->row, distance[pNeighbor->row][pNeighbor->col]);
             pNeighbor = (position*) ArrayListGet(neighbors, i);
             tmpDist = distance[p->row][p->col] + 1;
-            if(tmpDist < distance[pNeighbor->y][pNeighbor->x] && !areEqualsPosition(p, pNeighbor)){
+            if(tmpDist < distance[pNeighbor->row][pNeighbor->col] && !areEqualsPosition(p, pNeighbor)){
                 printf("\tNew d %d\n", tmpDist);
-                distance[pNeighbor->y][pNeighbor->x] = tmpDist;
-                previous[pNeighbor->y][pNeighbor->x] = p;
+                distance[pNeighbor->row][pNeighbor->col] = tmpDist;
+                previous[pNeighbor->row][pNeighbor->col] = p;
                 PriorityQueueChangePrioSpecificSearch(queue, pNeighbor, tmpDist, (int (*)(T, T)) areEqualsPosition);
             }
         }
