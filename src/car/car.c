@@ -97,7 +97,7 @@ int areEqualsPosition(position* p1, position* p2){
     if(p1 == p2){
         return 1;
     }
-    return (p1->x == p2->x && p1->y == p2->y);
+    return (p1->col == p2->col && p1->row == p2->row);
 
 }
 

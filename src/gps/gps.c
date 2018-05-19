@@ -53,7 +53,7 @@ ArrayList getPossibleMoves(vector* speed, position* current, map* map){
 
     //TODO : Get the real possible position and not all
 
-    printf("Current : %d %d %c\n", current->x, current->y, current->type);
+    printf("Current : %d %d %c\n", current->col, current->row, current->type);
     for(int i = 0; i < map->size->y; i++){
         for(int j = 0; j < map->size->x; j++){
             if(areEqualsPosition(map->plan[i][j], current)){
@@ -69,52 +69,52 @@ ArrayList getPossibleMoves(vector* speed, position* current, map* map){
     ArrayList possibleMoves = newArrayList(sizeof(position));
     position* p = NULL;
 
-    p = map->plan[current->y + speed->y][current->x + speed->x];
+    p = map->plan[current->row + speed->y][current->col + speed->x];
 
     if(isCorrectPosition(map, p)){
-        printf("ADD : %d %d %c\n", p->x, p->y, p->type);
+        printf("ADD : %d %d %c\n", p->col, p->row, p->type);
         ArrayListAppend(possibleMoves, p);
     }
 
-    p = map->plan[ current->y + speed->y][current->x + speed->x + 1];
+    p = map->plan[ current->row + speed->y][current->col + speed->x + 1];
 
     if(isCorrectPosition(map, p)){
-        printf("ADD : %d %d %c\n", p->x, p->y, p->type);
+        printf("ADD : %d %d %c\n", p->col, p->row, p->type);
         ArrayListAppend(possibleMoves, p);
     }
 
-    p = map->plan[current->y + speed->y][current->x + speed->x + 1];
+    p = map->plan[current->row + speed->y][current->row + speed->x + 1];
 
     if(isCorrectPosition(map, p)){
-        printf("ADD : %d %d %c\n", p->x, p->y, p->type);
+        printf("ADD : %d %d %c\n", p->col, p->row, p->type);
         ArrayListAppend(possibleMoves, p);
     }
 
-    p = map->plan[current->y + speed->y - 1][current->x + speed->x + 1];
+    p = map->plan[current->row + speed->y - 1][current->col + speed->x + 1];
 
     if(isCorrectPosition(map, p)){
-        printf("ADD : %d %d %c\n", p->x, p->y, p->type);
+        printf("ADD : %d %d %c\n", p->col, p->row, p->type);
         ArrayListAppend(possibleMoves, p);
     }
 
-    p = map->plan[current->y + speed->y][current->x + speed->x - 1];
+    p = map->plan[current->row + speed->y][current->col + speed->x - 1];
 
     if(isCorrectPosition(map, p)){
-        printf("ADD : %d %d %c\n", p->x, p->y, p->type);
+        printf("ADD : %d %d %c\n", p->col, p->row, p->type);
         ArrayListAppend(possibleMoves, p);
     }
 
-    p = map->plan[current->y + speed->y + 1][current->x + speed->x - 1];
+    p = map->plan[current->row + speed->y + 1][current->col + speed->x - 1];
 
     if(isCorrectPosition(map, p)){
-        printf("ADD : %d %d %c\n", p->x, p->y, p->type);
+        printf("ADD : %d %d %c\n", p->col, p->row, p->type);
         ArrayListAppend(possibleMoves, p);
     }
 
-    p = map->plan[current->y + speed->y - 1][current->x + speed->x - 1];
+    p = map->plan[current->row + speed->y - 1][current->col + speed->x - 1];
 
     if(isCorrectPosition(map, p)){
-        printf("ADD : %d %d %c\n", p->x, p->y, p->type);
+        printf("ADD : %d %d %c\n", p->col, p->row, p->type);
         ArrayListAppend(possibleMoves, p);
     }
 
@@ -172,7 +172,7 @@ ArrayList calculateDijkstra(map* map, car* car){
                 distance[y][x] = INT_MAX;
             }
             if(isCorrectPosition(map, p)){
-                printf("ADDQ %d %d %c\n", p->x, p->y, p->type);
+                printf("ADDQ %d %d %c\n", p->col, p->row, p->type);
                 PriorityQueueAdd(queue, p, distance[y][x]);
             }
         }
@@ -183,11 +183,11 @@ ArrayList calculateDijkstra(map* map, car* car){
     while(!PriorityQueueIsEmpty(queue)){
         p = (position*) PriorityQueuePop(queue);
         neighbors = getPossibleMoves(car->currentSpeed, p, map);
-        printf("(%d %d %c) poss moves : \n", p->x, p->y, p->type);
+        printf("(%d %d %c) poss moves : \n", p->col, p->row, p->type);
         for(i=0; i<ArrayListGetLength(neighbors); i++){
             printf("\t(%d %d) with dist %d : \n", pNeighbor->x, pNeighbor->y, distance[pNeighbor->y][pNeighbor->x]);
             pNeighbor = (position*) ArrayListGet(neighbors, i);
-            tmpDist = distance[p->y][p->x] + 1;
+            tmpDist = distance[p->row][p->col] + 1;
             if(tmpDist < distance[pNeighbor->y][pNeighbor->x] && !areEqualsPosition(p, pNeighbor)){
                 printf("\tNew d %d\n", tmpDist);
                 distance[pNeighbor->y][pNeighbor->x] = tmpDist;
@@ -203,16 +203,16 @@ ArrayList calculateDijkstra(map* map, car* car){
 
     for(i=0; i<ArrayListGetLength(arrivals); i++){
         p = (position*) ArrayListGet(arrivals, i);
-        if(distance[p->y][p->x] < tmpDist){
+        if(distance[p->row][p->col] < tmpDist){
             best = p;
         }
     }
 
     p = best;
 
-    while(previous[p->y][p->x] != NULL){
-        ArrayListAppend(path, previous[p->y][p->x]);
-        p = previous[p->y][p->x];
+    while(previous[p->row][p->col] != NULL){
+        ArrayListAppend(path, previous[p->row][p->col]);
+        p = previous[p->row][p->col];
     }
 
     clock_t end = clock();

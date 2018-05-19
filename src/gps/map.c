@@ -21,11 +21,11 @@
  * @param the road type
  * @return the pointer of the created structure
  */
-position* createPosition(int x, int y, char roadType) {
+position* createPosition(int col, int row, char roadType) {
 
 	position* p = (position*)malloc(sizeof(struct position));
-	p->x = x;
-	p->y = y;
+	p->col = x;
+	p->row = y;
 	p->type = roadType;
 	return p;
 
@@ -58,16 +58,16 @@ map* createMap(vector* mapSize) {
 void generateMap(map* map) {
 
   char read;
-  int x = 0;
-  int y;
+  int col = 0;
+  int row;
   position* p = NULL;
 
   /* Read the map from stdin and fill the track into an array*/
-  for (y = 0; y < map->size->y; y++) {
+  for (row = 0; row < map->size->row; row++) {
     while (fread(&read, sizeof(char), 1, stdin) == 1 && read != '\n'){
-      p = createPosition(y, x, read);
-      map->plan[y][x] = p;
-      x++;
+      p = createPosition(col, row, read);
+      map->plan[row][col] = p;
+      col++;
     }
     x = 0;
   }
@@ -100,7 +100,7 @@ int isCorrectPosition(map* map, position* target){
 
 int isPositionInMap(map* map, position* target){
 
-  if(target->x < map->size->x && target->x > 0 && target->y < map->size->y && target->y > 0){
+  if(target->col < map->size->x && target->col > 0 && target->row < map->size->y && target->row > 0){
     return 1;
   }else{
     return 0;
@@ -111,12 +111,12 @@ int isPositionInMap(map* map, position* target){
 
 int isPositionFree(map* map, position* target){
 
-    printf("D : %d %d %c\n", target->x, target->y, target->type);
-    printf("E : %d %d %c\n", map->plan[target->y][target->x]->x, map->plan[target->y][target->x]->y, map->plan[target->y][target->x]->type);
+    printf("D : %d %d %c\n", target->col, target->row, target->type);
+    printf("E : %d %d %c\n", map->plan[target->row][target->col]->x, map->plan[target->row][target->col]->y, map->plan[target->row][target->col]->type);
 
-  if(map->plan[target->y][target->x]->type == '#' ||
-     map->plan[target->y][target->x]->type == '~' ||
-     map->plan[target->y][target->x]->type == '='){
+  if(map->plan[target->row][target->col]->type == '#' ||
+     map->plan[target->row][target->col]->type == '~' ||
+     map->plan[target->row][target->col]->type == '='){
 	if ( !areEqualsPosition(target, map->rival1) ||
 	     !areEqualsPosition(target, map->rival2)) {
 	  return 1;

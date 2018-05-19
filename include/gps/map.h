@@ -71,12 +71,12 @@ int isPositionFree(map* map, position* target);
 
 /**
  * Create a new postion structure pointer
- * @param x
- * @param y
+ * @param column
+ * @param row
  * @param roadType
  * @return the pointer of the created structure
  */
-position* createPosition(int x, int y, char roadType);
+position* createPosition(int col, int row, char roadType);
 
 
 /**

@@ -24,8 +24,8 @@ struct vector{
 };
 
 struct position {
-    int x;
-    int y;
+    int col;
+    int row;
     char type;
 };
 
