@@ -71,7 +71,7 @@ int main(){
     ArrayList path = NULL;
     position* p = NULL;
 
-    fp = fopen("../tracks/starter_deux_virages.txt", "r+");
+    fp = fopen("../tracks/starter_droit_au_but.txt", "r+");
     if(fp == NULL){
         exit(-1);
     }
@@ -84,12 +84,14 @@ int main(){
     displayMap(map);
 
     car = createCar(50);
-    car->currentPosition = map->plan[1][17];
+    car->currentPosition = map->plan[5][3];
     printf("A %d %d\n", car->currentPosition->col, car->currentPosition->row);
     printf("B %d %d\n", map->plan[car->currentPosition->row][car->currentPosition->col]->col, map->plan[car->currentPosition->row][car->currentPosition->col]->row);
     car->currentSpeed = createVector(0,0);
 
-    path = calculateDijkstra(map, car);
+    FILE* info = fopen("etc/save.log", "w");
+
+    path = calculateDijkstra(info, map, car);
 
     for(i=0; i<ArrayListGetLength(path); i++){
         p = (position*) ArrayListGet(path, i);

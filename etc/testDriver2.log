@@ -24,27 +24,14 @@
 	 -> fuel : 35 
 =====> START RACE <=====
  ---> Tour 1 
-	 -> position (5,3)  
+	 -> position (3,5)  
+DEST : 4 5 
 	 -> supposed acceleration (1,0)  
-	 -> Tour over : 0.000139 s 
+	 -> Tour over : 0.000410 s 
  ---> Tour 2 
-	 -> position (5,3)  
+	 -> position (3,5)  
+DEST : 4 5 
 	 -> supposed acceleration (1,0)  
-	 -> Tour over : 0.000083 s 
+	 -> Tour over : 0.000395 s 
  ---> Tour 3 
-	 -> position (5,4)  
-	 -> supposed acceleration (1,0)  
-	 -> Tour over : 0.000106 s 
- ---> Tour 4 
-	 -> position (5,6)  
-	 -> supposed acceleration (1,0)  
-	 -> Tour over : 0.000097 s 
- ---> Tour 5 
-	 -> position (5,9)  
-	 -> supposed acceleration (1,0)  
-	 -> Tour over : 0.000117 s 
- ---> Tour 6 
-	 -> position (5,13)  
-	 -> supposed acceleration (1,0)  
-	 -> Tour over : 0.000112 s 
- ---> Tour 7 
+	 -> position (4,5)  
