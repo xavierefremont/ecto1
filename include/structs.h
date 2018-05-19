@@ -30,8 +30,8 @@ struct position {
 };
 
 typedef struct map {
-  position* size;
-  char** plan;
+  vector* size;
+  position*** plan;
   position* rival1;
   position* rival2;
 };
