@@ -1,37 +1,524 @@
 =====> START TESTDRIVER <=====
- ---> INIT GAME DONE (x : 32, y : 16, fuel : 35) 
+ ---> INIT GAME DONE (x : 60, y : 30, fuel : 250) 
 =====> ICI <=====
  ---> INIT MAP DONE 
-	 -> x : 32, y : 16 
+	 -> x : 60, y : 30 
 	 -> map : 
-................................
-................................
-................................
-................................
-..#########################==...
-..#########################==...
-..#########################==...
-..#########################==...
-..#########################==...
-..#########################==...
-..#########################==...
-................................
-................................
-................................
-................................
-................................
+............................................................
+.................######.....................................
+.................##############.............................
+.................######################.....................
+.....................######################.................
+.............................###############................
+.....................................#########..............
+.........................................######.............
+..........#####...........................######............
+........############==......................######..........
+.......#############==.......................######.........
+.......#####.#######==........................######........
+......####......................................####........
+......####......................................####........
+......###.......................................####........
+......###.......................................###.........
+......###.......................................###.........
+......####.....................................####.........
+......#####...................................#####.........
+.......####...............................########..........
+........##########################################..........
+........########################################............
+.........###################################................
+............................................................
+............................................................
+............................................................
+............................................................
+............................................................
+............................................................
+............................................................
  ---> INIT CAR DONE 
-	 -> fuel : 35 
+	 -> fuel : 250 
 =====> START RACE <=====
+c : 1
+c : 7
+c :  
+c : 1
+c : 	
+c : 1
+c : 7
+c :  
+c : 2
+c : 	
+c : 1
+c : 7
+c :  
+c : 3
  ---> Tour 1 
-	 -> position (3,5)  
-DEST : 4 5 
+	 -> position (17,1)  
+DEST : 18 1 
 	 -> supposed acceleration (1,0)  
-	 -> Tour over : 0.000410 s 
+	 -> Tour over : 0.000661 s 
  ---> Tour 2 
-	 -> position (3,5)  
-DEST : 4 5 
+	 -> position (17,1)  
+DEST : 18 1 
 	 -> supposed acceleration (1,0)  
-	 -> Tour over : 0.000395 s 
+	 -> Tour over : 0.000624 s 
  ---> Tour 3 
-	 -> position (4,5)  
+	 -> position (18,1)  
+DEST : 19 1 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000625 s 
+ ---> Tour 4 
+	 -> position (20,1)  
+DEST : 21 1 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000626 s 
+ ---> Tour 5 
+	 -> position (22,1)  
+DEST : 23 2 
+	 -> supposed acceleration (0,1)  
+	 -> Tour over : 0.000667 s 
+ ---> Tour 6 
+	 -> position (22,1)  
+DEST : 23 2 
+	 -> supposed acceleration (1,1)  
+	 -> Tour over : 0.000669 s 
+ ---> Tour 7 
+	 -> position (22,2)  
+DEST : 23 2 
+	 -> supposed acceleration (0,-1)  
+	 -> Tour over : 0.000646 s 
+ ---> Tour 8 
+	 -> position (23,4)  
+DEST : 24 4 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000663 s 
+ ---> Tour 9 
+	 -> position (23,4)  
+DEST : 24 4 
+	 -> supposed acceleration (1,0)  
+	 -> Tour over : 0.000662 s 
+ ---> Tour 10 
+	 -> position (23,4)  
+DEST : 24 4 
+	 -> supposed acceleration (1,0)  
+	 -> Tour over : 0.000666 s 
+ ---> Tour 11 
+	 -> position (24,4)  
+DEST : 25 4 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000644 s 
+ ---> Tour 12 
+	 -> position (26,4)  
+DEST : 27 4 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000643 s 
+ ---> Tour 13 
+	 -> position (28,4)  
+DEST : 29 4 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000655 s 
+ ---> Tour 14 
+	 -> position (30,4)  
+DEST : 31 4 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000663 s 
+ ---> Tour 15 
+	 -> position (32,4)  
+DEST : 33 4 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000668 s 
+ ---> Tour 16 
+	 -> position (34,4)  
+DEST : 35 4 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000670 s 
+ ---> Tour 17 
+	 -> position (36,4)  
+DEST : 37 4 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000666 s 
+ ---> Tour 18 
+	 -> position (38,4)  
+DEST : 39 4 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000683 s 
+ ---> Tour 19 
+	 -> position (40,4)  
+DEST : 41 5 
+	 -> supposed acceleration (0,1)  
+	 -> Tour over : 0.000691 s 
+ ---> Tour 20 
+	 -> position (42,4)  
+DEST : 42 5 
+	 -> supposed acceleration (-1,0)  
+	 -> Tour over : 0.000677 s 
+ ---> Tour 21 
+	 -> position (42,4)  
+DEST : 42 5 
+	 -> supposed acceleration (0,1)  
+	 -> Tour over : 0.000696 s 
+ ---> Tour 22 
+	 -> position (41,4)  
+DEST : 41 5 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000680 s 
+ ---> Tour 23 
+	 -> position (40,5)  
+DEST : 41 5 
+	 -> supposed acceleration (1,-1)  
+	 -> Tour over : 0.000702 s 
+ ---> Tour 24 
+	 -> position (39,6)  
+DEST : 40 6 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000673 s 
+ ---> Tour 25 
+	 -> position (39,6)  
+DEST : 40 6 
+	 -> supposed acceleration (1,0)  
+	 -> Tour over : 0.000687 s 
+ ---> Tour 26 
+	 -> position (39,6)  
+DEST : 40 6 
+	 -> supposed acceleration (1,0)  
+	 -> Tour over : 0.000742 s 
+ ---> Tour 27 
+	 -> position (40,6)  
+DEST : 41 6 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000696 s 
+ ---> Tour 28 
+	 -> position (42,6)  
+DEST : 43 7 
+	 -> supposed acceleration (0,1)  
+	 -> Tour over : 0.000696 s 
+ ---> Tour 29 
+	 -> position (44,6)  
+DEST : 44 7 
+	 -> supposed acceleration (-1,0)  
+	 -> Tour over : 0.000708 s 
+ ---> Tour 30 
+	 -> position (46,7)  
+DEST : 46 8 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000700 s 
+ ---> Tour 31 
+	 -> position (47,8)  
+DEST : 47 9 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000709 s 
+ ---> Tour 32 
+	 -> position (48,9)  
+DEST : 48 10 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000696 s 
+ ---> Tour 33 
+	 -> position (49,10)  
+DEST : 49 11 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000719 s 
+ ---> Tour 34 
+	 -> position (50,11)  
+DEST : 50 12 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000720 s 
+ ---> Tour 35 
+	 -> position (51,12)  
+DEST : 51 13 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000718 s 
+ ---> Tour 36 
+	 -> position (51,12)  
+DEST : 51 13 
+	 -> supposed acceleration (0,1)  
+	 -> Tour over : 0.000727 s 
+ ---> Tour 37 
+	 -> position (51,12)  
+DEST : 51 13 
+	 -> supposed acceleration (0,1)  
+	 -> Tour over : 0.000725 s 
+ ---> Tour 38 
+	 -> position (51,13)  
+DEST : 50 14 
+	 -> supposed acceleration (-1,0)  
+	 -> Tour over : 0.000705 s 
+ ---> Tour 39 
+	 -> position (51,13)  
+DEST : 50 14 
+	 -> supposed acceleration (-1,1)  
+	 -> Tour over : 0.000737 s 
+ ---> Tour 40 
+	 -> position (50,13)  
+DEST : 50 14 
+	 -> supposed acceleration (1,0)  
+	 -> Tour over : 0.000736 s 
+ ---> Tour 41 
+	 -> position (48,14)  
+DEST : 48 15 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000754 s 
+ ---> Tour 42 
+	 -> position (48,14)  
+DEST : 48 15 
+	 -> supposed acceleration (0,1)  
+	 -> Tour over : 0.000733 s 
+ ---> Tour 43 
+	 -> position (48,14)  
+DEST : 48 15 
+	 -> supposed acceleration (0,1)  
+	 -> Tour over : 0.000718 s 
+ ---> Tour 44 
+	 -> position (48,15)  
+DEST : 48 16 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000734 s 
+ ---> Tour 45 
+	 -> position (48,17)  
+DEST : 47 17 
+	 -> supposed acceleration (-1,-1)  
+	 -> Tour over : 0.000748 s 
+ ---> Tour 46 
+	 -> position (48,19)  
+DEST : 47 19 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000745 s 
+ ---> Tour 47 
+	 -> position (47,20)  
+DEST : 46 20 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000771 s 
+ ---> Tour 48 
+	 -> position (46,21)  
+DEST : 45 21 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000766 s 
+ ---> Tour 49 
+	 -> position (46,21)  
+DEST : 45 21 
+	 -> supposed acceleration (-1,0)  
+	 -> Tour over : 0.000924 s 
+ ---> Tour 50 
+	 -> position (46,21)  
+DEST : 45 21 
+	 -> supposed acceleration (-1,0)  
+	 -> Tour over : 0.000746 s 
+ ---> Tour 51 
+	 -> position (45,21)  
+DEST : 44 21 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000770 s 
+ ---> Tour 52 
+	 -> position (43,21)  
+DEST : 42 21 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000820 s 
+ ---> Tour 53 
+	 -> position (41,21)  
+DEST : 40 21 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000796 s 
+ ---> Tour 54 
+	 -> position (39,21)  
+DEST : 38 21 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000788 s 
+ ---> Tour 55 
+	 -> position (37,21)  
+DEST : 36 21 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000767 s 
+ ---> Tour 56 
+	 -> position (35,21)  
+DEST : 34 21 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000758 s 
+ ---> Tour 57 
+	 -> position (33,21)  
+DEST : 32 21 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000758 s 
+ ---> Tour 58 
+	 -> position (31,21)  
+DEST : 30 21 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000760 s 
+ ---> Tour 59 
+	 -> position (29,21)  
+DEST : 28 21 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000809 s 
+ ---> Tour 60 
+	 -> position (27,21)  
+DEST : 26 21 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000800 s 
+ ---> Tour 61 
+	 -> position (25,21)  
+DEST : 24 21 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000792 s 
+ ---> Tour 62 
+	 -> position (23,21)  
+DEST : 22 21 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000765 s 
+ ---> Tour 63 
+	 -> position (21,21)  
+DEST : 20 21 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000754 s 
+ ---> Tour 64 
+	 -> position (19,21)  
+DEST : 18 21 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000750 s 
+ ---> Tour 65 
+	 -> position (17,21)  
+DEST : 16 21 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000780 s 
+ ---> Tour 66 
+	 -> position (15,21)  
+DEST : 14 21 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000775 s 
+ ---> Tour 67 
+	 -> position (13,21)  
+DEST : 12 21 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000741 s 
+ ---> Tour 68 
+	 -> position (11,21)  
+DEST : 11 20 
+	 -> supposed acceleration (1,-1)  
+	 -> Tour over : 0.000762 s 
+ ---> Tour 69 
+	 -> position (9,21)  
+DEST : 9 20 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000753 s 
+ ---> Tour 70 
+	 -> position (8,20)  
+DEST : 8 19 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000727 s 
+ ---> Tour 71 
+	 -> position (7,19)  
+DEST : 7 18 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000718 s 
+ ---> Tour 72 
+	 -> position (6,18)  
+DEST : 6 17 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000709 s 
+ ---> Tour 73 
+	 -> position (6,18)  
+DEST : 6 17 
+	 -> supposed acceleration (0,-1)  
+	 -> Tour over : 0.000722 s 
+ ---> Tour 74 
+	 -> position (6,18)  
+DEST : 6 17 
+	 -> supposed acceleration (0,-1)  
+	 -> Tour over : 0.000712 s 
+ ---> Tour 75 
+	 -> position (6,17)  
+DEST : 6 16 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000717 s 
+ ---> Tour 76 
+	 -> position (6,15)  
+DEST : 7 14 
+	 -> supposed acceleration (1,0)  
+	 -> Tour over : 0.000711 s 
+ ---> Tour 77 
+	 -> position (6,13)  
+DEST : 7 13 
+	 -> supposed acceleration (0,1)  
+	 -> Tour over : 0.000740 s 
+ ---> Tour 78 
+	 -> position (7,11)  
+DEST : 8 11 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000733 s 
+ ---> Tour 79 
+	 -> position (8,10)  
+DEST : 9 10 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000684 s 
+ ---> Tour 80 
+	 -> position (9,9)  
+DEST : 10 9 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000708 s 
+ ---> Tour 81 
+	 -> position (10,8)  
+DEST : 11 8 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000682 s 
+ ---> Tour 82 
+	 -> position (10,8)  
+DEST : 11 8 
+	 -> supposed acceleration (1,0)  
+	 -> Tour over : 0.000675 s 
+ ---> Tour 83 
+	 -> position (10,8)  
+DEST : 11 8 
+	 -> supposed acceleration (1,0)  
+	 -> Tour over : 0.000706 s 
+ ---> Tour 84 
+	 -> position (11,8)  
+DEST : 12 8 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000842 s 
+ ---> Tour 85 
+	 -> position (13,8)  
+DEST : 14 8 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000699 s 
+ ---> Tour 86 
+	 -> position (13,8)  
+DEST : 14 8 
+	 -> supposed acceleration (1,0)  
+	 -> Tour over : 0.000675 s 
+ ---> Tour 87 
+	 -> position (13,8)  
+DEST : 14 8 
+	 -> supposed acceleration (1,0)  
+	 -> Tour over : 0.000666 s 
+ ---> Tour 88 
+	 -> position (14,8)  
+DEST : 15 9 
+	 -> supposed acceleration (0,1)  
+	 -> Tour over : 0.000697 s 
+ ---> Tour 89 
+	 -> position (14,8)  
+DEST : 15 9 
+	 -> supposed acceleration (1,1)  
+	 -> Tour over : 0.000694 s 
+ ---> Tour 90 
+	 -> position (14,9)  
+DEST : 15 9 
+	 -> supposed acceleration (0,-1)  
+	 -> Tour over : 0.000662 s 
+ ---> Tour 91 
+	 -> position (15,11)  
+DEST : 16 11 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000674 s 
+ ---> Tour 92 
+	 -> position (15,11)  
+DEST : 16 11 
+	 -> supposed acceleration (1,0)  
+	 -> Tour over : 0.000711 s 
+ ---> Tour 93 
+	 -> position (15,11)  
+DEST : 16 11 
+	 -> supposed acceleration (1,0)  
+	 -> Tour over : 0.000855 s 
+ ---> Tour 94 
+	 -> position (16,11)  
+DEST : 17 11 
+	 -> supposed acceleration (0,0)  
+	 -> Tour over : 0.000677 s 
+ ---> Tour 95 

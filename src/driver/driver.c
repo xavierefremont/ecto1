@@ -94,11 +94,12 @@ void initRound(car* car, map* map){
     setPosition(map, rival1Position, rival2Position);
     car->currentPosition = carPosition;
 
-
-    //Do the verification somewhere else
-    if(areEqualsPosition(car->currentPosition, car->previousPosition)){
-        car->currentSpeed = createVector(0,0);
+    if(car->previousPosition){
+        if(areEqualsPosition(car->currentPosition, car->previousPosition)){
+            car->currentSpeed = createVector(0,0);
+        }
     }
+
 
 
 
