@@ -11,12 +11,13 @@
 
 
 #include "../../include/util/ArrayList.h"
+#include "../../include/util/Stack.h"
 #include "../../include/driver/driver.h"
 #include "../../include/gps/map.h"
 #include "../../include/car/car.h"
 #include "../../include/gps/gps.h"
 
-
+static Stack moves = NULL;
 /**
  * Initialize the game by reading map and car datas
  * @param a pointer to a structure position containing the map size
@@ -111,13 +112,18 @@ vector* playRound(FILE* info, car* car, map* map){
 
     /* Calculate the acceleration vector */
     vector* acceleration = NULL;
-    ArrayList moves = NULL;
     position* p = NULL;
 
-    moves = calculateDijkstra(info, map, car);
+    if (moves == NULL ) { 
+      moves = calculateDijkstra(info, map, car);
+    }
 
     p = (position*) ArrayListGet(moves, ArrayListGetLength(moves)-2);
-
+    if (car->previousPosition == car->currentPosition || !isCorrectPosition(StackPop(moves))) {
+      moves = calculateDijkstra(info, map, car);
+        p = (position*) StackPop(moves);
+    }
+    
     fprintf(info, "DEST : %d %d \n", p->col, p->row);
 
     acceleration = calculateVector(car, p);
