@@ -27,7 +27,6 @@ vector* createVector(int x, int y){
     v->y = y;
 
     return v;
-
 }
 
 vector* calculateVector(car* car, position* dest){
