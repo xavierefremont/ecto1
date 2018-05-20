@@ -63,7 +63,6 @@ ArrayList getPossibleMoves(FILE* info, vector* speed, position* current, map* ma
     ArrayList possibleMoves = newArrayList(sizeof(position));
     position* p = NULL;
 
-    if(current->type == '~'){
 
         if(current->col + falseSpeed->x < map->size->x && current->col + falseSpeed->x >= 0
                 && current->row + falseSpeed->y < map->size->y && current->row + falseSpeed->y >= 0){
@@ -105,24 +104,7 @@ ArrayList getPossibleMoves(FILE* info, vector* speed, position* current, map* ma
             }
         }
 
-    }else{
-
-        if(current->col + falseSpeed->x < map->size->x && current->col + falseSpeed->x >= 0
-           && current->row + falseSpeed->y < map->size->y && current->row + falseSpeed->y >= 0) {
-            p = map->plan[current->row + falseSpeed->y][current->col + falseSpeed->x];
-            if (isCorrectPosition(map, p)) {
-                ArrayListAppend(possibleMoves, p);
-            }
-        }
-
-        if(current->col + falseSpeed->x < map->size->x && current->col + falseSpeed->x >= 0
-           && current->row + falseSpeed->y < map->size->y && current->row + falseSpeed->y >= 0) {
-            p = map->plan[current->row + falseSpeed->y][current->col + falseSpeed->x + 1];
-            if (isCorrectPosition(map, p)) {
-                ArrayListAppend(possibleMoves, p);
-            }
-        }
-
+    if(current->type != '~'){
 
         if(current->col + falseSpeed->x + 1 < map->size->x && current->col + falseSpeed->x + 1 >= 0
            && current->row + falseSpeed->y + 1 < map->size->y && current->row + falseSpeed->y + 1 >= 0) {
@@ -141,14 +123,6 @@ ArrayList getPossibleMoves(FILE* info, vector* speed, position* current, map* ma
         }
 
         if(current->col + falseSpeed->x - 1 < map->size->x && current->col + falseSpeed->x - 1 >= 0
-           && current->row + falseSpeed->y < map->size->y && current->row + falseSpeed->y >= 0) {
-            p = map->plan[current->row + falseSpeed->y][current->col + falseSpeed->x - 1];
-            if (isCorrectPosition(map, p)) {
-                ArrayListAppend(possibleMoves, p);
-            }
-        }
-
-        if(current->col + falseSpeed->x - 1 < map->size->x && current->col + falseSpeed->x - 1 >= 0
            && current->row + falseSpeed->y + 1 < map->size->y && current->row + falseSpeed->y + 1 >= 0) {
             p = map->plan[current->row + falseSpeed->y + 1][current->col + falseSpeed->x - 1];
             if (isCorrectPosition(map, p)) {
@@ -159,22 +133,6 @@ ArrayList getPossibleMoves(FILE* info, vector* speed, position* current, map* ma
         if(current->col + falseSpeed->x - 1 < map->size->x && current->col + falseSpeed->x - 1 >= 0
            && current->row + falseSpeed->y - 1 < map->size->y && current->row + falseSpeed->y - 1 >= 0) {
             p = map->plan[current->row + falseSpeed->y - 1][current->col + falseSpeed->x - 1];
-            if (isCorrectPosition(map, p)) {
-                ArrayListAppend(possibleMoves, p);
-            }
-        }
-
-        if(current->col + falseSpeed->x < map->size->x && current->col + falseSpeed->x >= 0
-           && current->row + falseSpeed->y - 1 < map->size->y && current->row + falseSpeed->y - 1 >= 0) {
-            p = map->plan[current->row + falseSpeed->y - 1][current->col + falseSpeed->x];
-            if (isCorrectPosition(map, p)) {
-                ArrayListAppend(possibleMoves, p);
-            }
-        }
-
-        if(current->col + falseSpeed->x < map->size->x && current->col + falseSpeed->x >= 0
-           && current->row + falseSpeed->y + 1 < map->size->y && current->row + falseSpeed->y + 1 >= 0) {
-            p = map->plan[current->row + falseSpeed->y + 1][current->col + falseSpeed->x];
             if (isCorrectPosition(map, p)) {
                 ArrayListAppend(possibleMoves, p);
             }
