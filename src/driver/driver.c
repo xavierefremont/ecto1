@@ -85,9 +85,9 @@ void initRound(car* car, map* map){
            &bx, &by,
            &cx, &cy);
 
-    carPosition = map->plan[ax][ay];
-    rival1Position = map->plan[bx][by];
-    rival2Position = map->plan[cx][cy];
+    carPosition = map->plan[ay][ax];
+    rival1Position = map->plan[by][bx];
+    rival2Position = map->plan[cy][cx];
 
 
     /* Set car position into the map*/
@@ -112,11 +112,20 @@ void initRound(car* car, map* map){
  * @param map : the track map
  * @return the acceleration vector to send
  */
-vector* playRound(car* car, map* map){
+vector* playRound(FILE* info, car* car, map* map){
 
     /* Calculate the acceleration vector */
-    vector* acceleration;
-    acceleration = calculateVector(car, map);
+    vector* acceleration = NULL;
+    ArrayList moves = NULL;
+    position* p = NULL;
+
+    moves = calculateDijkstra(info, map, car);
+
+    p = (position*) ArrayListGet(moves, ArrayListGetLength(moves)-2);
+
+    fprintf(info, "DEST : %d %d \n", p->col, p->row);
+
+    acceleration = calculateVector(car, p);
 
     //TODO : Maybe verificate before sending datas
 

@@ -32,7 +32,7 @@ car* createCar(int fuel) {
     car->fuel = fuel;
     car->previousPosition = NULL;
     car->currentPosition = NULL;
-    car->currentSpeed = NULL;
+    car->currentSpeed = createVector(0,0);
     car->presumedFuel = 0;
     car->nbrBoosts = 5;
 

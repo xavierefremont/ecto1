@@ -32,7 +32,7 @@ car* initCar(int fuel);
 void initRound(car* car, map* map);
 
 
-vector* playRound(car* car, map* map);
+vector* playRound(FILE* info, car* car, map* map);
 
 
 void updateGame(car* car, map* map, vector* acceleration);

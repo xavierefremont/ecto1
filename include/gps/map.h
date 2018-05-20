@@ -53,15 +53,6 @@ int isCorrectPosition(map* map, position* target);
 
 
 /**
- * Verify if a position is in the map
- * @param the map structure
- * @param the target position to check in the map
- * @return 1 if the position is in the map, else 0
- */
-int isPositionInMap(map* map, position* target);
-
-
-/**
  * Verify if a position is free i.e a road or sable without car
  * @param the map structure
  * @param the target position to check in the map

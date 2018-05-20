@@ -41,12 +41,11 @@ map* readMapFromFile(FILE* fp){
     int a;
     for (int i = 0; i < map->size->y; i++) {
         while (fread(&read, sizeof(char), 1, fp) == 1 && read != '\n'){
-            map->plan[i][j] = createPosition(i, j, read);
+            map->plan[i][j] = createPosition(j, i, read);
             j++;
         }
         j = 0;
     }
-
 
     return map;
 
@@ -85,11 +84,14 @@ int main(){
     displayMap(map);
 
     car = createCar(50);
-    car->currentPosition = map->plan[3][5];
-    printf("%d %d\n", car->currentPosition->col, car->currentPosition->row);
+    car->currentPosition = map->plan[5][3];
+    printf("A %d %d\n", car->currentPosition->col, car->currentPosition->row);
+    printf("B %d %d\n", map->plan[car->currentPosition->row][car->currentPosition->col]->col, map->plan[car->currentPosition->row][car->currentPosition->col]->row);
     car->currentSpeed = createVector(0,0);
 
-    path = calculateDijkstra(map, car);
+    FILE* info = fopen("etc/save.log", "w");
+
+    path = calculateDijkstra(info, map, car);
 
     for(i=0; i<ArrayListGetLength(path); i++){
         p = (position*) ArrayListGet(path, i);
