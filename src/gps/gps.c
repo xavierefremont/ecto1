@@ -54,97 +54,101 @@ float getVectorNorm(vector* v){
 }
 
 
-ArrayList getPossibleMoves(FILE* info, vector* speed, position* current, map* map){
+ArrayList getPossibleMoves(FILE* info, vector* speeed, position* current, map* map){
 
     //TODO : Get the real possible position and not all
-
-    vector* falseSpeed = createVector(0,0);
-    vector* currentSpeed = createVector(0,0);
 
     ArrayList possibleMoves = newArrayList(sizeof(position));
     position* p = NULL;
 
+   /* vector* speeed = createVector(0,0);*/
+    vector* v = NULL;
 
-    if(current->col + falseSpeed->x < map->size->x && current->col + falseSpeed->x >= 0
-       && current->row + falseSpeed->y < map->size->y && current->row + falseSpeed->y >= 0){
-        p = map->plan[current->row + falseSpeed->y][current->col + falseSpeed->x];
-        if(isCorrectPosition(map, p)){
+
+    if(current->col + speeed->x < map->size->x && current->col + speeed->x >= 0
+       && current->row + speeed->y < map->size->y && current->row + speeed->y >= 0){
+        p = map->plan[current->row + speeed->y][current->col + speeed->x];
+        v = createVector(speeed->x, speeed->y);
+        if(getVectorNorm(v) < 5 && isCorrectPosition(map, p)){
             ArrayListAppend(possibleMoves, p);
         }
     }
 
-    if(current->col + falseSpeed->x + 1 < map->size->x && current->col + falseSpeed->x + 1 >= 0
-       && current->row + falseSpeed->y < map->size->y && current->row + falseSpeed->y >= 0) {
-        p = map->plan[current->row + falseSpeed->y][current->col + falseSpeed->x + 1];
-        if (isCorrectPosition(map, p)) {
+    if(current->col + speeed->x + 1 < map->size->x && current->col + speeed->x + 1 >= 0
+       && current->row + speeed->y < map->size->y && current->row + speeed->y >= 0) {
+        p = map->plan[current->row + speeed->y][current->col + speeed->x + 1];
+        v = createVector(speeed->x + 1, speeed->y);
+        if(getVectorNorm(v) < 5 && isCorrectPosition(map, p)){
             ArrayListAppend(possibleMoves, p);
         }
     }
 
-    if(current->col + falseSpeed->x - 1 < map->size->x && current->col + falseSpeed->x - 1 >= 0
-       && current->row + falseSpeed->y < map->size->y && current->row + falseSpeed->y >= 0) {
-        p = map->plan[current->row + falseSpeed->y][current->col + falseSpeed->x - 1];
-        if (isCorrectPosition(map, p)) {
+    if(current->col + speeed->x - 1 < map->size->x && current->col + speeed->x - 1 >= 0
+       && current->row + speeed->y < map->size->y && current->row + speeed->y >= 0) {
+        p = map->plan[current->row + speeed->y][current->col + speeed->x - 1];
+        v = createVector(speeed->x - 1, speeed->y);
+        if(getVectorNorm(v) < 5 && isCorrectPosition(map, p)){
             ArrayListAppend(possibleMoves, p);
         }
     }
 
-    if(current->col + falseSpeed->x < map->size->x && current->col + falseSpeed->x >= 0
-       && current->row + falseSpeed->y + 1 < map->size->y && current->row + falseSpeed->y + 1 >= 0) {
-        p = map->plan[current->row + falseSpeed->y + 1][current->col + falseSpeed->x];
-        if (isCorrectPosition(map, p)) {
+    if(current->col + speeed->x < map->size->x && current->col + speeed->x >= 0
+       && current->row + speeed->y + 1 < map->size->y && current->row + speeed->y + 1 >= 0) {
+        p = map->plan[current->row + speeed->y + 1][current->col + speeed->x];
+        v = createVector(speeed->x, speeed->y + 1);
+        if(getVectorNorm(v) < 5 && isCorrectPosition(map, p)){
             ArrayListAppend(possibleMoves, p);
         }
     }
 
-    if(current->col + falseSpeed->x < map->size->x && current->col + falseSpeed->x >= 0
-       && current->row + falseSpeed->y < map->size->y - 1 && current->row + falseSpeed->y - 1 >= 0) {
-        p = map->plan[current->row + falseSpeed->y - 1][current->col + falseSpeed->x];
-        if (isCorrectPosition(map, p)) {
+    if(current->col + speeed->x < map->size->x && current->col + speeed->x >= 0
+       && current->row + speeed->y < map->size->y - 1 && current->row + speeed->y - 1 >= 0) {
+        p = map->plan[current->row + speeed->y - 1][current->col + speeed->x];
+        v = createVector(speeed->x, speeed->y - 1);
+        if(getVectorNorm(v) < 5 && isCorrectPosition(map, p)){
             ArrayListAppend(possibleMoves, p);
         }
     }
 
     if(current->type != '~'){
 
-        if(current->col + falseSpeed->x + 1 < map->size->x && current->col + falseSpeed->x + 1 >= 0
-           && current->row + falseSpeed->y + 1 < map->size->y && current->row + falseSpeed->y + 1 >= 0) {
-            p = map->plan[current->row + falseSpeed->y + 1][current->col + falseSpeed->x + 1];
-            if (isCorrectPosition(map, p)) {
+        if(current->col + speeed->x + 1 < map->size->x && current->col + speeed->x + 1 >= 0
+           && current->row + speeed->y + 1 < map->size->y && current->row + speeed->y + 1 >= 0) {
+            p = map->plan[current->row + speeed->y + 1][current->col + speeed->x + 1];
+            v = createVector(speeed->x + 1, speeed->y + 1);
+            if(getVectorNorm(v) < 5 && isCorrectPosition(map, p)){
                 ArrayListAppend(possibleMoves, p);
             }
         }
 
-        if(current->col + falseSpeed->x + 1 < map->size->x && current->col + falseSpeed->x + 1 >= 0
-           && current->row + falseSpeed->y - 1 < map->size->y && current->row + falseSpeed->y - 1 >= 0) {
-            p = map->plan[current->row + falseSpeed->y - 1][current->col + falseSpeed->x + 1];
-            if (isCorrectPosition(map, p)) {
+        if(current->col + speeed->x + 1 < map->size->x && current->col + speeed->x + 1 >= 0
+           && current->row + speeed->y - 1 < map->size->y && current->row + speeed->y - 1 >= 0) {
+            p = map->plan[current->row + speeed->y - 1][current->col + speeed->x + 1];
+            v = createVector(speeed->x + 1, speeed->y - 1);
+            if(getVectorNorm(v) < 5 && isCorrectPosition(map, p)){
                 ArrayListAppend(possibleMoves, p);
             }
         }
 
-        if(current->col + falseSpeed->x - 1 < map->size->x && current->col + falseSpeed->x - 1 >= 0
-           && current->row + falseSpeed->y + 1 < map->size->y && current->row + falseSpeed->y + 1 >= 0) {
-            p = map->plan[current->row + falseSpeed->y + 1][current->col + falseSpeed->x - 1];
-            if (isCorrectPosition(map, p)) {
+        if(current->col + speeed->x - 1 < map->size->x && current->col + speeed->x - 1 >= 0
+           && current->row + speeed->y + 1 < map->size->y && current->row + speeed->y + 1 >= 0) {
+            p = map->plan[current->row + speeed->y + 1][current->col + speeed->x - 1];
+            v = createVector(speeed->x - 1, speeed->y + 1);
+            if(getVectorNorm(v) < 5 && isCorrectPosition(map, p)){
                 ArrayListAppend(possibleMoves, p);
             }
         }
 
-        if(current->col + falseSpeed->x - 1 < map->size->x && current->col + falseSpeed->x - 1 >= 0
-           && current->row + falseSpeed->y - 1 < map->size->y && current->row + falseSpeed->y - 1 >= 0) {
-            p = map->plan[current->row + falseSpeed->y - 1][current->col + falseSpeed->x - 1];
-            if (isCorrectPosition(map, p)) {
+        if(current->col + speeed->x - 1 < map->size->x && current->col + speeed->x - 1 >= 0
+           && current->row + speeed->y - 1 < map->size->y && current->row + speeed->y - 1 >= 0) {
+            p = map->plan[current->row + speeed->y - 1][current->col + speeed->x - 1];
+            v = createVector(speeed->x - 1, speeed->y - 1);
+            if(getVectorNorm(v) < 5 && isCorrectPosition(map, p)){
                 ArrayListAppend(possibleMoves, p);
             }
         }
 
     }
-
-    //TODO : vecteur norm = 5
-
-    free(falseSpeed);
-    free(currentSpeed);
 
     return possibleMoves;
 

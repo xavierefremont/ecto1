@@ -92,6 +92,7 @@ int main(){
         fflush(info);
         acceleration = playRound(info, car, map);
         fprintf(info, "\t -> supposed acceleration (%d,%d)  \n", acceleration->x, acceleration->y);
+        fprintf(info, "\t -> current speed (%d,%d)  \n", car->currentSpeed->x, car->currentSpeed->y);
         fflush(info);
         updateGame(car, map, acceleration);
         sendDatas(acceleration);

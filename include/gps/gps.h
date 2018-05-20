@@ -29,7 +29,7 @@ vector* calculateVector(car* car, position* dest);
 
 float getVectorNorm(vector* v);
 
-ArrayList getPossibleMoves(FILE* info, vector* speed, position* current, map* map);
+ArrayList getPossibleMoves(FILE* info, vector* speeed, position* current, map* map);
 
 ArrayList getAllArrivals(map* map);
 
