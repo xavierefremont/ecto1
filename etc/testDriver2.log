@@ -1,103 +1,3308 @@
 =====> START TESTDRIVER <=====
- ---> INIT GAME DONE (x : 60, y : 30, fuel : 150) 
+ ---> INIT GAME DONE (x : 95, y : 110, fuel : 650) 
 =====> ICI <=====
  ---> INIT MAP DONE 
-	 -> x : 60, y : 30 
+	 -> x : 95, y : 110 
 	 -> map : 
-............................................................
-.................######.....................................
-.................##############.............................
-.................######################.....................
-.....................######################.................
-.............................###############................
-.....................................#########..............
-.........................................######.............
-..........#####...........................######............
-........############==......................######..........
-.......#############==.......................######.........
-.......#####.#######==........................######........
-......####......................................####........
-......####......................................####........
-......###.......................................####........
-......###.......................................###.........
-......###.......................................###.........
-......####.....................................####.........
-......#####...................................#####.........
-.......####...............................########..........
-........##########################################..........
-........########################################............
-.........###################################................
-............................................................
-............................................................
-............................................................
-............................................................
-............................................................
-............................................................
-............................................................
+....................................................##############.............................
+...................................................################............................
+...................................................#################...........................
+..................................................###################..........................
+..................................................####################.........................
+.................................................######~~~~~~~~~#######........................
+.................................................######~........~#######.......................
+.................................................#####~...........#######......................
+.................................................#####.............#######.....................
+.................................................#####..............#######....................
+.................................................#####...............#######...................
+.................................................#####................#######..................
+................................................~#####.................#######.................
+...............................................~~#####..................#######................
+..............................................~~~#####...................#######...............
+.............................................~~~~#####....................#######..............
+....................##################################.....................#######.............
+...................###################################......................#######............
+..................####################################.......................#######...........
+.................#####################################........................#######..........
+................#####################################..........................#######.........
+...............#######..........................................................#######........
+..............#######............................................................######........
+.............#######..............................................................#####........
+............#######...............................................................#####........
+...........#######................................................................#####........
+..........#######.................................................................#####........
+.........#######..................................................................#####........
+........#######...................................................................#####........
+.......#######....................................................................#####........
+.......######.....................................................................#####........
+.......#####......................................................................#####........
+.......#####......................................................................#####........
+.......#####......................................................................#####........
+.......#####.....................................................................#######.......
+.......#####....................................................................#########......
+.......#####...................................................................###########.....
+.......#####..................................................................#############....
+.......#####.................................................................#######.#######...
+.......#####................................................................#######...#######..
+.......#####...............................................................#######.....#######.
+.......#####...............................................................######.......######.
+.......#####...............................................................#####.........#####.
+.......#####...............................................................#####.........#####.
+.......#####...............................................................#####.........#####.
+.......#####...............................................................#####.........#####.
+.......#####...............................................................#####.........#####.
+.......#####...............................................................#####.........#####.
+.......#####.................................####################..........#####.........#####.
+.......#####................................######################.........#####.........#####.
+.......#####...............................#######################.........#####.........#####.
+.......#####..............................########################.........#####.........#####.
+.......#####.............................#########################.........~####.........####~.
+.......#####............................#######..............#####.........~#####.......#####~.
+.......#####...........................#######...............#####.........~~#####.....#####~~.
+.......#####..........................#######................#####.........~~~#####...#####~~~.
+.......#####.........................#######.................#####..........~~~###########~~~..
+.......#####........................#######..................#####...........~~~#########~~~...
+.......#####.......................#######...................#####............~~~#######~~~....
+.......#####......................#######....................#####............~~~#######~~~....
+.......#####......................######.....................#####...........~~###########~~...
+.......#####......................#####......................#####...........###############...
+.......#####......................#####......................#####..........#################..
+.......#####......................#####......................#####.........########...########.
+.......#####......................#####......................#####.........#######.....#######.
+..................................#####......................#####.........######.......######.
+..................................#####......................#####.........#####.........#####.
+..................................#####......................#####.........#####.........#####.
+..................................#####.....................######.........#####.........#####.
+..................................#####....................#######.........#####.........#####.
+..................................#####...................########.........#####.........#####.
+..................................#####..................########..........#####.........#####.
+..................................#####.................#######~~..........#####.........#####.
+..................................#####................#######~~...........#####.........#####.
+.......=====......................#####...............#######~~............~####.........####~.
+.......#####......................#####...............######~~~............~####.........####~.
+.......#####.....................######...............#######~~............~~###.........###~~.
+.......#####...................########................#######~~...........~~####.......####~~.
+.......#####.................#########~.................#######~...........~~~####.....####~~~.
+.......#####...............~#########~...................#######~...........~~#####...#####~~..
+......######..............~########~~.....................#######............~~#####.#####~~...
+.....#######.............~#######~~........................#######............~###########~....
+.....#######............~######~~...........................#######............~#########~.....
+.....#######............~#####~~.............................#######............~#######~......
+.....#######............~####~~...............................######~~~..........~#####~.......
+.....#######............~####~~................................######~~~..........#####........
+.....#######............~#####~~................................######~~..........#####........
+.....#######............~######~~................................######~..........#####........
+.....#######.............~#######~~..............................#######..........#####........
+.....#######..............~########~~............................#######..........#####........
+.....#######...............~#########~...........................#######..........#####........
+.....#######.................#########~..........................#######..........#####........
+.....#######...................########..........................#######..........#####........
+.....#######.....................######..........................#######..........#####........
+.....#######......................#####.........................########..........#####........
+.....#######......................#####........................#########..........#####........
+.....#######......................#####........................#########..........#####........
+.....################.............#####........................#########.........######........
+.....#################............#####........................#########........#######........
+.....##################...........#####........................#########.......#######.........
+.....###################..........#####........................#########......#######..........
+......###################.........#####........................#########.....#######...........
+...................#######........#####........................#########~~~~#######............
+....................###################........................#########~~~#######.............
+.....................##################........................#########~~#######..............
+......................#################.........................################...............
+.......................################..........................##############................
+........................##############............................############.................
+...................................................................###########.................
+....................................................................#########..................
  ---> INIT CAR DONE 
-	 -> fuel : 150 
+	 -> fuel : 650 
 =====> START RACE <=====
  ---> Tour 1 
-	 -> position (17,1)  
+	 -> position (7,64)  
 CALCUL
-	 -> supposed acceleration (1,0)  
-	 -> current speed (0,0)  
-	 -> Tour over : 0.001881 s 
- ---> Tour 2 
-	 -> position (18,1)  
-	 -> supposed acceleration (0,0)  
-	 -> current speed (1,0)  
-	 -> Tour over : 0.000115 s 
- ---> Tour 3 
-	 -> position (19,1)  
-	 -> supposed acceleration (0,0)  
-	 -> current speed (1,0)  
-	 -> Tour over : 0.000113 s 
- ---> Tour 4 
-	 -> position (20,1)  
-	 -> supposed acceleration (0,0)  
-	 -> current speed (1,0)  
-	 -> Tour over : 0.000113 s 
- ---> Tour 5 
-	 -> position (21,1)  
-	 -> supposed acceleration (0,0)  
-	 -> current speed (1,0)  
-	 -> Tour over : 0.000116 s 
- ---> Tour 6 
-	 -> position (22,1)  
-	 -> supposed acceleration (0,1)  
-	 -> current speed (1,0)  
-	 -> Tour over : 0.000113 s 
- ---> Tour 7 
-	 -> position (23,2)  
-	 -> supposed acceleration (0,-1)  
-	 -> current speed (1,1)  
-	 -> Tour over : 0.000130 s 
- ---> Tour 8 
-	 -> position (24,2)  
-	 -> supposed acceleration (0,0)  
-	 -> current speed (1,0)  
-	 -> Tour over : 0.000110 s 
- ---> Tour 9 
-	 -> position (25,2)  
-	 -> supposed acceleration (0,0)  
-	 -> current speed (1,0)  
-	 -> Tour over : 0.000115 s 
- ---> Tour 10 
-	 -> position (26,2)  
-	 -> supposed acceleration (0,0)  
-	 -> current speed (1,0)  
-	 -> Tour over : 0.000113 s 
- ---> Tour 11 
-	 -> position (27,2)  
-	 -> supposed acceleration (0,0)  
-	 -> current speed (1,0)  
-	 -> Tour over : 0.000111 s 
- ---> Tour 12 
-	 -> position (28,2)  
-	 -> supposed acceleration (0,0)  
-	 -> current speed (1,0)  
-	 -> Tour over : 0.000129 s 
- ---> Tour 13 
-	 -> position (29,2)  
-CALCUL
+p 7col 64row --> sx 0, sy 0
+p 8col 64row --> sx 1, sy 0
+p 7col 63row --> sx 0, sy -1
+p 8col 63row --> sx 1, sy -1
+p 7col 62row --> sx 0, sy -1
+p 7col 61row --> sx 0, sy -2
+p 8col 61row --> sx 1, sy -2
+p 10col 64row --> sx 2, sy 0
+p 9col 63row --> sx 1, sy -1
+p 10col 63row --> sx 2, sy -1
+p 8col 62row --> sx 1, sy -1
+p 9col 61row --> sx 1, sy -2
+p 10col 61row --> sx 2, sy -2
+p 9col 62row --> sx 1, sy -1
+p 10col 62row --> sx 2, sy -1
+p 7col 60row --> sx 0, sy -2
+p 8col 60row --> sx 1, sy -2
+p 11col 63row --> sx 1, sy 0
+p 7col 59row --> sx 0, sy -2
+p 7col 58row --> sx 0, sy -3
+p 8col 58row --> sx 1, sy -3
+p 9col 58row --> sx 1, sy -3
+p 8col 59row --> sx 1, sy -2
+p 10col 58row --> sx 2, sy -3
+p 9col 59row --> sx 1, sy -2
+p 10col 59row --> sx 2, sy -2
+p 9col 60row --> sx 1, sy -1
+p 10col 60row --> sx 2, sy -1
+p 11col 61row --> sx 2, sy -2
+CALCULnexxxxx
+p 11col 62row --> sx 2, sy -1
+CALCULnexxxxx
+p 11col 58row --> sx 2, sy -3
+CALCULnexxxxx
+p 11col 59row --> sx 2, sy -2
+CALCULnexxxxx
+p 11col 60row --> sx 2, sy -1
+CALCULnexxxxx
+p 7col 57row --> sx 0, sy -3
+p 8col 57row --> sx 1, sy -3
+p 9col 57row --> sx 1, sy -3
+p 10col 57row --> sx 2, sy -3
+p 7col 55row --> sx 0, sy -3
+p 7col 54row --> sx 0, sy -4
+p 8col 54row --> sx 1, sy -4
+p 9col 54row --> sx 1, sy -4
+p 10col 54row --> sx 2, sy -4
+p 11col 54row --> sx 2, sy -4
+CALCULnexxxxx
+p 8col 55row --> sx 1, sy -3
+p 9col 55row --> sx 1, sy -3
+p 10col 55row --> sx 2, sy -3
+p 11col 55row --> sx 2, sy -3
+CALCULnexxxxx
+p 7col 56row --> sx 0, sy -3
+p 8col 56row --> sx 1, sy -3
+p 9col 56row --> sx 1, sy -2
+p 10col 56row --> sx 2, sy -2
+p 11col 56row --> sx 2, sy -2
+CALCULnexxxxx
+p 11col 57row --> sx 2, sy -2
+CALCULnexxxxx
+p 9col 53row --> sx 1, sy -4
+p 10col 53row --> sx 2, sy -4
+p 11col 53row --> sx 2, sy -4
+CALCULnexxxxx
+p 7col 53row --> sx 0, sy -4
+p 8col 53row --> sx 1, sy -4
+p 7col 51row --> sx 0, sy -4
+p 7col 50row --> sx 0, sy -4
+p 8col 50row --> sx 1, sy -4
+p 9col 50row --> sx 1, sy -4
+p 10col 50row --> sx 2, sy -4
+p 11col 50row --> sx 2, sy -4
+CALCULnexxxxx
+p 8col 51row --> sx 1, sy -4
+p 9col 51row --> sx 1, sy -3
+p 10col 51row --> sx 2, sy -3
+p 11col 51row --> sx 2, sy -3
+CALCULnexxxxx
+p 7col 52row --> sx 0, sy -3
+p 8col 52row --> sx 1, sy -3
+p 9col 52row --> sx 1, sy -3
+p 10col 52row --> sx 2, sy -3
+p 11col 52row --> sx 2, sy -3
+CALCULnexxxxx
+p 10col 49row --> sx 1, sy -4
+p 11col 49row --> sx 2, sy -4
+CALCULnexxxxx
+p 9col 49row --> sx 0, sy -4
+p 7col 49row --> sx 0, sy -4
+p 8col 49row --> sx 1, sy -4
+p 7col 47row --> sx 0, sy -4
+p 8col 47row --> sx 1, sy -4
+p 7col 46row --> sx 0, sy -4
+p 8col 46row --> sx 1, sy -4
+p 9col 46row --> sx 1, sy -4
+p 10col 46row --> sx 2, sy -4
+p 11col 46row --> sx 2, sy -4
+CALCULnexxxxx
+p 9col 47row --> sx 1, sy -3
+p 10col 47row --> sx 2, sy -3
+p 11col 47row --> sx 2, sy -3
+CALCULnexxxxx
+p 7col 48row --> sx 0, sy -3
+p 8col 48row --> sx 1, sy -3
+p 9col 48row --> sx 1, sy -3
+p 10col 48row --> sx 2, sy -3
+p 11col 48row --> sx 2, sy -3
+CALCULnexxxxx
+p 11col 45row --> sx 1, sy -4
+p 10col 45row --> sx 0, sy -4
+p 9col 45row --> sx 0, sy -4
+p 8col 45row --> sx -1, sy -4
+p 7col 45row --> sx 0, sy -4
+p 7col 43row --> sx 0, sy -4
+p 8col 43row --> sx 1, sy -4
+p 9col 43row --> sx 1, sy -4
+p 10col 43row --> sx 2, sy -4
+p 7col 42row --> sx 0, sy -4
+p 8col 42row --> sx 1, sy -4
+p 9col 42row --> sx 1, sy -4
+p 10col 42row --> sx 2, sy -4
+p 11col 42row --> sx 2, sy -4
+CALCULnexxxxx
+p 11col 43row --> sx 2, sy -3
+CALCULnexxxxx
+p 7col 44row --> sx 0, sy -3
+p 8col 44row --> sx 1, sy -3
+p 9col 44row --> sx 1, sy -3
+p 10col 44row --> sx 2, sy -3
+p 11col 44row --> sx 2, sy -3
+CALCULnexxxxx
+p 11col 41row --> sx 0, sy -4
+p 10col 41row --> sx 0, sy -4
+p 8col 41row --> sx -1, sy -4
+p 7col 41row --> sx -1, sy -4
+p 9col 41row --> sx -1, sy -4
+p 7col 39row --> sx 0, sy -4
+p 7col 38row --> sx 0, sy -4
+p 8col 38row --> sx 1, sy -4
+p 9col 38row --> sx 1, sy -4
+p 8col 39row --> sx 1, sy -4
+p 10col 38row --> sx 2, sy -4
+p 11col 38row --> sx 2, sy -4
+CALCULnexxxxx
+p 9col 39row --> sx 1, sy -4
+p 10col 39row --> sx 2, sy -4
+p 11col 39row --> sx 2, sy -4
+CALCULnexxxxx
+p 7col 40row --> sx 0, sy -3
+p 8col 40row --> sx 1, sy -3
+p 9col 40row --> sx 1, sy -3
+p 10col 40row --> sx 2, sy -3
+p 11col 40row --> sx 2, sy -3
+CALCULnexxxxx
+p 11col 37row --> sx 0, sy -4
+p 10col 37row --> sx -1, sy -4
+p 7col 37row --> sx -1, sy -4
+p 9col 37row --> sx -1, sy -4
+p 8col 37row --> sx 0, sy -4
+p 7col 35row --> sx 0, sy -4
+p 8col 35row --> sx 1, sy -4
+p 7col 36row --> sx 0, sy -3
+p 7col 34row --> sx 0, sy -4
+p 8col 34row --> sx 1, sy -4
+p 9col 34row --> sx 1, sy -4
+p 10col 34row --> sx 2, sy -4
+p 11col 34row --> sx 2, sy -4
+p 9col 35row --> sx 1, sy -3
+p 8col 36row --> sx 1, sy -3
+p 10col 35row --> sx 2, sy -3
+p 11col 35row --> sx 2, sy -3
+CALCULnexxxxx
+p 9col 36row --> sx 1, sy -3
+p 10col 36row --> sx 2, sy -3
+p 11col 36row --> sx 2, sy -3
+CALCULnexxxxx
+p 11col 33row --> sx 0, sy -4
+p 10col 33row --> sx -1, sy -4
+p 7col 33row --> sx 0, sy -4
+p 9col 33row --> sx -1, sy -4
+p 8col 33row --> sx -2, sy -4
+p 7col 30row --> sx 0, sy -4
+CALCULnexxxxx
+p 8col 30row --> sx 1, sy -4
+p 9col 30row --> sx 1, sy -4
+p 10col 30row --> sx 2, sy -4
+p 11col 30row --> sx 2, sy -4
+p 12col 30row --> sx 2, sy -4
+p 7col 31row --> sx 0, sy -4
+p 8col 31row --> sx 1, sy -4
+p 9col 31row --> sx 1, sy -4
+p 10col 31row --> sx 2, sy -4
+p 11col 31row --> sx 2, sy -3
+p 7col 32row --> sx 0, sy -3
+p 8col 32row --> sx 1, sy -3
+p 9col 32row --> sx 1, sy -3
+p 10col 32row --> sx 2, sy -3
+p 11col 32row --> sx 2, sy -3
+p 10col 29row --> sx -1, sy -4
+p 9col 29row --> sx -1, sy -4
+CALCULnexxxxx
+p 8col 29row --> sx -2, sy -4
+CALCULnexxxxx
+p 7col 29row --> sx 0, sy -4
+CALCULnexxxxx
+p 11col 29row --> sx 0, sy -4
+p 12col 29row --> sx 1, sy -4
+p 10col 26row --> sx 2, sy -4
+p 11col 26row --> sx 2, sy -4
+p 12col 26row --> sx 2, sy -4
+p 13col 26row --> sx 2, sy -4
+p 14col 26row --> sx 2, sy -4
+p 9col 27row --> sx 1, sy -3
+p 10col 27row --> sx 2, sy -3
+p 11col 27row --> sx 2, sy -3
+p 12col 27row --> sx 2, sy -3
+p 13col 27row --> sx 3, sy -3
+p 14col 27row --> sx 3, sy -3
+p 15col 27row --> sx 3, sy -3
+p 8col 28row --> sx 1, sy -3
+p 9col 28row --> sx 1, sy -3
+p 10col 28row --> sx 2, sy -3
+p 11col 28row --> sx 2, sy -3
+p 12col 28row --> sx 2, sy -3
+p 13col 28row --> sx 3, sy -3
+p 14col 28row --> sx 3, sy -3
+p 13col 29row --> sx 2, sy -2
+p 11col 25row --> sx 0, sy -4
+CALCULnexxxxx
+p 12col 25row --> sx 1, sy -4
+p 13col 25row --> sx 1, sy -4
+p 14col 25row --> sx 2, sy -4
+p 15col 25row --> sx 3, sy -2
+p 16col 25row --> sx 3, sy -2
+p 17col 25row --> sx 4, sy -2
+p 15col 26row --> sx 3, sy -2
+p 16col 26row --> sx 3, sy -2
+p 14col 22row --> sx 2, sy -4
+p 15col 22row --> sx 2, sy -4
+p 16col 22row --> sx 2, sy -4
+p 13col 23row --> sx 3, sy -3
+p 14col 23row --> sx 3, sy -3
+p 15col 23row --> sx 3, sy -3
+p 16col 23row --> sx 3, sy -3
+p 17col 23row --> sx 3, sy -3
+p 12col 24row --> sx 2, sy -3
+p 13col 24row --> sx 3, sy -3
+p 14col 24row --> sx 3, sy -3
+p 15col 24row --> sx 3, sy -3
+p 16col 24row --> sx 3, sy -3
+p 17col 24row --> sx 3, sy -3
+p 18col 24row --> sx 3, sy -3
+p 15col 21row --> sx 2, sy -4
+p 16col 21row --> sx 2, sy -4
+p 17col 22row --> sx 3, sy -3
+p 17col 19row --> sx 3, sy -3
+p 18col 19row --> sx 3, sy -3
+p 18col 18row --> sx 2, sy -4
+CALCULnexxxxx
+p 19col 19row --> sx 3, sy -3
+p 16col 20row --> sx 3, sy -3
+p 17col 20row --> sx 3, sy -3
+p 18col 20row --> sx 3, sy -3
+p 19col 20row --> sx 3, sy -3
+p 20col 20row --> sx 3, sy -3
+p 17col 21row --> sx 4, sy -2
+p 18col 21row --> sx 4, sy -2
+p 19col 21row --> sx 4, sy -2
+p 20col 21row --> sx 4, sy -2
+p 21col 21row --> sx 4, sy -2
+p 18col 22row --> sx 3, sy -3
+p 19col 22row --> sx 3, sy -3
+p 20col 22row --> sx 3, sy -3
+p 18col 23row --> sx 3, sy -2
+p 19col 23row --> sx 4, sy -2
+p 19col 18row --> sx 3, sy -3
+p 20col 19row --> sx 3, sy -3
+p 21col 20row --> sx 4, sy -2
+p 20col 17row --> sx 3, sy -2
+p 21col 17row --> sx 4, sy -2
+p 19col 17row --> sx 2, sy -2
+p 22col 17row --> sx 4, sy -2
+p 23col 17row --> sx 4, sy -2
+p 20col 18row --> sx 4, sy -2
+p 21col 18row --> sx 4, sy -2
+p 22col 18row --> sx 4, sy -2
+p 23col 18row --> sx 4, sy -2
+p 24col 18row --> sx 4, sy -2
+p 21col 19row --> sx 4, sy -2
+p 22col 19row --> sx 4, sy -2
+p 23col 19row --> sx 4, sy -2
+p 24col 19row --> sx 4, sy -2
+p 25col 19row --> sx 4, sy -2
+p 22col 20row --> sx 4, sy -1
+p 23col 20row --> sx 4, sy -1
+p 24col 20row --> sx 4, sy -1
+p 25col 20row --> sx 4, sy -1
+p 20col 16row --> sx 3, sy -3
+CALCULnexxxxx
+p 21col 16row --> sx 3, sy -3
+CALCULnexxxxx
+p 22col 16row --> sx 3, sy -3
+CALCULnexxxxx
+p 24col 17row --> sx 4, sy -2
+p 25col 18row --> sx 4, sy -2
+p 23col 16row --> sx 4, sy -2
+CALCULnexxxxx
+p 25col 17row --> sx 4, sy -1
+p 26col 17row --> sx 4, sy -1
+p 27col 17row --> sx 4, sy -1
+p 28col 17row --> sx 4, sy -1
+p 29col 17row --> sx 4, sy -2
+p 26col 18row --> sx 4, sy -1
+p 27col 18row --> sx 4, sy -1
+p 28col 18row --> sx 4, sy -1
+p 29col 18row --> sx 4, sy -1
+p 26col 19row --> sx 4, sy -1
+p 27col 19row --> sx 4, sy -1
+p 28col 19row --> sx 4, sy -1
+p 29col 19row --> sx 4, sy -1
+p 26col 20row --> sx 4, sy 0
+p 27col 20row --> sx 4, sy 0
+p 28col 20row --> sx 4, sy 0
+p 29col 20row --> sx 4, sy 0
+p 24col 16row --> sx 4, sy -1
+p 25col 16row --> sx 4, sy -1
+p 26col 16row --> sx 4, sy -1
+p 27col 16row --> sx 4, sy -1
+p 28col 16row --> sx 4, sy -2
+CALCULnexxxxx
+p 29col 16row --> sx 4, sy -2
+CALCULnexxxxx
+p 30col 17row --> sx 4, sy 0
+p 33col 16row --> sx 4, sy -1
+p 31col 17row --> sx 4, sy 0
+p 32col 17row --> sx 4, sy 0
+p 33col 17row --> sx 4, sy -1
+p 30col 18row --> sx 4, sy 0
+p 31col 18row --> sx 4, sy 0
+p 32col 18row --> sx 4, sy 0
+p 33col 18row --> sx 4, sy 0
+p 30col 19row --> sx 4, sy 0
+p 31col 19row --> sx 4, sy 0
+p 32col 19row --> sx 4, sy 0
+p 33col 19row --> sx 4, sy 0
+p 30col 20row --> sx 4, sy 0
+p 31col 20row --> sx 4, sy 0
+p 32col 20row --> sx 4, sy 0
+p 33col 20row --> sx 4, sy 0
+p 30col 16row --> sx 4, sy -1
+p 31col 16row --> sx 4, sy -1
+p 32col 16row --> sx 4, sy -1
+p 34col 16row --> sx 4, sy -1
+p 37col 16row --> sx 4, sy 0
+p 36col 16row --> sx 3, sy 0
+p 35col 16row --> sx 4, sy -1
+p 34col 17row --> sx 4, sy 0
+p 35col 17row --> sx 4, sy 0
+p 36col 17row --> sx 4, sy 0
+p 37col 17row --> sx 4, sy 0
+p 34col 18row --> sx 4, sy 1
+p 35col 18row --> sx 4, sy 1
+p 36col 18row --> sx 4, sy 1
+p 37col 18row --> sx 4, sy 0
+p 34col 19row --> sx 4, sy 1
+p 35col 19row --> sx 4, sy 1
+p 36col 19row --> sx 4, sy 1
+p 37col 19row --> sx 4, sy 1
+p 34col 20row --> sx 4, sy 1
+p 35col 20row --> sx 4, sy 1
+p 36col 20row --> sx 4, sy 1
+p 37col 20row --> sx 4, sy 1
+p 38col 16row --> sx 4, sy 0
+p 41col 16row --> sx 4, sy 0
+p 40col 16row --> sx 3, sy 0
+p 39col 16row --> sx 3, sy 0
+p 38col 17row --> sx 2, sy 1
+p 41col 17row --> sx 4, sy 1
+p 40col 17row --> sx 3, sy 1
+p 39col 17row --> sx 3, sy 1
+p 38col 18row --> sx 4, sy 1
+p 39col 18row --> sx 4, sy 1
+p 40col 18row --> sx 4, sy 1
+p 41col 18row --> sx 4, sy 1
+p 38col 19row --> sx 4, sy 1
+p 39col 19row --> sx 4, sy 1
+p 40col 19row --> sx 4, sy 1
+p 41col 19row --> sx 4, sy 1
+p 38col 20row --> sx 4, sy 2
+CALCULnexxxxx
+p 39col 20row --> sx 4, sy 2
+CALCULnexxxxx
+p 40col 20row --> sx 4, sy 2
+CALCULnexxxxx
+p 41col 20row --> sx 4, sy 1
+p 42col 16row --> sx 4, sy 0
+p 45col 16row --> sx 4, sy 0
+p 44col 16row --> sx 3, sy 0
+p 43col 16row --> sx 3, sy 0
+p 42col 17row --> sx 4, sy 1
+p 45col 17row --> sx 4, sy 1
+p 44col 17row --> sx 3, sy 1
+p 43col 17row --> sx 3, sy 1
+p 43col 18row --> sx 3, sy 1
+p 42col 18row --> sx 2, sy 1
+p 45col 18row --> sx 4, sy 1
+p 44col 18row --> sx 3, sy 1
+p 45col 19row --> sx 4, sy 2
+p 43col 19row --> sx 3, sy 2
+p 42col 19row --> sx 2, sy 2
+p 44col 19row --> sx 3, sy 2
+p 42col 20row --> sx 4, sy 2
+CALCULnexxxxx
+p 43col 20row --> sx 4, sy 2
+CALCULnexxxxx
+p 44col 20row --> sx 4, sy 2
+CALCULnexxxxx
+p 45col 20row --> sx 4, sy 2
+CALCULnexxxxx
+p 45col 15row --> sx 4, sy -1
+p 46col 20row --> sx 1, sy 0
+p 46col 16row --> sx 4, sy 0
+p 48col 16row --> sx 3, sy 0
+p 47col 16row --> sx 3, sy 0
+p 49col 16row --> sx 4, sy 0
+p 46col 17row --> sx 4, sy 1
+p 49col 17row --> sx 4, sy 1
+p 48col 17row --> sx 3, sy 1
+p 47col 17row --> sx 3, sy 1
+p 46col 18row --> sx 4, sy 1
+p 47col 18row --> sx 3, sy 1
+p 49col 18row --> sx 4, sy 1
+p 48col 18row --> sx 3, sy 1
+p 46col 19row --> sx 4, sy 2
+p 49col 19row --> sx 4, sy 2
+p 48col 19row --> sx 3, sy 2
+p 49col 13row --> sx 4, sy -2
+p 47col 19row --> sx 3, sy 2
+p 49col 14row --> sx 4, sy -1
+p 48col 14row --> sx 3, sy -1
+p 47col 20row --> sx 4, sy 2
+CALCULnexxxxx
+p 48col 20row --> sx 3, sy 2
+CALCULnexxxxx
+p 49col 20row --> sx 4, sy 2
+CALCULnexxxxx
+p 46col 15row --> sx 4, sy -1
+p 49col 15row --> sx 4, sy -1
+p 48col 15row --> sx 3, sy -1
+p 47col 15row --> sx 3, sy -1
+p 50col 20row --> sx 1, sy 0
+p 50col 16row --> sx 4, sy 0
+p 51col 16row --> sx 3, sy 0
+p 52col 16row --> sx 4, sy 0
+CALCULnexxxxx
+p 53col 16row --> sx 4, sy 0
+CALCULnexxxxx
+p 50col 17row --> sx 4, sy 1
+p 51col 17row --> sx 3, sy 1
+p 52col 17row --> sx 4, sy 1
+CALCULnexxxxx
+p 53col 17row --> sx 4, sy 1
+CALCULnexxxxx
+p 50col 18row --> sx 4, sy 1
+p 52col 10row --> sx 3, sy -3
+p 51col 18row --> sx 3, sy 1
+p 53col 18row --> sx 4, sy 1
+CALCULnexxxxx
+p 53col 11row --> sx 4, sy -2
+CALCULnexxxxx
+p 52col 11row --> sx 3, sy -2
+CALCULnexxxxx
+p 52col 18row --> sx 3, sy 1
+CALCULnexxxxx
+p 53col 12row --> sx 4, sy -1
+CALCULnexxxxx
+p 52col 12row --> sx 3, sy -1
+CALCULnexxxxx
+p 51col 12row --> sx 3, sy -2
+p 51col 19row --> sx 3, sy 2
+CALCULnexxxxx
+p 53col 19row --> sx 4, sy 2
+CALCULnexxxxx
+p 50col 13row --> sx 2, sy -1
+p 52col 19row --> sx 3, sy 2
+CALCULnexxxxx
+p 51col 13row --> sx 3, sy -1
+p 52col 13row --> sx 3, sy -1
+CALCULnexxxxx
+p 53col 13row --> sx 4, sy -1
+CALCULnexxxxx
+p 50col 19row --> sx 4, sy 2
+CALCULnexxxxx
+p 53col 14row --> sx 4, sy 0
+CALCULnexxxxx
+p 52col 14row --> sx 3, sy 0
+CALCULnexxxxx
+p 51col 14row --> sx 3, sy 0
+p 50col 14row --> sx 4, sy -1
+p 51col 20row --> sx 4, sy 2
+CALCULnexxxxx
+p 52col 20row --> sx 3, sy 2
+CALCULnexxxxx
+p 50col 15row --> sx 4, sy -1
+p 51col 15row --> sx 3, sy -1
+p 52col 15row --> sx 4, sy -1
+CALCULnexxxxx
+p 53col 15row --> sx 4, sy -1
+CALCULnexxxxx
+p 53col 10row --> sx 0, sy -1
+p 51col 11row --> sx -1, sy 0
+p 54col 7row --> sx 2, sy -3
+p 53col 9row --> sx 2, sy -3
+p 51col 10row --> sx -1, sy -1
+p 54col 6row --> sx 2, sy -4
+p 50col 11row --> sx -1, sy 0
+p 53col 8row --> sx 0, sy -2
+p 52col 8row --> sx -1, sy -2
+p 52col 9row --> sx -1, sy -1
+p 51col 9row --> sx 0, sy -1
+p 50col 10row --> sx -1, sy -1
+p 49col 10row --> sx -2, sy -1
+CALCULnexxxxx
+p 49col 11row --> sx -2, sy 0
+p 50col 12row --> sx -1, sy 1
+p 49col 12row --> sx -2, sy 1
+p 50col 8row --> sx -1, sy -2
+p 51col 8row --> sx 0, sy -2
+p 49col 8row --> sx -2, sy -2
+CALCULnexxxxx
+p 55col 2row --> sx 1, sy -4
+CALCULnexxxxx
+p 55col 4row --> sx 1, sy -3
+p 56col 2row --> sx 2, sy -4
+CALCULnexxxxx
+p 56col 4row --> sx 2, sy -3
+p 49col 9row --> sx -2, sy -1
+CALCULnexxxxx
+p 57col 4row --> sx 3, sy -3
+p 50col 9row --> sx -1, sy -1
+p 55col 5row --> sx 2, sy -4
+p 54col 5row --> sx 1, sy -4
+p 56col 5row --> sx 2, sy -2
+p 56col 3row --> sx 2, sy -4
+p 57col 3row --> sx 3, sy -3
+p 55col 3row --> sx 1, sy -3
+p 55col 6row --> sx 2, sy -3
+p 53col 7row --> sx 0, sy -1
+p 48col 12row --> sx -2, sy 1
+p 52col 7row --> sx 0, sy -1
+p 54col 2row --> sx -1, sy 0
+p 57col 2row --> sx 1, sy 0
+p 55col 1row --> sx 0, sy -1
+p 56col 1row --> sx 0, sy -1
+p 53col 5row --> sx 0, sy -3
+p 51col 5row --> sx -1, sy -3
+p 50col 5row --> sx -2, sy -3
+CALCULnexxxxx
+p 52col 5row --> sx -1, sy -3
+p 48col 13row --> sx -2, sy 1
+p 47col 13row --> sx -2, sy 1
+p 47col 14row --> sx -2, sy 2
+p 46col 14row --> sx -3, sy 2
+p 51col 6row --> sx -1, sy -2
+p 50col 6row --> sx -2, sy -2
+p 53col 6row --> sx 0, sy -2
+p 52col 6row --> sx -1, sy -2
+p 51col 7row --> sx -1, sy -1
+p 50col 7row --> sx -2, sy -1
+p 49col 7row --> sx 0, sy -1
+p 59col 0row --> sx 2, sy -4
+CALCULnexxxxx
+p 54col 1row --> sx -1, sy -1
+p 58col 4row --> sx 2, sy -1
+p 58col 2row --> sx 2, sy -2
+p 55col 0row --> sx 0, sy -4
+CALCULnexxxxx
+p 59col 2row --> sx 3, sy -2
+p 60col 0row --> sx 3, sy -3
+CALCULnexxxxx
+p 49col 5row --> sx -1, sy -3
+CALCULnexxxxx
+p 60col 2row --> sx 3, sy -2
+p 61col 2row --> sx 4, sy -2
+p 57col 1row --> sx 2, sy -3
+CALCULnexxxxx
+p 56col 0row --> sx 1, sy -4
+CALCULnexxxxx
+p 58col 1row --> sx 2, sy -3
+CALCULnexxxxx
+p 59col 1row --> sx 3, sy -3
+CALCULnexxxxx
+p 60col 1row --> sx 3, sy -3
+CALCULnexxxxx
+p 61col 1row --> sx 4, sy -2
+p 54col 3row --> sx -1, sy 1
+p 49col 6row --> sx -1, sy -2
+p 57col 0row --> sx 2, sy -4
+CALCULnexxxxx
+p 58col 3row --> sx 2, sy -2
+p 59col 3row --> sx 3, sy -2
+p 58col 0row --> sx 2, sy -4
+CALCULnexxxxx
+p 53col 2row --> sx -1, sy 0
+p 50col 4row --> sx 0, sy -1
+p 52col 2row --> sx -2, sy 0
+p 52col 1row --> sx -2, sy -1
+p 53col 1row --> sx -1, sy -1
+p 51col 4row --> sx 1, sy -1
+p 52col 4row --> sx -1, sy -2
+p 53col 4row --> sx 0, sy -2
+p 54col 4row --> sx 1, sy -2
+p 59col 4row --> sx 1, sy 0
+p 61col 0row --> sx 1, sy 0
+p 50col 3row --> sx -1, sy -2
+CALCULnexxxxx
+p 51col 3row --> sx 0, sy -2
+p 52col 3row --> sx -2, sy 1
+p 53col 3row --> sx -1, sy 1
+p 54col 0row --> sx -1, sy -1
+p 51col 2row --> sx 0, sy -3
+p 51col 1row --> sx 0, sy -4
+CALCULnexxxxx
+p 60col 4row --> sx 2, sy 0
+p 61col 4row --> sx 3, sy 0
+p 53col 0row --> sx -1, sy -1
+p 52col 0row --> sx -2, sy -1
+CALCULnexxxxx
+p 62col 2row --> sx 3, sy -1
+p 63col 2row --> sx 4, sy -1
+p 62col 0row --> sx 3, sy -2
+CALCULnexxxxx
+p 63col 0row --> sx 4, sy -2
+CALCULnexxxxx
+p 62col 1row --> sx 3, sy -1
+p 64col 0row --> sx 4, sy -2
+CALCULnexxxxx
+p 63col 1row --> sx 4, sy -1
+p 64col 1row --> sx 4, sy -1
+CALCULnexxxxx
+p 60col 3row --> sx 2, sy -1
+p 65col 1row --> sx 4, sy -1
+CALCULnexxxxx
+p 61col 3row --> sx 3, sy -1
+p 65col 0row --> sx 4, sy -2
+CALCULnexxxxx
+p 59col 5row --> sx 0, sy 1
+p 64col 2row --> sx 0, sy 1
+p 65col 2row --> sx 0, sy 1
+p 60col 5row --> sx 1, sy 1
+p 61col 5row --> sx 2, sy 1
+p 66col 1row --> sx 1, sy 0
+p 64col 4row --> sx 3, sy 0
+p 65col 4row --> sx 4, sy 0
+p 62col 4row --> sx 2, sy 0
+p 63col 4row --> sx 3, sy 0
+p 66col 2row --> sx 4, sy 0
+CALCULnexxxxx
+p 67col 2row --> sx 4, sy 0
+CALCULnexxxxx
+p 62col 5row --> sx 2, sy 1
+p 63col 5row --> sx 3, sy 1
+p 64col 5row --> sx 3, sy 1
+p 65col 5row --> sx 4, sy 1
+p 62col 3row --> sx 2, sy -1
+p 63col 3row --> sx 3, sy -1
+p 64col 3row --> sx 3, sy -1
+p 65col 3row --> sx 4, sy -1
+p 66col 3row --> sx 1, sy 1
+p 67col 3row --> sx 0, sy 1
+p 66col 4row --> sx 1, sy 2
+p 64col 6row --> sx 3, sy 1
+p 68col 3row --> sx 4, sy -1
+CALCULnexxxxx
+p 66col 7row --> sx 3, sy 2
+p 67col 7row --> sx 3, sy 2
+p 68col 7row --> sx 4, sy 2
+p 69col 7row --> sx 4, sy 2
+p 67col 4row --> sx 3, sy 0
+p 68col 4row --> sx 4, sy 0
+CALCULnexxxxx
+p 69col 4row --> sx 4, sy 0
+CALCULnexxxxx
+p 67col 5row --> sx 3, sy 1
+p 68col 5row --> sx 4, sy 1
+p 66col 5row --> sx 2, sy 1
+p 69col 5row --> sx 4, sy 1
+p 65col 6row --> sx 3, sy 1
+p 66col 6row --> sx 3, sy 1
+p 67col 6row --> sx 4, sy 1
+p 68col 6row --> sx 4, sy 1
+p 69col 6row --> sx 4, sy 1
+p 67col 8row --> sx 3, sy 2
+p 68col 8row --> sx 2, sy 1
+p 70col 7row --> sx 3, sy 2
+p 71col 7row --> sx 4, sy 2
+p 72col 7row --> sx 4, sy 2
+p 69col 9row --> sx 3, sy 2
+p 69col 8row --> sx 3, sy 1
+p 70col 8row --> sx 4, sy 1
+p 71col 8row --> sx 4, sy 1
+p 72col 8row --> sx 4, sy 1
+p 73col 8row --> sx 4, sy 1
+CALCULnexxxxx
+p 70col 9row --> sx 4, sy 2
+p 68col 9row --> sx 2, sy 2
+p 71col 9row --> sx 4, sy 2
+p 72col 9row --> sx 4, sy 2
+p 73col 9row --> sx 4, sy 2
+p 69col 10row --> sx 3, sy 3
+p 70col 10row --> sx 3, sy 3
+p 71col 10row --> sx 3, sy 3
+p 72col 10row --> sx 3, sy 3
+p 70col 5row --> sx 3, sy 1
+p 70col 6row --> sx 3, sy 1
+p 71col 6row --> sx 4, sy 1
+CALCULnexxxxx
+p 70col 11row --> sx 3, sy 3
+p 74col 9row --> sx 4, sy 2
+p 73col 10row --> sx 3, sy 3
+p 74col 10row --> sx 3, sy 3
+p 75col 10row --> sx 3, sy 3
+p 72col 11row --> sx 3, sy 2
+p 71col 11row --> sx 2, sy 2
+p 73col 11row --> sx 4, sy 2
+p 74col 11row --> sx 4, sy 2
+p 75col 11row --> sx 4, sy 2
+p 71col 12row --> sx 2, sy 3
+p 76col 11row --> sx 4, sy 2
+p 72col 12row --> sx 3, sy 3
+p 73col 12row --> sx 3, sy 3
+p 74col 12row --> sx 3, sy 3
+p 75col 12row --> sx 3, sy 3
+p 76col 12row --> sx 3, sy 3
+p 72col 13row --> sx 3, sy 3
+p 73col 13row --> sx 3, sy 3
+p 74col 13row --> sx 3, sy 3
+p 73col 14row --> sx 2, sy 4
+p 75col 13row --> sx 3, sy 3
+p 74col 14row --> sx 2, sy 4
+p 75col 16row --> sx 2, sy 4
+p 76col 16row --> sx 2, sy 4
+p 77col 16row --> sx 2, sy 4
+p 78col 16row --> sx 2, sy 4
+p 76col 17row --> sx 2, sy 4
+p 77col 17row --> sx 2, sy 4
+p 77col 12row --> sx 3, sy 3
+p 76col 13row --> sx 3, sy 3
+p 77col 13row --> sx 3, sy 3
+p 78col 13row --> sx 3, sy 3
+p 75col 14row --> sx 2, sy 4
+p 76col 14row --> sx 2, sy 4
+p 77col 14row --> sx 2, sy 4
+p 78col 14row --> sx 3, sy 3
+p 79col 14row --> sx 3, sy 3
+p 74col 15row --> sx 3, sy 3
+p 75col 15row --> sx 3, sy 3
+p 76col 15row --> sx 3, sy 3
+p 77col 15row --> sx 3, sy 3
+p 78col 15row --> sx 3, sy 3
+p 79col 15row --> sx 3, sy 3
+p 79col 16row --> sx 2, sy 4
+p 80col 16row --> sx 3, sy 3
+p 81col 16row --> sx 3, sy 3
+p 78col 17row --> sx 2, sy 4
+p 79col 17row --> sx 2, sy 4
+p 80col 17row --> sx 2, sy 4
+p 81col 17row --> sx 3, sy 3
+p 82col 17row --> sx 3, sy 3
+p 77col 18row --> sx 2, sy 4
+p 78col 18row --> sx 2, sy 4
+p 79col 18row --> sx 2, sy 4
+p 80col 18row --> sx 2, sy 4
+p 81col 18row --> sx 2, sy 4
+p 82col 18row --> sx 3, sy 3
+p 78col 19row --> sx 3, sy 3
+p 79col 19row --> sx 3, sy 3
+p 80col 19row --> sx 3, sy 3
+p 81col 19row --> sx 3, sy 3
+p 79col 20row --> sx 2, sy 4
+p 80col 20row --> sx 2, sy 4
+p 80col 15row --> sx 3, sy 3
+p 83col 18row --> sx 3, sy 2
+p 82col 19row --> sx 3, sy 3
+p 83col 19row --> sx 3, sy 3
+p 84col 19row --> sx 3, sy 3
+p 81col 20row --> sx 2, sy 4
+p 82col 20row --> sx 2, sy 4
+p 83col 20row --> sx 2, sy 4
+p 84col 20row --> sx 3, sy 3
+p 85col 20row --> sx 3, sy 3
+CALCULnexxxxx
+p 80col 21row --> sx 2, sy 4
+p 81col 21row --> sx 2, sy 4
+p 82col 21row --> sx 2, sy 4
+p 83col 21row --> sx 2, sy 4
+p 84col 21row --> sx 2, sy 4
+p 85col 21row --> sx 3, sy 3
+CALCULnexxxxx
+p 81col 22row --> sx 2, sy 4
+p 82col 22row --> sx 2, sy 4
+p 83col 22row --> sx 2, sy 4
+p 84col 22row --> sx 2, sy 4
+p 82col 23row --> sx 2, sy 4
+p 83col 23row --> sx 2, sy 4
+p 82col 24row --> sx 2, sy 4
+p 86col 21row --> sx 1, sy 0
+p 85col 22row --> sx 0, sy 1
+p 82col 25row --> sx 2, sy 4
+p 83col 25row --> sx 2, sy 4
+p 84col 25row --> sx 2, sy 4
+p 85col 25row --> sx 2, sy 4
+p 86col 25row --> sx 2, sy 4
+CALCULnexxxxx
+p 82col 26row --> sx 1, sy 4
+p 83col 26row --> sx 2, sy 4
+p 84col 26row --> sx 2, sy 4
+p 85col 26row --> sx 2, sy 4
+p 86col 26row --> sx 2, sy 4
+CALCULnexxxxx
+p 84col 27row --> sx 2, sy 4
+p 83col 27row --> sx 1, sy 4
+p 85col 27row --> sx 2, sy 4
+p 84col 28row --> sx 2, sy 4
+p 83col 28row --> sx 1, sy 4
+p 86col 22row --> sx 3, sy 3
+CALCULnexxxxx
+p 84col 23row --> sx 2, sy 4
+p 85col 23row --> sx 2, sy 4
+p 86col 23row --> sx 2, sy 4
+CALCULnexxxxx
+p 83col 24row --> sx 2, sy 4
+p 84col 24row --> sx 2, sy 4
+p 85col 24row --> sx 2, sy 4
+p 86col 24row --> sx 2, sy 4
+CALCULnexxxxx
+p 86col 27row --> sx 0, sy 1
+p 85col 28row --> sx 3, sy 3
+CALCULnexxxxx
+p 86col 28row --> sx 3, sy 3
+CALCULnexxxxx
+p 84col 29row --> sx 2, sy 4
+p 83col 29row --> sx 1, sy 4
+p 82col 29row --> sx 0, sy 3
+p 85col 29row --> sx 2, sy 4
+p 86col 29row --> sx 2, sy 4
+CALCULnexxxxx
+p 83col 30row --> sx 1, sy 4
+p 82col 30row --> sx 0, sy 4
+p 84col 30row --> sx 2, sy 4
+p 85col 30row --> sx 2, sy 4
+p 86col 30row --> sx 2, sy 4
+p 86col 31row --> sx 2, sy 4
+p 85col 31row --> sx 1, sy 4
+p 83col 31row --> sx 0, sy 4
+p 84col 31row --> sx 1, sy 4
+p 86col 32row --> sx 2, sy 4
+p 85col 32row --> sx 1, sy 4
+p 83col 32row --> sx 0, sy 4
+p 84col 32row --> sx 1, sy 4
+p 82col 31row --> sx 0, sy 2
+p 82col 32row --> sx 0, sy 3
+p 85col 33row --> sx 1, sy 4
+p 84col 33row --> sx 1, sy 4
+p 83col 33row --> sx 0, sy 4
+p 82col 33row --> sx 0, sy 4
+p 86col 33row --> sx 2, sy 4
+p 84col 34row --> sx 1, sy 4
+p 82col 34row --> sx 0, sy 4
+p 81col 34row --> sx -1, sy 4
+p 85col 34row --> sx 2, sy 4
+p 83col 34row --> sx 0, sy 4
+p 86col 34row --> sx 2, sy 4
+p 87col 34row --> sx 2, sy 4
+p 88col 35row --> sx 2, sy 4
+p 85col 35row --> sx 0, sy 4
+p 83col 35row --> sx 0, sy 4
+p 82col 35row --> sx -1, sy 4
+p 84col 35row --> sx 1, sy 4
+p 87col 35row --> sx 1, sy 4
+p 86col 35row --> sx 1, sy 4
+p 88col 36row --> sx 2, sy 4
+p 87col 36row --> sx 1, sy 4
+p 86col 36row --> sx 1, sy 4
+p 85col 36row --> sx 0, sy 4
+p 83col 36row --> sx 0, sy 4
+p 82col 36row --> sx -1, sy 4
+p 84col 36row --> sx 1, sy 4
+p 81col 35row --> sx -1, sy 3
+p 81col 36row --> sx -1, sy 4
+p 89col 36row --> sx 3, sy 3
+p 86col 37row --> sx 1, sy 4
+p 85col 37row --> sx 0, sy 4
+CALCULnexxxxx
+p 81col 37row --> sx -1, sy 4
+p 79col 37row --> sx -2, sy 3
+p 80col 37row --> sx -1, sy 3
+p 84col 37row --> sx 0, sy 4
+CALCULnexxxxx
+p 83col 37row --> sx 0, sy 4
+CALCULnexxxxx
+p 82col 37row --> sx -1, sy 4
+p 87col 37row --> sx 2, sy 4
+p 88col 37row --> sx 2, sy 4
+p 89col 37row --> sx 3, sy 3
+p 90col 37row --> sx 3, sy 3
+p 85col 38row --> sx 1, sy 4
+CALCULnexxxxx
+p 86col 38row --> sx 2, sy 4
+p 82col 38row --> sx 0, sy 4
+CALCULnexxxxx
+p 81col 38row --> sx -1, sy 4
+p 80col 38row --> sx -1, sy 4
+p 79col 38row --> sx -2, sy 4
+p 83col 38row --> sx 1, sy 4
+CALCULnexxxxx
+p 87col 38row --> sx 2, sy 4
+p 88col 38row --> sx 2, sy 4
+p 89col 38row --> sx 2, sy 4
+p 90col 38row --> sx 2, sy 3
+p 91col 38row --> sx 3, sy 3
+p 89col 39row --> sx 1, sy 4
+p 86col 39row --> sx 1, sy 4
+CALCULnexxxxx
+p 82col 39row --> sx -1, sy 4
+CALCULnexxxxx
+p 80col 39row --> sx -2, sy 4
+p 81col 39row --> sx -1, sy 4
+p 88col 39row --> sx 1, sy 4
+p 87col 39row --> sx 0, sy 4
+CALCULnexxxxx
+p 90col 39row --> sx 2, sy 4
+p 90col 40row --> sx 2, sy 4
+p 91col 39row --> sx 3, sy 3
+p 87col 40row --> sx 0, sy 4
+CALCULnexxxxx
+p 81col 40row --> sx -1, sy 4
+p 80col 40row --> sx -2, sy 4
+p 89col 40row --> sx 1, sy 4
+p 88col 40row --> sx 1, sy 4
+p 77col 39row --> sx -2, sy 2
+p 78col 39row --> sx -1, sy 2
+p 76col 39row --> sx -3, sy 2
+CALCULnexxxxx
+p 79col 39row --> sx -2, sy 4
+p 92col 39row --> sx 3, sy 3
+CALCULnexxxxx
+p 77col 40row --> sx -2, sy 3
+p 76col 40row --> sx -3, sy 3
+CALCULnexxxxx
+p 78col 40row --> sx -1, sy 3
+p 79col 40row --> sx -2, sy 4
+p 91col 40row --> sx 2, sy 4
+p 92col 40row --> sx 3, sy 3
+CALCULnexxxxx
+p 93col 40row --> sx 3, sy 3
+CALCULnexxxxx
+p 79col 41row --> sx -2, sy 4
+p 77col 41row --> sx -2, sy 4
+p 76col 41row --> sx -3, sy 3
+CALCULnexxxxx
+p 78col 41row --> sx -1, sy 4
+p 88col 41row --> sx 2, sy 4
+p 80col 41row --> sx -1, sy 4
+p 89col 41row --> sx 2, sy 4
+p 90col 41row --> sx 2, sy 4
+p 91col 41row --> sx 2, sy 4
+p 92col 41row --> sx 2, sy 4
+p 93col 41row --> sx 3, sy 3
+CALCULnexxxxx
+p 78col 42row --> sx -2, sy 4
+p 77col 42row --> sx -2, sy 4
+p 79col 42row --> sx -2, sy 4
+p 89col 42row --> sx 2, sy 4
+p 90col 42row --> sx 2, sy 4
+p 91col 42row --> sx 2, sy 4
+p 92col 42row --> sx 2, sy 4
+p 93col 42row --> sx 2, sy 4
+CALCULnexxxxx
+p 78col 43row --> sx -2, sy 4
+p 79col 43row --> sx -1, sy 4
+p 77col 43row --> sx -3, sy 3
+p 90col 43row --> sx 1, sy 4
+p 91col 43row --> sx 2, sy 4
+p 89col 43row --> sx 0, sy 4
+p 92col 43row --> sx 2, sy 4
+p 93col 43row --> sx 3, sy 3
+CALCULnexxxxx
+p 79col 44row --> sx -2, sy 4
+p 78col 44row --> sx -2, sy 4
+p 89col 44row --> sx 0, sy 4
+p 92col 44row --> sx 2, sy 4
+p 91col 44row --> sx 1, sy 4
+p 90col 44row --> sx 1, sy 4
+p 75col 40row --> sx -1, sy 0
+p 75col 41row --> sx -1, sy 0
+p 76col 42row --> sx 0, sy 1
+p 93col 44row --> sx 0, sy 1
+p 77col 38row --> sx 1, sy -1
+p 75col 42row --> sx -2, sy 3
+CALCULnexxxxx
+p 75col 43row --> sx -2, sy 3
+CALCULnexxxxx
+p 76col 43row --> sx -1, sy 3
+p 75col 44row --> sx -2, sy 4
+CALCULnexxxxx
+p 76col 44row --> sx -1, sy 4
+p 77col 44row --> sx -1, sy 4
+p 77col 45row --> sx -2, sy 4
+p 75col 45row --> sx -2, sy 4
+CALCULnexxxxx
+p 76col 45row --> sx -1, sy 4
+p 78col 45row --> sx -1, sy 4
+p 79col 45row --> sx -1, sy 4
+p 90col 45row --> sx 2, sy 4
+p 89col 45row --> sx 1, sy 4
+p 91col 45row --> sx 2, sy 4
+p 92col 45row --> sx 2, sy 4
+p 93col 45row --> sx 2, sy 4
+CALCULnexxxxx
+p 76col 46row --> sx -2, sy 4
+p 77col 46row --> sx -1, sy 4
+p 75col 46row --> sx -2, sy 4
+CALCULnexxxxx
+p 78col 46row --> sx -1, sy 4
+p 91col 46row --> sx 2, sy 4
+p 79col 46row --> sx 0, sy 3
+p 89col 46row --> sx 0, sy 3
+p 90col 46row --> sx 1, sy 4
+p 92col 46row --> sx 2, sy 4
+p 93col 46row --> sx 2, sy 4
+CALCULnexxxxx
+p 75col 47row --> sx -2, sy 4
+CALCULnexxxxx
+p 76col 47row --> sx -2, sy 4
+p 77col 47row --> sx -1, sy 4
+p 78col 47row --> sx -1, sy 4
+p 79col 47row --> sx 0, sy 4
+p 91col 47row --> sx 1, sy 4
+p 90col 47row --> sx 0, sy 4
+p 89col 47row --> sx 0, sy 4
+p 92col 47row --> sx 2, sy 4
+p 93col 47row --> sx 2, sy 4
+CALCULnexxxxx
+p 77col 48row --> sx -2, sy 4
+p 78col 48row --> sx -1, sy 4
+p 76col 48row --> sx -2, sy 4
+p 89col 48row --> sx 0, sy 4
+p 90col 48row --> sx 1, sy 4
+p 93col 48row --> sx 1, sy 4
+p 92col 48row --> sx 1, sy 4
+p 91col 48row --> sx 0, sy 4
+p 78col 38row --> sx 1, sy 0
+p 75col 48row --> sx 0, sy 1
+p 79col 36row --> sx 2, sy -2
+p 78col 37row --> sx 1, sy -1
+p 79col 48row --> sx 0, sy 3
+p 75col 49row --> sx -2, sy 4
+CALCULnexxxxx
+p 76col 49row --> sx -1, sy 4
+p 77col 49row --> sx -1, sy 4
+p 78col 49row --> sx 0, sy 4
+p 79col 49row --> sx 0, sy 4
+p 92col 49row --> sx 2, sy 4
+p 91col 49row --> sx 1, sy 4
+p 90col 49row --> sx 1, sy 4
+p 89col 49row --> sx 0, sy 4
+p 93col 49row --> sx 2, sy 4
+CALCULnexxxxx
+p 75col 50row --> sx -1, sy 4
+p 76col 50row --> sx -1, sy 4
+p 77col 50row --> sx 0, sy 4
+p 78col 50row --> sx 0, sy 4
+p 79col 50row --> sx 0, sy 4
+p 89col 50row --> sx 0, sy 4
+p 90col 50row --> sx 1, sy 4
+p 93col 50row --> sx 2, sy 4
+CALCULnexxxxx
+p 92col 50row --> sx 1, sy 4
+p 91col 50row --> sx 1, sy 4
+p 75col 51row --> sx -1, sy 4
+p 76col 51row --> sx -1, sy 4
+p 77col 51row --> sx 0, sy 4
+p 78col 51row --> sx 0, sy 4
+p 79col 51row --> sx 0, sy 4
+p 92col 51row --> sx 1, sy 4
+p 91col 51row --> sx 0, sy 4
+p 89col 51row --> sx -1, sy 4
+p 90col 51row --> sx 0, sy 4
+p 93col 51row --> sx 2, sy 4
+CALCULnexxxxx
+p 75col 52row --> sx -2, sy 4
+CALCULnexxxxx
+p 76col 52row --> sx -1, sy 4
+p 77col 52row --> sx -1, sy 4
+p 78col 52row --> sx 0, sy 4
+p 89col 52row --> sx 0, sy 4
+p 90col 52row --> sx 1, sy 4
+p 91col 52row --> sx 1, sy 4
+p 92col 52row --> sx 2, sy 4
+p 93col 52row --> sx 0, sy 4
+p 75col 53row --> sx 0, sy 1
+p 80col 35row --> sx 1, sy -1
+p 76col 53row --> sx 0, sy 4
+p 77col 53row --> sx 0, sy 4
+p 78col 53row --> sx 0, sy 4
+p 79col 53row --> sx 1, sy 4
+p 80col 53row --> sx 1, sy 4
+p 90col 53row --> sx 0, sy 4
+p 88col 53row --> sx -1, sy 4
+p 89col 53row --> sx 0, sy 4
+p 93col 53row --> sx 1, sy 4
+CALCULnexxxxx
+p 92col 53row --> sx 1, sy 4
+p 91col 53row --> sx 0, sy 4
+p 75col 54row --> sx 0, sy 4
+CALCULnexxxxx
+p 76col 54row --> sx 0, sy 4
+CALCULnexxxxx
+p 77col 54row --> sx 0, sy 4
+p 78col 54row --> sx 1, sy 4
+p 79col 54row --> sx 1, sy 4
+p 80col 54row --> sx 1, sy 4
+p 87col 54row --> sx -2, sy 3
+p 89col 54row --> sx 0, sy 4
+p 88col 54row --> sx -1, sy 4
+p 90col 54row --> sx 1, sy 4
+p 91col 54row --> sx 1, sy 4
+p 92col 54row --> sx 2, sy 4
+CALCULnexxxxx
+p 93col 54row --> sx 1, sy 4
+CALCULnexxxxx
+p 75col 55row --> sx 0, sy 4
+CALCULnexxxxx
+p 76col 55row --> sx 0, sy 4
+CALCULnexxxxx
+p 77col 55row --> sx 0, sy 4
+p 78col 55row --> sx 1, sy 4
+p 79col 55row --> sx 1, sy 4
+p 80col 55row --> sx 1, sy 4
+p 90col 55row --> sx -1, sy 4
+p 88col 55row --> sx -1, sy 4
+p 87col 55row --> sx -2, sy 4
+p 89col 55row --> sx 0, sy 4
+p 93col 55row --> sx 1, sy 4
+CALCULnexxxxx
+p 92col 55row --> sx 0, sy 4
+CALCULnexxxxx
+p 91col 55row --> sx 0, sy 4
+p 76col 56row --> sx 0, sy 4
+p 77col 56row --> sx 0, sy 4
+p 78col 56row --> sx 0, sy 4
+p 79col 56row --> sx 1, sy 4
+p 89col 56row --> sx 0, sy 4
+p 90col 56row --> sx 1, sy 4
+p 88col 56row --> sx -1, sy 4
+p 91col 56row --> sx 1, sy 4
+p 92col 56row --> sx 2, sy 4
+CALCULnexxxxx
+p 80col 36row --> sx 2, sy -1
+p 79col 52row --> sx 0, sy 4
+p 80col 56row --> sx 1, sy 3
+p 81col 56row --> sx 2, sy 3
+p 82col 56row --> sx 2, sy 3
+p 87col 56row --> sx -1, sy 3
+p 85col 56row --> sx -2, sy 2
+p 84col 56row --> sx -3, sy 2
+p 86col 56row --> sx -2, sy 3
+p 77col 57row --> sx 1, sy 4
+p 78col 57row --> sx 1, sy 4
+p 79col 57row --> sx 1, sy 4
+p 80col 57row --> sx 1, sy 4
+p 81col 57row --> sx 2, sy 4
+p 82col 57row --> sx 2, sy 4
+p 86col 57row --> sx -2, sy 4
+p 84col 57row --> sx -3, sy 3
+p 85col 57row --> sx -2, sy 3
+p 90col 57row --> sx 0, sy 4
+p 89col 57row --> sx -1, sy 4
+p 87col 57row --> sx -1, sy 4
+p 88col 57row --> sx 0, sy 4
+p 91col 57row --> sx 1, sy 4
+p 78col 58row --> sx 1, sy 4
+p 79col 58row --> sx 1, sy 4
+p 80col 58row --> sx 2, sy 4
+p 81col 58row --> sx 2, sy 4
+p 82col 58row --> sx 2, sy 4
+p 85col 58row --> sx -2, sy 4
+p 84col 58row --> sx -3, sy 3
+p 86col 58row --> sx -1, sy 4
+p 87col 58row --> sx -1, sy 4
+p 89col 58row --> sx 0, sy 4
+p 90col 58row --> sx 1, sy 4
+p 88col 58row --> sx -1, sy 4
+p 78col 59row --> sx 1, sy 4
+p 79col 59row --> sx 1, sy 4
+p 80col 59row --> sx 2, sy 4
+p 81col 59row --> sx 2, sy 4
+p 82col 59row --> sx 2, sy 4
+p 89col 59row --> sx -1, sy 4
+p 85col 59row --> sx -2, sy 4
+p 88col 59row --> sx -2, sy 4
+p 87col 59row --> sx -1, sy 4
+p 86col 59row --> sx -2, sy 4
+p 90col 59row --> sx 0, sy 4
+p 77col 60row --> sx 1, sy 4
+p 78col 60row --> sx 1, sy 4
+p 79col 60row --> sx 1, sy 4
+p 80col 60row --> sx 1, sy 4
+p 81col 60row --> sx 2, sy 4
+p 89col 60row --> sx 0, sy 4
+p 90col 60row --> sx 1, sy 4
+p 87col 60row --> sx -1, sy 4
+p 86col 60row --> sx -2, sy 4
+CALCULnexxxxx
+p 88col 60row --> sx -1, sy 4
+p 91col 60row --> sx 1, sy 4
+p 85col 60row --> sx -1, sy 0
+p 86col 61row --> sx 0, sy 1
+p 83col 57row --> sx -2, sy 1
+p 83col 58row --> sx 2, sy 2
+p 84col 59row --> sx 3, sy 3
+p 83col 59row --> sx 2, sy 3
+p 83col 60row --> sx 2, sy 4
+p 82col 60row --> sx 2, sy 4
+CALCULnexxxxx
+p 84col 60row --> sx 2, sy 4
+p 78col 61row --> sx 1, sy 4
+p 79col 61row --> sx 2, sy 4
+p 77col 61row --> sx 0, sy 4
+p 81col 61row --> sx 2, sy 4
+CALCULnexxxxx
+p 82col 61row --> sx 2, sy 4
+CALCULnexxxxx
+p 83col 61row --> sx 2, sy 4
+CALCULnexxxxx
+p 84col 61row --> sx 2, sy 4
+p 85col 61row --> sx -1, sy 4
+CALCULnexxxxx
+p 80col 61row --> sx 2, sy 4
+p 90col 61row --> sx 0, sy 4
+p 91col 61row --> sx 1, sy 4
+p 89col 61row --> sx -1, sy 4
+p 87col 61row --> sx -2, sy 4
+CALCULnexxxxx
+p 88col 61row --> sx -1, sy 4
+p 79col 62row --> sx 1, sy 4
+p 80col 62row --> sx 2, sy 4
+CALCULnexxxxx
+p 78col 62row --> sx 0, sy 4
+p 81col 62row --> sx 2, sy 4
+CALCULnexxxxx
+p 82col 62row --> sx 2, sy 4
+CALCULnexxxxx
+p 83col 62row --> sx 2, sy 4
+CALCULnexxxxx
+p 84col 62row --> sx 2, sy 4
+CALCULnexxxxx
+p 85col 62row --> sx -1, sy 4
+CALCULnexxxxx
+p 86col 62row --> sx 0, sy 4
+CALCULnexxxxx
+p 87col 62row --> sx 0, sy 4
+p 89col 62row --> sx 0, sy 4
+p 90col 62row --> sx 1, sy 4
+p 88col 62row --> sx -1, sy 4
+p 91col 62row --> sx 1, sy 4
+p 92col 62row --> sx 2, sy 4
+p 79col 63row --> sx 1, sy 4
+p 80col 63row --> sx 2, sy 4
+CALCULnexxxxx
+p 78col 63row --> sx 0, sy 4
+p 81col 63row --> sx 2, sy 4
+CALCULnexxxxx
+p 82col 63row --> sx 2, sy 4
+CALCULnexxxxx
+p 86col 63row --> sx -2, sy 4
+CALCULnexxxxx
+p 88col 63row --> sx -1, sy 4
+CALCULnexxxxx
+p 87col 63row --> sx -2, sy 4
+CALCULnexxxxx
+p 89col 63row --> sx 0, sy 4
+p 90col 63row --> sx 0, sy 4
+p 91col 63row --> sx 1, sy 4
+p 92col 63row --> sx 1, sy 3
+p 78col 64row --> sx 1, sy 4
+p 79col 64row --> sx 2, sy 4
+CALCULnexxxxx
+p 77col 64row --> sx 0, sy 4
+p 80col 64row --> sx 2, sy 4
+CALCULnexxxxx
+p 81col 64row --> sx 2, sy 4
+CALCULnexxxxx
+p 89col 64row --> sx 0, sy 4
+p 87col 64row --> sx 0, sy 4
+CALCULnexxxxx
+p 88col 64row --> sx -1, sy 4
+CALCULnexxxxx
+p 90col 64row --> sx 1, sy 4
+p 91col 64row --> sx 1, sy 4
+p 92col 64row --> sx 2, sy 4
+p 93col 64row --> sx 2, sy 4
+CALCULnexxxxx
+p 79col 65row --> sx 0, sy 1
+p 80col 65row --> sx 0, sy 1
+p 88col 65row --> sx 0, sy 1
+p 93col 63row --> sx 0, sy -1
+p 93col 65row --> sx 0, sy 1
+p 76col 64row --> sx -1, sy 3
+p 76col 65row --> sx -1, sy 4
+p 78col 65row --> sx 0, sy 4
+p 77col 65row --> sx 0, sy 4
+p 90col 65row --> sx 0, sy 4
+p 91col 65row --> sx 1, sy 4
+p 89col 65row --> sx -1, sy 4
+p 92col 65row --> sx 1, sy 4
+p 79col 66row --> sx 0, sy 4
+p 78col 66row --> sx 0, sy 4
+p 77col 66row --> sx -1, sy 4
+p 89col 66row --> sx 0, sy 4
+p 90col 66row --> sx 1, sy 4
+p 91col 66row --> sx 1, sy 4
+p 92col 66row --> sx 2, sy 4
+p 93col 66row --> sx 2, sy 4
+CALCULnexxxxx
+p 79col 67row --> sx 0, sy 4
+p 78col 67row --> sx 0, sy 4
+p 77col 67row --> sx -1, sy 4
+p 76col 67row --> sx -1, sy 3
+p 89col 67row --> sx 0, sy 4
+p 90col 67row --> sx 1, sy 4
+p 91col 67row --> sx 1, sy 4
+p 92col 67row --> sx 1, sy 4
+p 93col 67row --> sx 2, sy 4
+CALCULnexxxxx
+p 79col 68row --> sx 1, sy 4
+p 78col 68row --> sx 0, sy 4
+p 77col 68row --> sx 0, sy 4
+p 76col 68row --> sx -1, sy 4
+p 89col 68row --> sx 0, sy 4
+p 90col 68row --> sx 1, sy 4
+p 91col 68row --> sx 1, sy 4
+p 92col 68row --> sx 2, sy 4
+p 93col 68row --> sx 2, sy 4
+CALCULnexxxxx
+p 93col 69row --> sx 0, sy 1
+p 75col 66row --> sx -1, sy 2
+p 93col 72row --> sx 2, sy 4
+CALCULnexxxxx
+p 76col 66row --> sx 0, sy 2
+p 92col 72row --> sx 2, sy 4
+p 78col 72row --> sx 0, sy 4
+p 75col 72row --> sx -1, sy 4
+p 91col 72row --> sx 1, sy 4
+p 89col 72row --> sx 0, sy 4
+p 90col 72row --> sx 1, sy 4
+p 77col 72row --> sx -1, sy 4
+p 76col 72row --> sx -1, sy 4
+p 75col 67row --> sx -1, sy 3
+p 75col 68row --> sx -1, sy 4
+p 93col 70row --> sx 2, sy 4
+CALCULnexxxxx
+p 79col 72row --> sx 0, sy 4
+p 75col 69row --> sx -1, sy 4
+p 76col 69row --> sx 0, sy 4
+p 79col 69row --> sx 1, sy 4
+p 77col 69row --> sx -1, sy 4
+p 90col 69row --> sx 0, sy 4
+p 89col 69row --> sx -1, sy 4
+p 91col 69row --> sx 1, sy 4
+p 92col 69row --> sx 1, sy 4
+p 78col 69row --> sx 0, sy 4
+p 79col 70row --> sx 0, sy 4
+p 78col 70row --> sx -1, sy 4
+p 76col 70row --> sx -1, sy 4
+p 75col 70row --> sx -2, sy 4
+CALCULnexxxxx
+p 77col 70row --> sx -1, sy 4
+p 89col 70row --> sx 0, sy 4
+p 90col 70row --> sx 1, sy 4
+p 91col 70row --> sx 1, sy 4
+p 92col 70row --> sx 2, sy 4
+p 77col 71row --> sx -1, sy 4
+p 76col 71row --> sx -1, sy 4
+p 75col 71row --> sx -2, sy 4
+CALCULnexxxxx
+p 79col 71row --> sx 0, sy 4
+p 78col 71row --> sx -1, sy 4
+p 89col 71row --> sx 0, sy 4
+p 90col 71row --> sx 1, sy 4
+p 91col 71row --> sx 1, sy 4
+p 92col 71row --> sx 2, sy 4
+p 93col 71row --> sx 2, sy 4
+CALCULnexxxxx
+p 93col 73row --> sx 0, sy 1
+p 93col 76row --> sx 1, sy 4
+CALCULnexxxxx
+p 93col 75row --> sx 1, sy 3
+p 78col 76row --> sx 0, sy 4
+p 79col 76row --> sx 1, sy 4
+p 92col 76row --> sx 1, sy 4
+CALCULnexxxxx
+p 89col 76row --> sx 0, sy 4
+p 91col 76row --> sx 0, sy 4
+p 90col 76row --> sx 1, sy 4
+p 77col 76row --> sx -1, sy 4
+p 75col 76row --> sx 0, sy 4
+CALCULnexxxxx
+p 76col 76row --> sx -1, sy 4
+CALCULnexxxxx
+p 78col 75row --> sx 0, sy 3
+p 79col 75row --> sx 1, sy 3
+p 75col 75row --> sx 0, sy 3
+p 92col 75row --> sx 1, sy 3
+p 91col 75row --> sx 0, sy 3
+p 77col 75row --> sx -1, sy 3
+p 89col 75row --> sx 0, sy 3
+p 90col 75row --> sx 1, sy 3
+p 76col 75row --> sx -1, sy 3
+p 79col 74row --> sx 0, sy 4
+p 90col 74row --> sx 1, sy 4
+p 91col 74row --> sx 1, sy 4
+p 92col 74row --> sx 2, sy 4
+p 93col 74row --> sx 2, sy 4
+CALCULnexxxxx
+p 78col 74row --> sx -1, sy 4
+p 77col 74row --> sx -1, sy 4
+p 89col 74row --> sx 0, sy 4
+p 76col 74row --> sx -2, sy 4
+p 75col 74row --> sx -1, sy 4
+p 92col 73row --> sx -1, sy 1
+p 75col 73row --> sx 0, sy 4
+p 76col 73row --> sx 0, sy 4
+p 90col 73row --> sx 0, sy 4
+p 91col 73row --> sx 1, sy 4
+p 77col 73row --> sx 1, sy 4
+p 79col 73row --> sx 0, sy 4
+p 89col 73row --> sx -1, sy 4
+p 78col 73row --> sx 0, sy 4
+p 93col 77row --> sx 0, sy 1
+p 92col 77row --> sx 0, sy 1
+p 75col 77row --> sx 0, sy 1
+p 76col 77row --> sx 0, sy 1
+p 78col 78row --> sx 0, sy 3
+p 77col 78row --> sx -1, sy 3
+CALCULnexxxxx
+p 75col 78row --> sx 0, sy 3
+CALCULnexxxxx
+p 76col 78row --> sx 1, sy 3
+p 79col 77row --> sx 1, sy 2
+p 80col 77row --> sx 1, sy 2
+p 91col 77row --> sx 0, sy 2
+p 90col 77row --> sx -1, sy 2
+p 89col 77row --> sx 0, sy 2
+p 88col 77row --> sx -1, sy 2
+p 78col 77row --> sx 0, sy 2
+p 77col 77row --> sx -1, sy 2
+p 88col 79row --> sx -1, sy 3
+p 91col 80row --> sx 0, sy 4
+CALCULnexxxxx
+p 93col 78row --> sx 0, sy 3
+CALCULnexxxxx
+p 78col 80row --> sx 0, sy 4
+CALCULnexxxxx
+p 79col 80row --> sx 1, sy 4
+p 81col 79row --> sx 2, sy 3
+p 89col 80row --> sx 0, sy 4
+p 90col 80row --> sx 1, sy 4
+CALCULnexxxxx
+p 88col 80row --> sx -1, sy 4
+p 77col 80row --> sx -1, sy 4
+CALCULnexxxxx
+p 80col 80row --> sx 1, sy 4
+p 81col 80row --> sx 2, sy 4
+p 89col 79row --> sx 0, sy 3
+p 90col 79row --> sx 1, sy 3
+p 91col 79row --> sx 0, sy 3
+CALCULnexxxxx
+p 92col 79row --> sx 1, sy 3
+CALCULnexxxxx
+p 78col 79row --> sx 0, sy 3
+p 79col 79row --> sx 1, sy 3
+p 77col 79row --> sx -1, sy 3
+CALCULnexxxxx
+p 80col 79row --> sx 1, sy 3
+p 76col 79row --> sx -1, sy 3
+CALCULnexxxxx
+p 79col 78row --> sx 1, sy 3
+p 80col 78row --> sx 1, sy 3
+p 81col 78row --> sx 2, sy 3
+p 92col 78row --> sx 0, sy 3
+CALCULnexxxxx
+p 89col 78row --> sx 0, sy 3
+p 88col 78row --> sx -1, sy 3
+p 91col 78row --> sx 0, sy 3
+p 90col 78row --> sx -1, sy 3
+p 78col 81row --> sx 0, sy 1
+p 90col 81row --> sx 0, sy 1
+p 81col 84row --> sx 2, sy 4
+p 81col 83row --> sx 2, sy 3
+p 87col 84row --> sx -1, sy 4
+p 86col 84row --> sx -2, sy 4
+p 80col 82row --> sx 1, sy 3
+p 82col 84row --> sx 2, sy 4
+p 83col 84row --> sx 2, sy 4
+p 87col 82row --> sx -1, sy 3
+p 87col 83row --> sx -1, sy 4
+p 88col 83row --> sx 0, sy 4
+CALCULnexxxxx
+p 86col 83row --> sx -2, sy 4
+p 83col 83row --> sx 2, sy 4
+p 84col 83row --> sx 3, sy 3
+p 80col 83row --> sx 1, sy 3
+p 82col 83row --> sx 1, sy 4
+p 88col 82row --> sx 0, sy 3
+p 86col 82row --> sx -2, sy 3
+p 83col 82row --> sx 2, sy 3
+p 81col 82row --> sx 2, sy 3
+p 82col 82row --> sx 1, sy 3
+p 84col 82row --> sx 3, sy 3
+p 89col 82row --> sx 0, sy 3
+CALCULnexxxxx
+p 82col 79row --> sx 2, sy 2
+p 79col 82row --> sx 1, sy 4
+CALCULnexxxxx
+p 86col 79row --> sx -2, sy 2
+p 79col 81row --> sx 1, sy 3
+p 87col 81row --> sx -1, sy 2
+p 88col 81row --> sx 0, sy 2
+p 89col 81row --> sx 0, sy 2
+p 86col 81row --> sx -2, sy 2
+p 82col 81row --> sx 1, sy 2
+p 83col 81row --> sx 2, sy 2
+p 84col 81row --> sx 3, sy 2
+p 81col 81row --> sx 2, sy 2
+p 80col 81row --> sx 1, sy 2
+p 86col 80row --> sx -2, sy 3
+p 87col 80row --> sx -1, sy 3
+p 83col 80row --> sx 2, sy 2
+p 82col 80row --> sx 2, sy 3
+p 87col 79row --> sx -1, sy 2
+p 87col 78row --> sx -1, sy 1
+p 83col 85row --> sx 2, sy 2
+p 84col 85row --> sx 3, sy 2
+p 86col 85row --> sx -1, sy 3
+p 85col 85row --> sx -2, sy 3
+p 82col 85row --> sx 1, sy 2
+p 85col 88row --> sx -2, sy 4
+p 85col 84row --> sx -2, sy 2
+p 84col 84row --> sx -2, sy 2
+p 86col 88row --> sx -1, sy 4
+p 85col 83row --> sx -2, sy 2
+p 85col 82row --> sx 3, sy 3
+p 85col 81row --> sx 3, sy 2
+p 83col 88row --> sx 2, sy 4
+p 86col 86row --> sx -1, sy 4
+p 84col 88row --> sx -2, sy 4
+p 85col 80row --> sx 3, sy 1
+p 82col 88row --> sx 1, sy 4
+p 82col 87row --> sx 1, sy 4
+p 83col 87row --> sx 2, sy 3
+p 83col 86row --> sx 2, sy 3
+p 86col 87row --> sx -1, sy 3
+p 85col 86row --> sx -2, sy 4
+p 84col 86row --> sx 3, sy 3
+p 82col 86row --> sx 1, sy 3
+p 84col 87row --> sx -2, sy 3
+p 85col 87row --> sx -1, sy 3
+p 85col 89row --> sx -1, sy 4
+p 85col 91row --> sx -1, sy 3
+p 84col 89row --> sx -2, sy 4
+p 86col 89row --> sx 0, sy 4
+p 82col 89row --> sx -3, sy 3
+CALCULnexxxxx
+p 83col 89row --> sx -2, sy 4
+p 84col 91row --> sx -1, sy 3
+p 82col 91row --> sx -3, sy 3
+CALCULnexxxxx
+p 86col 91row --> sx 0, sy 3
+p 83col 91row --> sx -2, sy 3
+p 83col 92row --> sx -2, sy 4
+p 84col 92row --> sx -1, sy 4
+p 86col 90row --> sx 0, sy 4
+p 85col 92row --> sx -1, sy 4
+p 86col 92row --> sx 0, sy 4
+p 82col 92row --> sx -2, sy 4
+CALCULnexxxxx
+p 82col 90row --> sx 0, sy 3
+p 83col 90row --> sx 1, sy 3
+p 85col 90row --> sx -1, sy 4
+p 84col 90row --> sx -2, sy 4
+p 82col 93row --> sx 0, sy 1
+p 84col 94row --> sx -1, sy 3
+p 85col 94row --> sx 0, sy 3
+p 83col 96row --> sx -1, sy 4
+p 83col 94row --> sx -2, sy 3
+p 82col 94row --> sx -2, sy 3
+p 86col 94row --> sx 0, sy 3
+p 84col 96row --> sx 0, sy 4
+p 85col 96row --> sx 0, sy 4
+p 86col 96row --> sx 0, sy 4
+p 82col 96row --> sx -1, sy 4
+p 83col 93row --> sx -2, sy 4
+p 86col 93row --> sx 0, sy 4
+p 84col 93row --> sx -1, sy 4
+p 85col 93row --> sx 0, sy 4
+p 82col 95row --> sx -2, sy 4
+p 84col 95row --> sx -1, sy 4
+p 85col 95row --> sx 0, sy 4
+p 83col 95row --> sx -2, sy 4
+p 86col 95row --> sx 0, sy 4
+p 83col 98row --> sx -1, sy 4
+p 84col 98row --> sx 0, sy 4
+p 81col 99row --> sx -2, sy 3
+p 83col 100row --> sx 0, sy 4
+CALCULnexxxxx
+p 82col 99row --> sx -1, sy 3
+p 83col 99row --> sx 0, sy 3
+p 84col 99row --> sx 0, sy 3
+p 82col 98row --> sx -2, sy 4
+p 81col 98row --> sx -2, sy 4
+p 80col 98row --> sx -2, sy 4
+p 82col 100row --> sx -1, sy 4
+p 80col 99row --> sx -2, sy 3
+p 81col 100row --> sx -2, sy 4
+p 80col 100row --> sx -2, sy 4
+p 84col 97row --> sx 0, sy 3
+p 85col 98row --> sx 0, sy 4
+CALCULnexxxxx
+p 85col 99row --> sx 1, sy 3
+CALCULnexxxxx
+p 86col 98row --> sx 1, sy 4
+CALCULnexxxxx
+p 82col 97row --> sx -2, sy 3
+p 81col 97row --> sx -2, sy 3
+p 85col 97row --> sx 0, sy 3
+p 86col 97row --> sx 1, sy 3
+CALCULnexxxxx
+p 83col 97row --> sx -1, sy 3
+p 84col 100row --> sx 0, sy 4
+CALCULnexxxxx
+p 83col 101row --> sx 0, sy 1
+p 82col 102row --> sx -1, sy 4
+CALCULnexxxxx
+p 81col 102row --> sx -2, sy 4
+p 78col 102row --> sx -3, sy 3
+p 79col 102row --> sx -2, sy 3
+p 80col 102row --> sx -1, sy 3
+p 77col 102row --> sx -3, sy 3
+p 79col 103row --> sx -2, sy 4
+p 77col 103row --> sx -3, sy 3
+p 80col 103row --> sx -1, sy 4
+p 78col 103row --> sx -2, sy 4
+p 81col 103row --> sx -1, sy 4
+CALCULnexxxxx
+p 79col 100row --> sx -3, sy 3
+p 80col 104row --> sx -2, sy 4
+p 79col 104row --> sx -2, sy 4
+p 79col 99row --> sx -3, sy 2
+p 78col 100row --> sx -3, sy 3
+p 77col 101row --> sx -3, sy 3
+p 78col 101row --> sx -3, sy 2
+p 82col 101row --> sx -1, sy 3
+p 81col 101row --> sx -2, sy 3
+p 79col 101row --> sx -2, sy 2
+p 80col 101row --> sx -1, sy 2
+p 78col 104row --> sx -2, sy 4
+p 76col 106row --> sx -2, sy 4
+p 77col 104row --> sx -2, sy 2
+p 74col 106row --> sx -3, sy 3
+p 77col 106row --> sx -2, sy 4
+p 78col 106row --> sx -1, sy 4
+p 76col 102row --> sx -3, sy 2
+p 75col 102row --> sx -4, sy 2
+p 74col 102row --> sx -4, sy 2
+p 74col 104row --> sx -4, sy 2
+p 77col 107row --> sx -2, sy 4
+CALCULnexxxxx
+p 73col 103row --> sx -4, sy 2
+p 76col 107row --> sx -2, sy 4
+CALCULnexxxxx
+p 74col 103row --> sx -3, sy 2
+p 76col 103row --> sx -3, sy 3
+p 75col 103row --> sx -3, sy 3
+p 75col 106row --> sx -2, sy 4
+p 75col 107row --> sx -2, sy 4
+CALCULnexxxxx
+p 77col 108row --> sx -2, sy 4
+CALCULnexxxxx
+p 76col 108row --> sx -2, sy 4
+CALCULnexxxxx
+p 73col 104row --> sx -4, sy 2
+p 75col 104row --> sx -3, sy 2
+p 76col 104row --> sx -2, sy 2
+p 79col 105row --> sx -2, sy 3
+p 78col 105row --> sx -3, sy 3
+p 76col 105row --> sx -2, sy 3
+p 77col 105row --> sx -2, sy 3
+p 75col 105row --> sx -3, sy 3
+p 74col 105row --> sx -3, sy 3
+p 73col 105row --> sx -4, sy 2
+p 75col 108row --> sx 0, sy 1
+p 76col 109row --> sx 0, sy 1
+p 74col 107row --> sx -1, sy 0
+p 73col 109row --> sx -3, sy 3
+CALCULnexxxxx
+p 73col 106row --> sx -3, sy 3
+p 69col 107row --> sx -4, sy 2
+CALCULnexxxxx
+p 72col 109row --> sx -2, sy 3
+CALCULnexxxxx
+p 73col 107row --> sx -2, sy 4
+CALCULnexxxxx
+p 71col 103row --> sx -4, sy 1
+p 70col 103row --> sx -4, sy 1
+p 72col 106row --> sx -3, sy 3
+p 70col 108row --> sx -4, sy 2
+CALCULnexxxxx
+p 72col 103row --> sx -4, sy 1
+p 71col 107row --> sx -3, sy 3
+p 72col 108row --> sx -2, sy 2
+p 73col 108row --> sx -3, sy 3
+CALCULnexxxxx
+p 72col 107row --> sx -3, sy 3
+p 71col 106row --> sx -3, sy 2
+p 75col 109row --> sx -1, sy 3
+CALCULnexxxxx
+p 71col 109row --> sx -3, sy 3
+CALCULnexxxxx
+p 71col 104row --> sx -4, sy 2
+p 70col 104row --> sx -4, sy 2
+p 69col 104row --> sx -4, sy 1
+p 71col 108row --> sx -3, sy 3
+CALCULnexxxxx
+p 74col 109row --> sx -3, sy 3
+CALCULnexxxxx
+p 70col 106row --> sx -4, sy 2
+p 70col 107row --> sx -4, sy 2
+p 72col 104row --> sx -4, sy 2
+p 71col 105row --> sx -3, sy 1
+p 72col 105row --> sx -2, sy 2
+p 70col 105row --> sx -4, sy 1
+p 69col 105row --> sx -4, sy 2
+p 69col 106row --> sx -4, sy 2
+p 74col 108row --> sx -1, sy 1
+p 68col 107row --> sx -1, sy 0
+p 69col 108row --> sx 0, sy 1
+p 70col 109row --> sx 0, sy 1
+p 68col 108row --> sx -1, sy 1
+p 67col 103row --> sx -4, sy 0
+p 66col 103row --> sx -4, sy 0
+p 66col 107row --> sx -4, sy 1
+CALCULnexxxxx
+p 68col 103row --> sx -3, sy 0
+p 67col 108row --> sx -4, sy 2
+CALCULnexxxxx
+p 66col 104row --> sx -4, sy 1
+p 67col 107row --> sx -4, sy 1
+CALCULnexxxxx
+p 69col 109row --> sx -3, sy 3
+CALCULnexxxxx
+p 68col 109row --> sx -4, sy 2
+CALCULnexxxxx
+p 68col 104row --> sx -3, sy 1
+p 67col 104row --> sx -4, sy 1
+p 65col 105row --> sx -4, sy 1
+CALCULnexxxxx
+p 67col 105row --> sx -4, sy 2
+CALCULnexxxxx
+p 68col 105row --> sx -3, sy 2
+p 66col 105row --> sx -4, sy 2
+CALCULnexxxxx
+p 65col 104row --> sx -4, sy 0
+CALCULnexxxxx
+p 68col 106row --> sx -1, sy -1
+p 67col 106row --> sx -4, sy 2
+CALCULnexxxxx
+p 66col 106row --> sx -4, sy 2
+CALCULnexxxxx
+p 65col 106row --> sx -4, sy 2
+CALCULnexxxxx
+p 64col 104row --> sx -1, sy 0
+p 65col 103row --> sx 0, sy -1
+p 64col 105row --> sx -1, sy 0
+p 64col 103row --> sx -3, sy 0
+CALCULnexxxxx
+p 63col 103row --> sx -4, sy 0
+CALCULnexxxxx
+p 63col 102row --> sx -4, sy -1
+CALCULnexxxxx
+p 64col 102row --> sx -3, sy -1
+CALCULnexxxxx
+p 63col 104row --> sx -4, sy 1
+CALCULnexxxxx
+p 65col 102row --> sx -3, sy -1
+p 66col 102row --> sx -2, sy -1
+p 64col 101row --> sx -1, sy -2
+p 65col 101row --> sx 0, sy -2
+p 66col 101row --> sx 1, sy -2
+p 63col 101row --> sx 0, sy -1
+p 63col 100row --> sx -2, sy -2
+CALCULnexxxxx
+p 64col 100row --> sx -2, sy -2
+p 65col 100row --> sx -1, sy -2
+p 66col 100row --> sx 0, sy -1
+p 65col 98row --> sx 0, sy -3
+p 67col 99row --> sx 1, sy -2
+p 66col 98row --> sx 1, sy -3
+p 68col 99row --> sx 2, sy -2
+p 67col 98row --> sx 1, sy -3
+p 63col 98row --> sx -1, sy -3
+p 64col 98row --> sx 0, sy -3
+p 68col 98row --> sx 2, sy -3
+p 63col 99row --> sx -1, sy -2
+p 64col 99row --> sx 0, sy -2
+p 65col 99row --> sx 0, sy -2
+p 68col 100row --> sx 2, sy -1
+p 66col 99row --> sx 1, sy -2
+p 67col 100row --> sx 1, sy -1
+p 65col 97row --> sx 0, sy -3
+p 64col 97row --> sx -1, sy -3
+p 63col 97row --> sx -1, sy -3
+p 69col 100row --> sx 1, sy 0
+p 67col 97row --> sx 0, sy -2
+p 68col 96row --> sx 1, sy -3
+p 70col 98row --> sx 2, sy -1
+p 67col 95row --> sx 1, sy -3
+p 70col 97row --> sx 2, sy -2
+p 71col 97row --> sx 3, sy -2
+CALCULnexxxxx
+p 63col 95row --> sx 0, sy -3
+CALCULnexxxxx
+p 67col 94row --> sx 1, sy -4
+p 68col 97row --> sx 1, sy -2
+p 71col 98row --> sx 3, sy -1
+CALCULnexxxxx
+p 69col 95row --> sx 2, sy -3
+p 68col 95row --> sx 2, sy -3
+p 70col 94row --> sx 2, sy -4
+p 71col 100row --> sx 3, sy 0
+CALCULnexxxxx
+p 69col 96row --> sx 2, sy -3
+p 68col 94row --> sx 2, sy -4
+p 69col 94row --> sx 2, sy -4
+p 69col 99row --> sx 1, sy -1
+p 66col 96row --> sx 1, sy -2
+p 64col 96row --> sx -1, sy -2
+p 63col 96row --> sx 0, sy -2
+p 67col 96row --> sx 0, sy -3
+p 70col 99row --> sx 2, sy -1
+p 65col 94row --> sx 0, sy -4
+p 70col 96row --> sx 2, sy -3
+p 65col 96row --> sx 0, sy -2
+p 71col 99row --> sx 3, sy -1
+CALCULnexxxxx
+p 65col 95row --> sx 0, sy -3
+p 70col 100row --> sx 2, sy 0
+p 64col 95row --> sx -1, sy -3
+CALCULnexxxxx
+p 66col 94row --> sx 1, sy -4
+p 69col 97row --> sx 2, sy -2
+p 66col 95row --> sx 1, sy -3
+p 70col 95row --> sx 2, sy -3
+p 71col 95row --> sx 3, sy -3
+CALCULnexxxxx
+p 66col 97row --> sx 1, sy -2
+p 64col 94row --> sx -1, sy -4
+CALCULnexxxxx
+p 69col 98row --> sx 2, sy -1
+p 71col 96row --> sx 3, sy -3
+CALCULnexxxxx
+p 66col 93row --> sx 1, sy -4
+p 65col 93row --> sx 0, sy -4
+p 69col 101row --> sx 0, sy 1
+p 71col 94row --> sx 0, sy -1
+p 70col 101row --> sx 1, sy 1
+p 71col 101row --> sx 2, sy 1
+p 68col 92row --> sx 0, sy -4
+p 68col 90row --> sx 1, sy -4
+p 70col 90row --> sx 2, sy -4
+p 65col 90row --> sx 0, sy -4
+p 69col 102row --> sx 0, sy 1
+p 66col 90row --> sx 1, sy -4
+p 71col 91row --> sx 2, sy -4
+CALCULnexxxxx
+p 66col 92row --> sx -1, sy -4
+p 67col 92row --> sx 0, sy -3
+p 69col 90row --> sx 2, sy -4
+p 68col 91row --> sx 1, sy -4
+p 65col 92row --> sx 0, sy -3
+p 69col 92row --> sx 1, sy -4
+p 68col 101row --> sx -1, sy 0
+p 69col 91row --> sx 2, sy -4
+p 67col 90row --> sx 0, sy -4
+p 70col 91row --> sx 1, sy -4
+p 67col 93row --> sx 0, sy -2
+p 71col 93row --> sx 2, sy -2
+CALCULnexxxxx
+p 65col 91row --> sx 0, sy -3
+p 67col 91row --> sx 0, sy -4
+p 71col 90row --> sx 1, sy -4
+p 66col 91row --> sx 1, sy -3
+p 71col 92row --> sx 2, sy -3
+CALCULnexxxxx
+p 70col 93row --> sx 2, sy -3
+p 69col 93row --> sx 1, sy -3
+p 68col 93row --> sx 0, sy -3
+p 70col 92row --> sx 2, sy -4
+p 68col 102row --> sx -1, sy 1
+p 70col 102row --> sx 1, sy 1
+p 67col 89row --> sx 1, sy -4
+p 68col 89row --> sx 2, sy -4
+p 66col 89row --> sx 0, sy -4
+p 65col 89row --> sx 0, sy -4
+p 69col 103row --> sx 0, sy 2
+p 72col 102row --> sx 2, sy 1
+p 73col 102row --> sx 2, sy 1
+p 67col 101row --> sx -1, sy 0
+p 71col 102row --> sx 1, sy 1
+p 70col 87row --> sx 2, sy -3
+p 71col 87row --> sx 1, sy -3
+CALCULnexxxxx
+p 67col 102row --> sx -1, sy 1
+p 65col 87row --> sx 0, sy -3
+p 66col 87row --> sx 1, sy -3
+p 69col 89row --> sx 1, sy -3
+p 70col 89row --> sx 1, sy -3
+p 67col 87row --> sx 1, sy -3
+p 69col 88row --> sx 1, sy -4
+p 71col 89row --> sx 2, sy -3
+CALCULnexxxxx
+p 65col 88row --> sx -1, sy -4
+p 70col 88row --> sx 2, sy -3
+p 71col 88row --> sx 2, sy -4
+CALCULnexxxxx
+p 68col 88row --> sx 0, sy -4
+p 66col 88row --> sx 0, sy -4
+p 67col 88row --> sx -1, sy -4
+p 69col 87row --> sx 1, sy -3
+p 69col 86row --> sx 1, sy -4
+CALCULnexxxxx
+p 71col 86row --> sx 1, sy -4
+CALCULnexxxxx
+p 65col 86row --> sx 0, sy -4
+p 64col 86row --> sx -1, sy -4
+p 70col 86row --> sx 2, sy -4
+CALCULnexxxxx
+p 68col 86row --> sx 0, sy -4
+p 68col 87row --> sx 0, sy -3
+p 66col 86row --> sx 1, sy -4
+p 67col 86row --> sx 1, sy -4
+p 70col 85row --> sx 2, sy -4
+CALCULnexxxxx
+p 68col 85row --> sx 1, sy -4
+CALCULnexxxxx
+p 69col 85row --> sx 2, sy -4
+CALCULnexxxxx
+p 67col 85row --> sx 0, sy -4
+p 66col 85row --> sx 0, sy -4
+p 65col 85row --> sx -1, sy -4
+p 64col 85row --> sx -1, sy -4
+p 71col 85row --> sx 0, sy -1
+p 63col 82row --> sx -1, sy -4
+p 62col 83row --> sx -2, sy -3
+p 65col 84row --> sx 0, sy -3
+p 66col 84row --> sx 1, sy -3
+p 69col 84row --> sx 2, sy -3
+CALCULnexxxxx
+p 63col 84row --> sx -2, sy -4
+p 70col 84row --> sx 1, sy -4
+CALCULnexxxxx
+p 67col 84row --> sx 1, sy -3
+CALCULnexxxxx
+p 68col 84row --> sx 2, sy -3
+CALCULnexxxxx
+p 64col 83row --> sx -1, sy -4
+p 67col 83row --> sx 1, sy -4
+CALCULnexxxxx
+p 63col 83row --> sx -1, sy -3
+p 64col 82row --> sx -1, sy -4
+p 64col 84row --> sx -1, sy -3
+p 66col 82row --> sx 1, sy -4
+CALCULnexxxxx
+p 62col 82row --> sx -2, sy -4
+p 65col 83row --> sx 0, sy -4
+p 66col 83row --> sx 1, sy -4
+CALCULnexxxxx
+p 63col 85row --> sx -2, sy -3
+p 65col 82row --> sx 0, sy -4
+p 62col 81row --> sx -2, sy -4
+p 63col 81row --> sx -2, sy -4
+p 65col 81row --> sx -1, sy -4
+p 64col 81row --> sx -1, sy -4
+p 62col 78row --> sx -1, sy -4
+p 61col 78row --> sx -2, sy -4
+p 60col 78row --> sx -2, sy -4
+p 63col 78row --> sx 0, sy -4
+p 61col 83row --> sx -2, sy -2
+p 60col 82row --> sx -3, sy -3
+p 61col 81row --> sx -1, sy -2
+p 60col 81row --> sx -2, sy -2
+p 60col 80row --> sx -2, sy -3
+p 59col 81row --> sx -3, sy -2
+p 61col 80row --> sx -1, sy -3
+p 64col 80row --> sx -1, sy -4
+p 62col 80row --> sx -1, sy -4
+p 61col 82row --> sx -2, sy -3
+p 63col 80row --> sx -1, sy -3
+p 59col 80row --> sx -3, sy -3
+p 62col 79row --> sx -1, sy -3
+p 63col 79row --> sx 0, sy -3
+p 64col 79row --> sx 0, sy -4
+CALCULnexxxxx
+p 61col 79row --> sx -2, sy -3
+p 60col 79row --> sx -2, sy -4
+p 59col 79row --> sx -3, sy -3
+p 60col 77row --> sx -2, sy -4
+p 63col 77row --> sx -2, sy -4
+p 61col 77row --> sx -1, sy -4
+p 62col 77row --> sx -1, sy -4
+p 59col 78row --> sx -3, sy -3
+p 58col 75row --> sx -3, sy -3
+p 56col 77row --> sx -3, sy -3
+p 58col 78row --> sx -2, sy -4
+p 57col 78row --> sx -3, sy -3
+p 56col 78row --> sx -3, sy -3
+p 59col 77row --> sx -1, sy -3
+p 57col 76row --> sx -2, sy -4
+p 61col 75row --> sx -1, sy -3
+p 60col 75row --> sx -2, sy -3
+p 62col 76row --> sx -2, sy -4
+p 58col 76row --> sx -2, sy -4
+p 61col 76row --> sx 0, sy -4
+p 55col 77row --> sx -4, sy -2
+CALCULnexxxxx
+p 59col 76row --> sx -1, sy -4
+p 60col 76row --> sx -1, sy -4
+p 62col 75row --> sx 0, sy -3
+p 59col 75row --> sx -2, sy -3
+p 57col 75row --> sx -3, sy -3
+p 61col 74row --> sx -1, sy -4
+p 62col 74row --> sx 0, sy -4
+p 60col 74row --> sx -2, sy -4
+p 58col 77row --> sx -2, sy -3
+p 59col 74row --> sx -2, sy -4
+p 58col 74row --> sx -2, sy -4
+p 57col 77row --> sx -3, sy -3
+p 56col 76row --> sx -3, sy -3
+p 58col 80row --> sx -3, sy -3
+p 57col 79row --> sx -3, sy -3
+p 58col 79row --> sx -2, sy -3
+p 56col 75row --> sx -3, sy -3
+CALCULnexxxxx
+p 55col 76row --> sx -4, sy -2
+CALCULnexxxxx
+p 57col 74row --> sx -3, sy -3
+CALCULnexxxxx
+p 58col 73row --> sx -2, sy -4
+CALCULnexxxxx
+p 61col 73row --> sx -2, sy -4
+p 62col 73row --> sx -1, sy -4
+p 59col 73row --> sx -1, sy -4
+p 60col 73row --> sx -1, sy -4
+p 54col 76row --> sx -3, sy -2
+CALCULnexxxxx
+p 54col 75row --> sx -2, sy -2
+CALCULnexxxxx
+p 55col 75row --> sx -3, sy -3
+CALCULnexxxxx
+p 54col 74row --> sx -2, sy -3
+CALCULnexxxxx
+p 56col 74row --> sx -2, sy -4
+CALCULnexxxxx
+p 55col 74row --> sx -2, sy -4
+CALCULnexxxxx
+p 56col 73row --> sx -2, sy -2
+CALCULnexxxxx
+p 57col 73row --> sx -2, sy -4
+CALCULnexxxxx
+p 56col 72row --> sx -2, sy -3
+CALCULnexxxxx
+p 55col 73row --> sx -3, sy -2
+CALCULnexxxxx
+p 60col 71row --> sx -1, sy -4
+p 58col 71row --> sx -2, sy -4
+CALCULnexxxxx
+p 62col 71row --> sx 0, sy -4
+p 59col 71row --> sx -1, sy -3
+p 60col 72row --> sx -1, sy -3
+p 61col 72row --> sx 0, sy -3
+p 62col 72row --> sx 1, sy -4
+p 63col 72row --> sx 1, sy -3
+p 59col 72row --> sx -2, sy -3
+p 57col 72row --> sx -3, sy -3
+CALCULnexxxxx
+p 58col 72row --> sx -2, sy -3
+CALCULnexxxxx
+p 57col 71row --> sx -2, sy -4
+CALCULnexxxxx
+p 60col 70row --> sx -1, sy -4
+CALCULnexxxxx
+p 61col 70row --> sx 0, sy -4
+p 62col 70row --> sx 0, sy -4
+p 63col 70row --> sx 1, sy -4
+p 59col 70row --> sx -2, sy -4
+CALCULnexxxxx
+p 58col 70row --> sx -2, sy -4
+CALCULnexxxxx
+p 60col 69row --> sx -1, sy -4
+CALCULnexxxxx
+p 61col 69row --> sx -1, sy -4
+p 62col 69row --> sx 0, sy -4
+p 59col 69row --> sx -2, sy -4
+CALCULnexxxxx
+p 62col 67row --> sx 0, sy -4
+p 63col 67row --> sx 1, sy -4
+p 65col 67row --> sx 2, sy -3
+CALCULnexxxxx
+p 61col 67row --> sx -1, sy -4
+p 64col 69row --> sx 2, sy -3
+p 65col 69row --> sx 2, sy -3
+CALCULnexxxxx
+p 63col 69row --> sx 1, sy -3
+p 64col 67row --> sx 1, sy -3
+p 60col 68row --> sx 0, sy -3
+p 63col 68row --> sx 1, sy -3
+p 64col 68row --> sx 2, sy -4
+p 62col 68row --> sx 0, sy -3
+p 61col 68row --> sx -1, sy -3
+p 61col 71row --> sx 1, sy 1
+p 64col 70row --> sx 1, sy -2
+p 61col 66row --> sx 0, sy -4
+p 62col 66row --> sx 1, sy -4
+p 63col 66row --> sx 1, sy -4
+p 64col 66row --> sx 1, sy -4
+p 65col 66row --> sx 2, sy -4
+CALCULnexxxxx
+p 61col 65row --> sx 0, sy -4
+p 62col 65row --> sx 0, sy -4
+p 63col 65row --> sx 1, sy -4
+p 65col 65row --> sx 0, sy -1
+p 65col 68row --> sx 0, sy 1
+p 65col 70row --> sx 0, sy 1
+p 63col 62row --> sx 1, sy -4
+p 64col 65row --> sx 1, sy -4
+p 61col 62row --> sx 0, sy -4
+p 62col 62row --> sx 1, sy -4
+p 63col 73row --> sx 2, sy 2
+CALCULnexxxxx
+p 63col 71row --> sx 2, sy 0
+p 64col 64row --> sx 1, sy -3
+p 65col 64row --> sx 2, sy -3
+CALCULnexxxxx
+p 62col 64row --> sx 0, sy -3
+p 61col 64row --> sx -1, sy -3
+p 63col 64row --> sx 1, sy -3
+p 62col 63row --> sx 0, sy -4
+p 63col 63row --> sx 1, sy -4
+p 64col 63row --> sx 1, sy -4
+p 65col 63row --> sx 2, sy -4
+CALCULnexxxxx
+p 64col 62row --> sx 2, sy -4
+p 65col 62row --> sx 2, sy -4
+CALCULnexxxxx
+p 61col 63row --> sx -1, sy -4
+p 61col 61row --> sx 0, sy -4
+p 65col 61row --> sx 2, sy -4
+CALCULnexxxxx
+p 62col 61row --> sx 1, sy -4
+p 63col 61row --> sx 1, sy -4
+p 64col 61row --> sx 1, sy -4
+p 64col 71row --> sx -1, sy 1
+p 64col 72row --> sx -1, sy 2
+p 64col 59row --> sx 1, sy -3
+p 65col 58row --> sx 2, sy -4
+CALCULnexxxxx
+p 61col 58row --> sx 0, sy -4
+p 62col 58row --> sx 1, sy -4
+p 63col 58row --> sx 0, sy -4
+p 64col 58row --> sx 1, sy -4
+p 65col 59row --> sx 2, sy -3
+CALCULnexxxxx
+p 65col 60row --> sx 1, sy -4
+p 63col 59row --> sx 0, sy -3
+p 61col 59row --> sx 0, sy -3
+p 62col 59row --> sx 1, sy -3
+p 64col 60row --> sx 0, sy -4
+p 62col 60row --> sx 0, sy -4
+p 63col 60row --> sx 1, sy -4
+p 61col 60row --> sx -1, sy -4
+p 64col 57row --> sx 2, sy -4
+p 61col 57row --> sx 0, sy -4
+p 62col 57row --> sx 1, sy -4
+p 65col 57row --> sx 2, sy -4
+CALCULnexxxxx
+p 63col 57row --> sx 1, sy -4
+p 61col 56row --> sx 0, sy -3
+p 62col 56row --> sx -1, sy -3
+p 65col 56row --> sx 1, sy -3
+p 61col 55row --> sx 0, sy -3
+p 65col 55row --> sx 1, sy -4
+p 64col 55row --> sx 0, sy -4
+p 62col 54row --> sx 1, sy -4
+p 63col 54row --> sx 1, sy -4
+p 63col 56row --> sx 0, sy -3
+p 62col 55row --> sx 1, sy -3
+p 65col 54row --> sx 1, sy -4
+p 64col 54row --> sx 2, sy -4
+p 63col 55row --> sx 1, sy -3
+p 64col 56row --> sx 0, sy -3
+p 61col 54row --> sx 0, sy -4
+p 65col 53row --> sx 1, sy -4
+p 62col 53row --> sx 1, sy -4
+p 63col 53row --> sx 1, sy -4
+p 64col 53row --> sx 2, sy -4
+p 61col 53row --> sx 0, sy -4
+p 61col 52row --> sx 0, sy -4
+p 60col 52row --> sx -1, sy -4
+p 63col 50row --> sx 1, sy -4
+CALCULnexxxxx
+p 64col 50row --> sx 2, sy -4
+CALCULnexxxxx
+p 65col 50row --> sx 2, sy -4
+CALCULnexxxxx
+p 62col 52row --> sx 1, sy -4
+p 62col 51row --> sx 1, sy -4
+p 65col 51row --> sx 0, sy -4
+p 63col 51row --> sx -1, sy -4
+p 64col 51row --> sx 0, sy -4
+p 60col 50row --> sx -1, sy -4
+CALCULnexxxxx
+p 61col 51row --> sx 0, sy -4
+p 62col 50row --> sx 0, sy -4
+CALCULnexxxxx
+p 60col 51row --> sx -1, sy -4
+p 63col 52row --> sx -1, sy -3
+p 61col 50row --> sx 0, sy -4
+CALCULnexxxxx
+p 65col 52row --> sx 0, sy -4
+p 64col 52row --> sx 0, sy -3
+p 62col 49row --> sx 0, sy -4
+CALCULnexxxxx
+p 60col 49row --> sx -1, sy -4
+CALCULnexxxxx
+p 61col 49row --> sx 0, sy -4
+CALCULnexxxxx
+p 63col 49row --> sx 1, sy -4
+CALCULnexxxxx
+p 65col 49row --> sx 0, sy -4
+CALCULnexxxxx
+p 64col 49row --> sx 2, sy -4
+CALCULnexxxxx
+p 59col 50row --> sx -1, sy 0
+p 59col 49row --> sx -1, sy -3
+CALCULnexxxxx
+p 58col 49row --> sx -2, sy -3
+CALCULnexxxxx
+p 58col 48row --> sx -2, sy -4
+CALCULnexxxxx
+p 59col 48row --> sx -1, sy -4
+CALCULnexxxxx
+p 61col 48row --> sx 0, sy -4
+CALCULnexxxxx
+p 60col 48row --> sx -1, sy -4
+CALCULnexxxxx
+p 64col 48row --> sx 2, sy -4
+CALCULnexxxxx
+p 62col 48row --> sx 1, sy -4
+CALCULnexxxxx
+p 63col 48row --> sx 1, sy -4
+CALCULnexxxxx
+p 59col 51row --> sx -1, sy 1
+p 58col 50row --> sx -1, sy 0
+p 57col 49row --> sx -2, sy -1
+p 57col 48row --> sx -1, sy 0
+p 59col 52row --> sx 0, sy 1
+p 57col 50row --> sx -2, sy 0
+p 58col 51row --> sx -1, sy 1
+p 57col 51row --> sx -2, sy 1
+p 58col 52row --> sx -1, sy 1
+p 57col 52row --> sx -2, sy 1
+p 56col 49row --> sx -2, sy -1
+p 56col 50row --> sx -2, sy 0
+p 56col 48row --> sx -1, sy 0
+p 56col 51row --> sx -2, sy 1
+p 54col 51row --> sx -3, sy 1
+p 55col 49row --> sx -2, sy 0
+p 54col 49row --> sx -3, sy 0
+p 55col 52row --> sx -2, sy 1
+p 56col 52row --> sx -2, sy 1
+p 54col 52row --> sx -3, sy 1
+p 55col 50row --> sx -2, sy 0
+p 54col 50row --> sx -3, sy 0
+p 55col 48row --> sx -2, sy -1
+p 55col 51row --> sx -2, sy 1
+p 54col 48row --> sx -3, sy -1
+p 53col 51row --> sx -3, sy 1
+p 53col 52row --> sx -3, sy 1
+p 53col 49row --> sx -3, sy 0
+p 53col 50row --> sx -3, sy 0
+p 53col 48row --> sx -3, sy -1
+p 51col 51row --> sx -3, sy 0
+p 50col 51row --> sx -4, sy 0
+p 51col 49row --> sx -3, sy 0
+p 52col 51row --> sx -2, sy 0
+p 52col 49row --> sx -3, sy 0
+p 51col 50row --> sx -3, sy 1
+p 50col 50row --> sx -4, sy 1
+p 52col 50row --> sx -3, sy 1
+p 52col 52row --> sx -2, sy 1
+p 51col 52row --> sx -3, sy 1
+p 50col 49row --> sx -4, sy 0
+p 50col 52row --> sx -4, sy 1
+p 52col 48row --> sx -3, sy -1
+p 50col 48row --> sx -4, sy -1
+p 51col 48row --> sx -3, sy -1
+p 49col 51row --> sx -4, sy 0
+p 49col 50row --> sx -4, sy 1
+p 49col 49row --> sx -4, sy 0
+p 49col 52row --> sx -4, sy 1
+p 49col 48row --> sx -4, sy -1
+p 48col 51row --> sx -3, sy 0
+p 47col 52row --> sx -4, sy 1
+p 47col 51row --> sx -4, sy 0
+p 46col 51row --> sx -4, sy 0
+p 47col 49row --> sx -4, sy 0
+p 48col 49row --> sx -3, sy 0
+p 48col 50row --> sx -3, sy -1
+p 47col 50row --> sx -4, sy -1
+p 46col 50row --> sx -4, sy -1
+p 47col 48row --> sx -4, sy -1
+CALCULnexxxxx
+p 46col 48row --> sx -4, sy -1
+CALCULnexxxxx
+p 48col 48row --> sx -3, sy -1
+p 46col 53row --> sx -4, sy 1
+p 48col 52row --> sx -3, sy 1
+p 46col 52row --> sx -4, sy 1
+p 46col 49row --> sx -4, sy 0
+p 45col 51row --> sx -4, sy 0
+p 45col 48row --> sx -4, sy -1
+CALCULnexxxxx
+p 45col 53row --> sx -4, sy 1
+p 45col 50row --> sx -4, sy -1
+CALCULnexxxxx
+p 45col 49row --> sx -4, sy 0
+CALCULnexxxxx
+p 45col 52row --> sx -4, sy 1
+p 45col 54row --> sx -4, sy 2
+p 44col 53row --> sx -3, sy 1
+p 44col 51row --> sx -4, sy 0
+p 43col 51row --> sx -4, sy 0
+CALCULnexxxxx
+p 42col 51row --> sx -4, sy 0
+CALCULnexxxxx
+p 44col 50row --> sx -4, sy -1
+CALCULnexxxxx
+p 44col 49row --> sx -3, sy 0
+CALCULnexxxxx
+p 43col 50row --> sx -4, sy -1
+CALCULnexxxxx
+p 43col 53row --> sx -4, sy 1
+p 42col 53row --> sx -4, sy 0
+p 42col 52row --> sx -4, sy 1
+p 43col 55row --> sx -3, sy 2
+p 42col 54row --> sx -4, sy 1
+p 42col 55row --> sx -4, sy 2
+p 43col 54row --> sx -4, sy 2
+p 44col 54row --> sx -3, sy 2
+p 44col 52row --> sx -4, sy 1
+p 43col 52row --> sx -4, sy 0
+p 41col 56row --> sx -4, sy 2
+p 42col 57row --> sx -3, sy 3
+p 41col 52row --> sx -4, sy 1
+CALCULnexxxxx
+p 42col 56row --> sx -3, sy 2
+p 41col 53row --> sx -4, sy 0
+CALCULnexxxxx
+p 41col 55row --> sx -4, sy 2
+p 41col 54row --> sx -4, sy 1
+p 41col 57row --> sx -2, sy 2
+p 40col 56row --> sx -3, sy 1
+p 39col 56row --> sx -4, sy 1
+p 38col 56row --> sx -4, sy 2
+p 41col 58row --> sx -2, sy 3
+p 39col 57row --> sx -4, sy 2
+p 38col 57row --> sx -4, sy 2
+p 40col 58row --> sx -3, sy 3
+p 39col 58row --> sx -3, sy 3
+p 40col 53row --> sx -4, sy 0
+CALCULnexxxxx
+p 40col 57row --> sx -3, sy 2
+p 38col 55row --> sx -4, sy 1
+CALCULnexxxxx
+p 39col 55row --> sx -4, sy 2
+p 40col 55row --> sx -4, sy 2
+p 39col 54row --> sx -4, sy 1
+CALCULnexxxxx
+p 40col 54row --> sx -4, sy 1
+p 37col 56row --> sx -4, sy 1
+CALCULnexxxxx
+p 38col 59row --> sx -3, sy 3
+p 37col 58row --> sx -4, sy 2
+p 40col 59row --> sx -2, sy 2
+p 38col 58row --> sx -3, sy 2
+p 39col 59row --> sx -3, sy 2
+p 37col 57row --> sx -4, sy 1
+p 39col 60row --> sx -3, sy 3
+p 35col 59row --> sx -3, sy 3
+CALCULnexxxxx
+p 35col 60row --> sx -3, sy 3
+CALCULnexxxxx
+p 38col 62row --> sx -2, sy 4
+p 37col 62row --> sx -2, sy 4
+p 36col 59row --> sx -3, sy 2
+p 38col 61row --> sx -3, sy 3
+p 36col 60row --> sx -3, sy 3
+p 37col 61row --> sx -3, sy 3
+p 36col 61row --> sx -3, sy 3
+p 35col 58row --> sx -4, sy 2
+CALCULnexxxxx
+p 34col 59row --> sx -4, sy 2
+CALCULnexxxxx
+p 37col 59row --> sx -3, sy 2
+p 37col 60row --> sx -3, sy 2
+p 38col 60row --> sx -3, sy 3
+p 36col 57row --> sx -4, sy 1
+CALCULnexxxxx
+p 36col 58row --> sx -4, sy 2
+CALCULnexxxxx
+p 34col 60row --> sx -3, sy 2
+CALCULnexxxxx
+p 35col 62row --> sx -3, sy 3
+CALCULnexxxxx
+p 37col 64row --> sx -2, sy 4
+p 36col 62row --> sx -2, sy 3
+p 34col 61row --> sx -4, sy 2
+CALCULnexxxxx
+p 37col 63row --> sx -2, sy 3
+p 35col 61row --> sx -3, sy 2
+CALCULnexxxxx
+p 36col 63row --> sx -2, sy 4
+p 34col 62row --> sx -2, sy 3
+CALCULnexxxxx
+p 34col 64row --> sx -2, sy 4
+CALCULnexxxxx
+p 36col 65row --> sx -2, sy 3
+p 37col 65row --> sx -1, sy 3
+p 35col 65row --> sx -3, sy 3
+CALCULnexxxxx
+p 35col 64row --> sx -3, sy 3
+CALCULnexxxxx
+p 34col 65row --> sx -3, sy 3
+CALCULnexxxxx
+p 35col 66row --> sx -2, sy 4
+p 36col 64row --> sx -2, sy 3
+p 36col 66row --> sx -2, sy 4
+p 37col 66row --> sx -1, sy 4
+p 35col 63row --> sx -3, sy 2
+CALCULnexxxxx
+p 34col 63row --> sx -4, sy 2
+CALCULnexxxxx
+p 36col 67row --> sx -1, sy 3
+p 35col 68row --> sx -2, sy 4
+p 36col 68row --> sx -1, sy 4
+p 35col 67row --> sx -2, sy 3
+p 34col 67row --> sx -3, sy 3
+CALCULnexxxxx
+p 34col 66row --> sx -2, sy 4
+CALCULnexxxxx
+p 37col 67row --> sx 0, sy 2
+p 35col 69row --> sx -1, sy 4
+p 36col 70row --> sx -1, sy 4
+p 37col 69row --> sx 0, sy 4
+p 37col 68row --> sx 0, sy 3
+p 35col 70row --> sx -1, sy 4
+p 37col 70row --> sx 0, sy 4
+p 34col 69row --> sx -2, sy 4
+CALCULnexxxxx
+p 34col 68row --> sx -2, sy 3
+CALCULnexxxxx
+p 36col 69row --> sx -1, sy 4
+p 34col 70row --> sx -1, sy 4
+p 36col 72row --> sx 0, sy 4
+p 35col 71row --> sx -1, sy 4
+p 36col 71row --> sx 0, sy 4
+p 34col 72row --> sx -1, sy 4
+p 35col 72row --> sx -1, sy 4
+p 34col 71row --> sx -2, sy 4
+CALCULnexxxxx
+p 36col 74row --> sx 0, sy 4
+p 36col 73row --> sx 0, sy 3
+p 38col 72row --> sx 1, sy 3
+p 38col 74row --> sx 1, sy 4
+p 34col 73row --> sx -1, sy 4
+p 34col 74row --> sx -2, sy 4
+p 38col 73row --> sx 1, sy 4
+p 37col 73row --> sx 0, sy 4
+p 38col 71row --> sx 1, sy 3
+p 38col 70row --> sx 1, sy 3
+p 38col 68row --> sx 1, sy 1
+p 35col 73row --> sx 0, sy 4
+p 37col 72row --> sx 0, sy 3
+p 37col 71row --> sx 0, sy 3
+p 38col 69row --> sx 1, sy 2
+p 35col 74row --> sx -1, sy 4
+p 37col 74row --> sx 0, sy 4
+p 36col 76row --> sx 0, sy 4
+p 35col 76row --> sx -1, sy 4
+p 37col 75row --> sx 1, sy 3
+p 37col 76row --> sx 1, sy 4
+p 33col 76row --> sx -1, sy 4
+p 35col 75row --> sx -1, sy 3
+p 36col 75row --> sx 0, sy 3
+p 34col 75row --> sx -1, sy 4
+p 34col 76row --> sx 0, sy 4
+p 36col 78row --> sx 0, sy 4
+CALCULnexxxxx
+p 37col 78row --> sx 1, sy 4
+CALCULnexxxxx
+p 35col 78row --> sx -1, sy 4
+p 33col 78row --> sx -1, sy 4
+p 36col 77row --> sx 0, sy 3
+p 33col 77row --> sx -1, sy 4
+p 34col 78row --> sx -1, sy 4
+p 32col 77row --> sx -2, sy 4
+p 37col 77row --> sx 1, sy 3
+p 38col 78row --> sx 0, sy 4
+CALCULnexxxxx
+p 35col 77row --> sx -1, sy 3
+p 38col 77row --> sx 0, sy 3
+p 34col 77row --> sx 0, sy 4
+p 38col 75row --> sx 0, sy 3
+p 38col 76row --> sx 0, sy 4
+p 31col 77row --> sx -3, sy 3
+p 32col 78row --> sx -2, sy 4
+p 36col 79row --> sx 0, sy 3
+CALCULnexxxxx
+p 37col 79row --> sx 1, sy 3
+CALCULnexxxxx
+p 34col 79row --> sx -1, sy 3
+p 35col 79row --> sx -1, sy 3
+p 33col 80row --> sx -2, sy 4
+p 32col 80row --> sx -1, sy 4
+p 36col 80row --> sx 0, sy 4
+CALCULnexxxxx
+p 35col 80row --> sx -1, sy 4
+CALCULnexxxxx
+p 34col 80row --> sx -1, sy 4
+CALCULnexxxxx
+p 31col 80row --> sx -2, sy 4
+p 33col 79row --> sx -2, sy 3
+p 32col 79row --> sx -1, sy 3
+p 31col 79row --> sx -2, sy 3
+p 32col 82row --> sx -1, sy 4
+p 34col 81row --> sx -1, sy 3
+CALCULnexxxxx
+p 33col 81row --> sx -2, sy 3
+p 32col 81row --> sx -1, sy 3
+p 30col 80row --> sx -2, sy 3
+p 29col 81row --> sx -2, sy 4
+p 31col 81row --> sx -2, sy 3
+p 28col 80row --> sx -3, sy 3
+p 29col 80row --> sx -3, sy 3
+p 31col 82row --> sx -2, sy 4
+p 30col 81row --> sx -2, sy 4
+p 30col 82row --> sx -2, sy 4
+p 28col 79row --> sx -3, sy 2
+p 29col 79row --> sx -2, sy 2
+p 27col 79row --> sx -4, sy 2
+CALCULnexxxxx
+p 31col 83row --> sx -2, sy 3
+p 28col 83row --> sx -3, sy 3
+p 30col 84row --> sx -2, sy 4
+p 27col 80row --> sx 0, sy 1
+p 30col 83row --> sx -3, sy 3
+p 29col 82row --> sx -2, sy 3
+p 28col 82row --> sx -3, sy 3
+p 29col 84row --> sx -2, sy 4
+p 29col 83row --> sx -2, sy 3
+p 28col 81row --> sx -3, sy 2
+p 28col 85row --> sx -1, sy 4
+p 25col 83row --> sx -3, sy 3
+CALCULnexxxxx
+p 24col 82row --> sx -4, sy 2
+CALCULnexxxxx
+p 27col 84row --> sx -2, sy 3
+p 26col 82row --> sx -2, sy 2
+p 26col 80row --> sx -2, sy 1
+p 31col 86row --> sx -1, sy 4
+p 27col 82row --> sx -3, sy 2
+p 26col 83row --> sx -2, sy 3
+p 29col 85row --> sx -2, sy 4
+p 25col 82row --> sx -3, sy 2
+CALCULnexxxxx
+p 28col 86row --> sx -2, sy 4
+p 25col 81row --> sx -3, sy 2
+CALCULnexxxxx
+p 27col 83row --> sx -3, sy 3
+p 26col 81row --> sx -2, sy 2
+p 27col 81row --> sx -2, sy 2
+p 27col 85row --> sx -2, sy 4
+p 28col 84row --> sx -2, sy 4
+p 30col 85row --> sx -2, sy 4
+p 29col 86row --> sx -2, sy 4
+p 30col 86row --> sx -2, sy 4
+p 26col 84row --> sx -3, sy 3
+p 26col 87row --> sx -2, sy 4
+CALCULnexxxxx
+p 24col 84row --> sx -4, sy 2
+CALCULnexxxxx
+p 27col 88row --> sx -2, sy 4
+CALCULnexxxxx
+p 26col 86row --> sx -2, sy 3
+p 27col 86row --> sx -3, sy 3
+p 29col 87row --> sx -2, sy 4
+p 28col 88row --> sx -2, sy 4
+CALCULnexxxxx
+p 28col 87row --> sx -2, sy 3
+p 25col 84row --> sx -3, sy 2
+CALCULnexxxxx
+p 27col 87row --> sx -2, sy 3
+p 25col 85row --> sx -3, sy 2
+CALCULnexxxxx
+p 26col 85row --> sx -2, sy 2
+p 29col 88row --> sx -1, sy 4
+p 24col 83row --> sx -4, sy 2
+CALCULnexxxxx
+p 25col 86row --> sx -3, sy 3
+CALCULnexxxxx
+p 24col 85row --> sx -4, sy 2
+CALCULnexxxxx
+p 29col 89row --> sx -1, sy 4
+CALCULnexxxxx
+p 27col 89row --> sx -1, sy 4
+CALCULnexxxxx
+p 24col 87row --> sx -3, sy 3
+CALCULnexxxxx
+p 28col 89row --> sx 0, sy 4
+CALCULnexxxxx
+p 26col 89row --> sx -2, sy 4
+CALCULnexxxxx
+p 30col 89row --> sx -1, sy 3
+p 27col 90row --> sx -1, sy 4
+CALCULnexxxxx
+p 31col 90row --> sx 0, sy 4
+CALCULnexxxxx
+p 29col 90row --> sx -2, sy 4
+CALCULnexxxxx
+p 25col 87row --> sx -2, sy 3
+CALCULnexxxxx
+p 26col 88row --> sx -2, sy 3
+CALCULnexxxxx
+p 25col 88row --> sx -2, sy 4
+CALCULnexxxxx
+p 30col 90row --> sx -1, sy 4
+CALCULnexxxxx
+p 28col 90row --> sx -1, sy 4
+CALCULnexxxxx
+p 24col 86row --> sx -3, sy 2
+CALCULnexxxxx
+p 30col 91row --> sx 0, sy 1
+p 32col 90row --> sx 1, sy 0
+p 31col 89row --> sx 0, sy -1
+p 31col 91row --> sx 0, sy 1
+p 29col 91row --> sx 0, sy 3
+CALCULnexxxxx
+p 32col 89row --> sx 1, sy -1
+p 30col 88row --> sx 1, sy -1
+p 32col 91row --> sx 1, sy 1
+p 33col 90row --> sx 1, sy 0
+p 31col 88row --> sx 0, sy -1
+p 31col 92row --> sx 0, sy 1
+p 32col 88row --> sx 1, sy -1
+p 32col 92row --> sx 1, sy 1
+p 34col 91row --> sx 2, sy 1
+p 33col 91row --> sx 1, sy 1
+p 34col 90row --> sx 2, sy 0
+p 34col 89row --> sx 2, sy -1
+p 31col 87row --> sx 0, sy -2
+p 30col 87row --> sx -1, sy -2
+p 33col 89row --> sx 1, sy -1
+p 32col 87row --> sx 1, sy -2
+CALCULnexxxxx
+p 33col 92row --> sx 1, sy 1
+p 34col 93row --> sx 2, sy 2
+p 34col 92row --> sx 2, sy 1
+p 33col 88row --> sx 1, sy -1
+p 34col 88row --> sx 2, sy -1
+CALCULnexxxxx
+p 33col 93row --> sx 1, sy 2
+p 35col 90row --> sx 2, sy 0
+p 35col 91row --> sx 2, sy 1
+p 35col 89row --> sx 2, sy -1
+CALCULnexxxxx
+p 36col 93row --> sx 2, sy 2
+p 36col 90row --> sx 2, sy 0
+p 37col 93row --> sx 3, sy 2
+CALCULnexxxxx
+p 34col 94row --> sx 2, sy 2
+p 35col 93row --> sx 1, sy 2
+p 37col 90row --> sx 3, sy 0
+CALCULnexxxxx
+p 36col 89row --> sx 2, sy -1
+CALCULnexxxxx
+p 35col 92row --> sx 1, sy 1
+p 36col 91row --> sx 2, sy 0
+p 37col 92row --> sx 3, sy 1
+CALCULnexxxxx
+p 36col 92row --> sx 2, sy 1
+p 37col 91row --> sx 3, sy 0
+CALCULnexxxxx
+p 36col 95row --> sx 2, sy 2
+p 34col 96row --> sx 1, sy 3
+p 36col 94row --> sx 2, sy 1
+p 37col 94row --> sx 3, sy 1
+CALCULnexxxxx
+p 37col 95row --> sx 3, sy 2
+CALCULnexxxxx
+p 36col 96row --> sx 2, sy 3
+p 34col 95row --> sx 1, sy 2
+p 35col 95row --> sx 1, sy 2
+p 35col 96row --> sx 1, sy 3
+p 35col 94row --> sx 2, sy 2
+p 37col 96row --> sx 3, sy 3
+CALCULnexxxxx
+p 38col 93row --> sx 3, sy 2
+CALCULnexxxxx
+p 38col 92row --> sx 3, sy 1
+CALCULnexxxxx
+p 38col 91row --> sx 3, sy 1
+CALCULnexxxxx
+p 36col 97row --> sx 2, sy 3
+p 38col 96row --> sx 2, sy 3
+CALCULnexxxxx
+p 37col 97row --> sx 3, sy 3
+CALCULnexxxxx
+p 38col 94row --> sx 2, sy 1
+CALCULnexxxxx
+p 38col 95row --> sx 2, sy 2
+CALCULnexxxxx
+p 35col 97row --> sx 1, sy 3
+p 36col 100row --> sx 2, sy 4
+p 38col 98row --> sx 2, sy 3
+CALCULnexxxxx
+p 35col 99row --> sx 1, sy 3
+p 37col 100row --> sx 1, sy 4
+p 34col 100row --> sx 0, sy 4
+p 34col 99row --> sx 0, sy 3
+p 37col 99row --> sx 1, sy 3
+p 34col 97row --> sx 0, sy 2
+p 38col 100row --> sx 2, sy 4
+CALCULnexxxxx
+p 37col 98row --> sx 1, sy 3
+p 35col 100row --> sx 1, sy 4
+p 38col 97row --> sx 2, sy 2
+CALCULnexxxxx
+p 38col 99row --> sx 2, sy 3
+CALCULnexxxxx
+p 36col 99row --> sx 2, sy 3
+p 36col 98row --> sx 2, sy 2
+p 34col 98row --> sx 0, sy 2
+p 35col 98row --> sx 1, sy 2
+p 36col 101row --> sx 1, sy 4
+p 38col 101row --> sx 2, sy 4
+CALCULnexxxxx
+p 35col 101row --> sx 0, sy 4
+p 37col 101row --> sx 1, sy 4
+p 37col 104row --> sx 1, sy 4
+p 38col 103row --> sx 2, sy 3
+CALCULnexxxxx
+p 35col 103row --> sx 0, sy 4
+p 38col 104row --> sx 2, sy 4
+CALCULnexxxxx
+p 34col 102row --> sx 0, sy 3
+p 36col 104row --> sx 1, sy 4
+p 34col 103row --> sx 0, sy 3
+p 33col 103row --> sx -1, sy 3
+p 34col 101row --> sx 0, sy 2
+p 36col 103row --> sx 1, sy 4
+p 37col 103row --> sx 1, sy 3
+p 36col 102row --> sx 1, sy 3
+p 37col 102row --> sx 2, sy 3
+p 38col 102row --> sx 1, sy 3
+p 35col 102row --> sx 0, sy 3
+p 35col 104row --> sx 1, sy 4
+p 34col 104row --> sx 0, sy 4
+p 33col 104row --> sx -1, sy 4
+p 35col 105row --> sx 0, sy 4
+CALCULnexxxxx
+p 38col 105row --> sx 2, sy 4
+CALCULnexxxxx
+p 37col 105row --> sx 1, sy 4
+CALCULnexxxxx
+p 36col 105row --> sx 0, sy 4
+CALCULnexxxxx
+p 34col 105row --> sx -1, sy 4
+CALCULnexxxxx
+p 37col 107row --> sx 0, sy 3
+CALCULnexxxxx
+p 33col 107row --> sx -1, sy 4
+CALCULnexxxxx
+p 36col 107row --> sx 1, sy 4
+CALCULnexxxxx
+p 36col 106row --> sx 1, sy 3
+CALCULnexxxxx
+p 38col 106row --> sx 2, sy 3
+CALCULnexxxxx
+p 34col 106row --> sx -1, sy 3
+CALCULnexxxxx
+p 33col 106row --> sx -1, sy 4
+CALCULnexxxxx
+p 34col 107row --> sx -1, sy 4
+CALCULnexxxxx
+p 32col 105row --> sx -1, sy 2
+p 37col 106row --> sx 1, sy 3
+CALCULnexxxxx
+p 35col 106row --> sx 0, sy 3
+CALCULnexxxxx
+p 35col 107row --> sx 0, sy 4
+CALCULnexxxxx
+p 31col 107row --> sx -2, sy 4
+CALCULnexxxxx
+p 33col 105row --> sx -1, sy 3
+p 31col 106row --> sx -2, sy 3
+CALCULnexxxxx
+p 32col 106row --> sx -1, sy 3
+CALCULnexxxxx
+p 32col 107row --> sx -1, sy 4
+CALCULnexxxxx
+p 31col 105row --> sx -2, sy 2
+p 30col 106row --> sx -1, sy 0
+p 30col 107row --> sx -1, sy 0
+p 30col 105row --> sx -1, sy -1
+p 29col 107row --> sx -2, sy 2
+CALCULnexxxxx
+p 29col 106row --> sx -2, sy 1
+p 28col 106row --> sx -3, sy 1
+p 28col 107row --> sx -3, sy 2
+CALCULnexxxxx
+p 28col 105row --> sx -2, sy -1
+p 30col 104row --> sx 0, sy -1
+p 29col 105row --> sx -1, sy -1
+p 27col 107row --> sx -1, sy 0
+p 29col 104row --> sx -1, sy -1
+p 30col 103row --> sx 0, sy -2
+CALCULnexxxxx
+p 25col 106row --> sx -3, sy 0
+p 25col 107row --> sx -3, sy 1
+CALCULnexxxxx
+p 29col 103row --> sx -1, sy -2
+CALCULnexxxxx
+p 24col 107row --> sx -4, sy 1
+CALCULnexxxxx
+p 24col 106row --> sx -4, sy 0
+CALCULnexxxxx
+p 28col 104row --> sx -2, sy -1
+p 26col 107row --> sx -3, sy 1
+p 27col 106row --> sx -2, sy 0
+p 26col 106row --> sx -3, sy 0
+p 28col 103row --> sx -2, sy -2
+p 27col 105row --> sx -1, sy 0
+p 31col 104row --> sx 1, sy 0
+p 26col 103row --> sx -2, sy -2
+p 31col 103row --> sx 1, sy -1
+p 27col 103row --> sx -1, sy -2
+p 25col 104row --> sx -3, sy -1
+p 24col 105row --> sx 0, sy -1
+p 26col 105row --> sx -2, sy 0
+p 25col 103row --> sx -3, sy -2
+p 25col 105row --> sx -3, sy 0
+p 26col 104row --> sx -2, sy -1
+p 23col 106row --> sx -1, sy 0
+p 27col 104row --> sx -1, sy -1
+p 25col 102row --> sx -3, sy -2
+p 22col 105row --> sx -3, sy -1
+p 23col 105row --> sx -2, sy -1
+p 32col 104row --> sx 1, sy 0
+p 32col 103row --> sx 1, sy -1
+p 24col 104row --> sx 0, sy -1
+p 22col 102row --> sx -3, sy -2
+p 23col 101row --> sx -3, sy -2
+p 22col 101row --> sx -3, sy -2
+p 21col 104row --> sx -4, sy 0
+CALCULnexxxxx
+p 22col 100row --> sx -3, sy -3
+p 24col 101row --> sx -2, sy -2
+p 21col 102row --> sx -4, sy -2
+p 22col 104row --> sx -3, sy 0
+p 23col 100row --> sx -3, sy -3
+p 21col 103row --> sx -4, sy -1
+p 23col 103row --> sx -2, sy -1
+p 23col 102row --> sx -3, sy -1
+p 24col 103row --> sx 0, sy -2
+p 22col 103row --> sx -3, sy -1
+p 24col 102row --> sx -2, sy -1
+p 21col 101row --> sx -4, sy -2
+p 23col 104row --> sx -2, sy 0
+p 20col 103row --> sx -2, sy -2
+p 22col 99row --> sx -3, sy -3
+p 21col 100row --> sx -4, sy -2
+p 18col 101row --> sx -4, sy -1
+p 21col 99row --> sx -2, sy -2
+p 19col 97row --> sx -3, sy -3
+CALCULnexxxxx
+p 20col 102row --> sx -3, sy -1
+p 18col 98row --> sx -4, sy -2
+p 20col 101row --> sx -2, sy -1
+p 21col 98row --> sx -2, sy -3
+CALCULnexxxxx
+p 19col 98row --> sx -3, sy -3
+CALCULnexxxxx
+p 19col 99row --> sx -3, sy -3
+p 17col 101row --> sx -4, sy -1
+p 19col 102row --> sx -4, sy 0
+p 17col 99row --> sx -4, sy -2
+p 19col 100row --> sx -3, sy -2
+p 19col 101row --> sx -3, sy -1
+p 20col 99row --> sx -2, sy -3
+p 20col 97row --> sx -2, sy -3
+CALCULnexxxxx
+p 20col 98row --> sx -3, sy -3
+CALCULnexxxxx
+p 20col 100row --> sx -2, sy -2
+p 18col 100row --> sx -4, sy -2
+p 18col 99row --> sx -4, sy -2
+p 17col 100row --> sx -4, sy -2
+p 17col 98row --> sx -4, sy -2
+p 18col 97row --> sx -4, sy -2
+CALCULnexxxxx
+p 15col 100row --> sx -3, sy -1
+p 14col 101row --> sx -4, sy 0
+p 13col 100row --> sx -4, sy -1
+p 16col 99row --> sx -3, sy -1
+p 15col 97row --> sx -3, sy -1
+p 15col 99row --> sx -3, sy -2
+p 16col 100row --> sx -4, sy -2
+p 14col 98row --> sx -3, sy -1
+p 14col 99row --> sx -4, sy -2
+p 13col 99row --> sx -4, sy -2
+p 13col 97row --> sx -4, sy -2
+p 16col 98row --> sx -3, sy -2
+p 13col 98row --> sx -4, sy -1
+p 14col 100row --> sx -4, sy -1
+p 16col 101row --> sx -4, sy -1
+p 15col 98row --> sx -4, sy -2
+p 14col 97row --> sx -4, sy -1
+p 16col 97row --> sx -3, sy -2
+CALCULnexxxxx
+p 15col 101row --> sx -3, sy 0
+p 17col 97row --> sx -2, sy -2
+CALCULnexxxxx
+p 13col 101row --> sx -4, sy 0
+p 11col 98row --> sx -4, sy -2
+p 10col 101row --> sx -4, sy 0
+p 11col 97row --> sx -4, sy 0
+p 10col 95row --> sx -3, sy -2
+p 9col 101row --> sx -4, sy 0
+p 9col 99row --> sx -4, sy -1
+p 10col 98row --> sx -3, sy -2
+p 11col 95row --> sx -4, sy -2
+p 9col 95row --> sx -4, sy -2
+p 10col 99row --> sx -3, sy -1
+p 11col 96row --> sx -4, sy -1
+p 11col 100row --> sx -4, sy 0
+p 9col 96row --> sx -4, sy -1
+p 12col 100row --> sx -3, sy 0
+p 12col 97row --> sx -4, sy -2
+p 10col 97row --> sx -4, sy -1
+p 12col 101row --> sx -4, sy 0
+p 12col 99row --> sx -3, sy -1
+p 11col 101row --> sx -3, sy 0
+p 10col 100row --> sx -4, sy -1
+p 9col 100row --> sx -4, sy 0
+p 12col 98row --> sx -3, sy -2
+p 9col 97row --> sx -4, sy -2
+p 10col 94row --> sx -3, sy -3
+p 11col 99row --> sx -4, sy -1
+p 10col 96row --> sx -4, sy -2
+p 9col 98row --> sx -4, sy -2
+p 7col 95row --> sx -3, sy -3
+p 8col 99row --> sx -2, sy 0
+p 8col 100row --> sx -3, sy 0
+p 7col 91row --> sx -3, sy -3
+p 7col 97row --> sx -4, sy -1
+CALCULnexxxxx
+p 8col 94row --> sx -2, sy -1
+p 5col 99row --> sx -4, sy 0
+CALCULnexxxxx
+p 8col 90row --> sx -2, sy -4
+p 7col 93row --> sx -3, sy -2
+p 8col 96row --> sx -3, sy -2
+p 8col 95row --> sx -3, sy -3
+p 5col 98row --> sx -4, sy -1
+CALCULnexxxxx
+p 6col 94row --> sx -4, sy -1
+CALCULnexxxxx
+p 7col 101row --> sx -3, sy 0
+p 8col 98row --> sx -3, sy 1
+p 6col 92row --> sx -3, sy -3
+CALCULnexxxxx
+p 5col 95row --> sx -4, sy -1
+CALCULnexxxxx
+p 7col 98row --> sx -4, sy 1
+CALCULnexxxxx
+p 5col 94row --> sx -4, sy -1
+CALCULnexxxxx
+p 6col 93row --> sx -4, sy -2
+CALCULnexxxxx
+p 8col 92row --> sx -2, sy -3
+p 6col 95row --> sx -3, sy -1
+CALCULnexxxxx
+p 7col 94row --> sx -3, sy -1
+p 5col 97row --> sx -4, sy -2
+CALCULnexxxxx
+p 8col 101row --> sx -3, sy 1
+p 6col 98row --> sx -3, sy -1
+CALCULnexxxxx
+p 6col 97row --> sx -3, sy -2
+CALCULnexxxxx
+p 6col 99row --> sx -3, sy 0
+CALCULnexxxxx
+p 7col 100row --> sx -3, sy -1
+p 5col 93row --> sx -4, sy -2
+CALCULnexxxxx
+p 5col 100row --> sx -4, sy -1
+CALCULnexxxxx
+p 8col 97row --> sx -3, sy -1
+p 6col 96row --> sx -4, sy -2
+CALCULnexxxxx
+p 6col 101row --> sx -4, sy 0
+CALCULnexxxxx
+p 7col 96row --> sx -4, sy -2
+CALCULnexxxxx
+p 6col 100row --> sx -4, sy -1
+CALCULnexxxxx
+p 7col 99row --> sx -3, sy 0
+p 8col 93row --> sx -2, sy -2
+p 9col 94row --> sx -3, sy -3
+p 7col 92row --> sx -3, sy -3
+p 5col 96row --> sx -4, sy 0
+CALCULnexxxxx
+p 8col 91row --> sx -2, sy -3
+p 5col 92row --> sx -1, sy 0
+p 6col 91row --> sx 0, sy -1
+p 6col 87row --> sx -2, sy -3
+p 7col 88row --> sx -1, sy -4
+p 5col 87row --> sx -2, sy -4
+CALCULnexxxxx
+p 5col 91row --> sx -2, sy -4
+CALCULnexxxxx
+p 6col 89row --> sx -2, sy -3
+p 5col 88row --> sx -2, sy -3
+CALCULnexxxxx
+p 6col 90row --> sx -2, sy -2
+p 5col 90row --> sx -2, sy -3
+CALCULnexxxxx
+p 6col 86row --> sx -2, sy -4
+p 7col 87row --> sx -1, sy -3
+p 7col 86row --> sx -1, sy -4
+p 7col 89row --> sx -1, sy -3
+p 5col 89row --> sx -2, sy -2
+CALCULnexxxxx
+p 6col 88row --> sx -2, sy -4
+p 7col 90row --> sx -1, sy -2
+p 5col 86row --> sx 0, sy -1
+p 5col 85row --> sx -1, sy -2
+p 5col 83row --> sx -1, sy -4
+CALCULnexxxxx
+p 6col 82row --> sx -1, sy -4
+CALCULnexxxxx
+p 7col 82row --> sx 0, sy -4
+p 7col 84row --> sx 0, sy -4
+p 7col 85row --> sx 0, sy -3
+p 6col 84row --> sx -1, sy -4
+p 6col 85row --> sx -1, sy -3
+p 5col 84row --> sx -1, sy -3
+p 7col 83row --> sx 0, sy -4
+p 5col 82row --> sx -1, sy -4
+CALCULnexxxxx
+p 6col 83row --> sx -1, sy -4
+p 6col 81row --> sx 0, sy -1
+p 5col 81row --> sx 0, sy -1
+p 7col 78row --> sx 0, sy -4
+p 7col 81row --> sx 1, sy -1
+p 7col 79row --> sx 0, sy -3
+p 8col 82row --> sx 1, sy -3
+p 8col 79row --> sx 1, sy -3
+p 8col 80row --> sx 1, sy -4
+p 7col 80row --> sx 0, sy -4
+p 8col 83row --> sx 1, sy -2
+p 8col 81row --> sx 1, sy -3
+p 8col 78row --> sx 1, sy -4
+p 6col 80row --> sx -1, sy -4
+CALCULnexxxxx
+p 8col 74row --> sx 1, sy -4
+CALCULnexxxxx
+p 9col 76row --> sx 1, sy -3
+p 10col 76row --> sx 2, sy -3
+p 9col 79row --> sx 2, sy -2
+p 9col 78row --> sx 1, sy -4
+p 8col 77row --> sx 1, sy -2
+p 10col 78row --> sx 2, sy -4
+p 9col 74row --> sx 1, sy -4
+CALCULnexxxxx
+p 8col 75row --> sx 1, sy -3
+CALCULnexxxxx
+p 10col 80row --> sx 2, sy -2
+p 9col 77row --> sx 1, sy -2
+p 9col 81row --> sx 2, sy 0
+p 9col 75row --> sx 1, sy -4
+CALCULnexxxxx
+p 10col 77row --> sx 2, sy -2
+p 8col 76row --> sx 1, sy -3
+p 9col 82row --> sx 1, sy -1
+p 10col 82row --> sx 2, sy -1
+p 7col 76row --> sx 0, sy -3
+p 7col 77row --> sx 0, sy -2
+p 7col 74row --> sx 0, sy -4
+CALCULnexxxxx
+p 9col 80row --> sx 2, sy -1
+p 10col 81row --> sx 2, sy -2
+p 10col 75row --> sx 2, sy -4
+CALCULnexxxxx
+p 10col 74row --> sx 2, sy -4
+CALCULnexxxxx
+p 7col 75row --> sx 0, sy -3
+CALCULnexxxxx
+p 10col 79row --> sx 2, sy -3
+p 11col 82row --> sx 1, sy 0
+p 11col 75row --> sx 1, sy 0
+p 11col 74row --> sx 1, sy 0
+p 11col 78row --> sx 2, sy -1
+CALCULnexxxxx
+p 11col 81row --> sx 2, sy 0
+CALCULnexxxxx
+p 11col 79row --> sx 1, sy -1
+p 11col 76row --> sx 2, sy -3
+CALCULnexxxxx
+p 11col 80row --> sx 2, sy -1
+CALCULnexxxxx
+p 11col 77row --> sx 2, sy -2
+CALCULnexxxxx
+p 11col 83row --> sx 0, sy 1
+p 11col 84row --> sx 0, sy 1
+p 10col 83row --> sx -1, sy 0
+p 10col 85row --> sx -1, sy 2
+p 10col 84row --> sx -1, sy 1
+p 11col 85row --> sx 0, sy 2
+p 9col 83row --> sx -1, sy 0
+p 9col 84row --> sx -1, sy 1
+p 8col 84row --> sx -2, sy 1
+p 10col 86row --> sx -1, sy 2
+p 11col 86row --> sx 0, sy 2
+p 10col 87row --> sx 0, sy 2
+p 9col 85row --> sx -1, sy 1
+p 8col 88row --> sx -2, sy 3
+p 8col 85row --> sx -2, sy 1
+p 11col 87row --> sx 0, sy 2
+p 10col 88row --> sx 0, sy 3
+p 8col 87row --> sx -2, sy 2
+p 9col 88row --> sx -1, sy 3
+p 9col 87row --> sx -1, sy 2
+p 8col 86row --> sx -2, sy 1
+p 11col 88row --> sx 0, sy 3
+p 9col 86row --> sx -1, sy 1
+p 8col 89row --> sx -2, sy 3
+p 11col 89row --> sx 0, sy 3
+p 9col 89row --> sx -1, sy 3
+p 10col 89row --> sx 0, sy 3
+p 11col 91row --> sx 1, sy 3
+p 10col 91row --> sx 0, sy 3
+p 10col 90row --> sx 0, sy 3
+p 11col 92row --> sx 1, sy 4
+p 9col 92row --> sx -1, sy 4
+p 9col 91row --> sx -1, sy 3
+p 9col 90row --> sx -1, sy 3
+p 10col 92row --> sx 0, sy 4
+p 11col 90row --> sx 1, sy 3
+p 11col 93row --> sx 0, sy 4
+p 9col 93row --> sx 0, sy 4
+p 10col 93row --> sx -1, sy 4
+p 11col 94row --> sx 0, sy 3

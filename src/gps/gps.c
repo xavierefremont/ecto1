@@ -31,13 +31,17 @@ vector* createVector(int x, int y){
 
 }
 
+vector* vectorSpeed(position* src, position* dest) {
+
+    int xMove = dest->col - src->col;
+    int yMove = dest->row - src->row;
+
+    vector* vMove = createVector(xMove, yMove);
+}
 
 vector* calculateVector(car* car, position* dest){
 
-    int xMove = dest->col - car->currentPosition->col;
-    int yMove = dest->row - car->currentPosition->row;
-
-    vector* vMove = createVector(xMove, yMove);
+  vector* vMove = vectorSpeed(car->currentPosition, dest);
 
     int xSpeed = vMove->x - car->currentSpeed->x;
     int ySpeed = vMove->y - car->currentSpeed->y;
@@ -182,6 +186,8 @@ Stack calculateDijkstra(FILE* info, map* map, car* car){
     clock_t begin = clock();
     int x, y, i, tmpDist;
     int** distance;
+    vector*** speed;
+    vector* s = NULL;
     position*** previous;
     position* p = NULL;
     position* pNeighbor = NULL;
@@ -194,15 +200,19 @@ Stack calculateDijkstra(FILE* info, map* map, car* car){
     /*Initialisation of the algorithm*/
     distance = malloc(sizeof(int*) * map->size->y);
     previous = malloc(sizeof(position**) * map->size->y);
-
+    speed = malloc(sizeof(vector**) * map->size->y);
+    
     for(y = 0; y < map->size->y; y++){
+      speed[y] = malloc(sizeof(vector*) * map->size->x);
         distance[y] = malloc(sizeof(int) * map->size->x);
         previous[y] = malloc(sizeof(position*) * map->size->x);
         for (x = 0; x < map->size->x; x++) {
             p = map->plan[y][x];
             previous[y][x] = NULL;
+	    speed[y][x] = NULL;
             if(areEqualsPosition(car->currentPosition, p)){
                 distance[y][x] = 0;
+		speed[y][x] = car->currentSpeed;
             }else{
                 distance[y][x] = INT_MAX;
             }
@@ -212,21 +222,34 @@ Stack calculateDijkstra(FILE* info, map* map, car* car){
         }
     }
 
+
     /*Algorithm*/
     while(!PriorityQueueIsEmpty(queue)){
         p = (position*) PriorityQueuePop(queue);
-        neighbors = getPossibleMoves(info, car->currentSpeed, p, map);
+	s = speed[p->row][p->col];
+	fprintf(info, "p %dcol %drow --> sx %d, sy %d\n", p->col, p->row, s->x, s->y);
+	fflush(info);
+        neighbors = getPossibleMoves(info, s, p, map);
+	if(!ArrayListGetLength(neighbors)) {
+	   fprintf(info, "CALCULnexxxxx\n");
+    fflush(info);
+	  s = createVector(0,0);
+	  neighbors = getPossibleMoves(info, s, p, map);
+	}
         for(i=0; i<ArrayListGetLength(neighbors); i++){
             pNeighbor = (position*) ArrayListGet(neighbors, i);
             tmpDist = distance[p->row][p->col] +  getDistance(p, pNeighbor);
             if(tmpDist < distance[pNeighbor->row][pNeighbor->col] && !areEqualsPosition(p, pNeighbor)){
+	      speed[pNeighbor->row][pNeighbor->col] = vectorSpeed(p, pNeighbor);
                 distance[pNeighbor->row][pNeighbor->col] = tmpDist;
                 previous[pNeighbor->row][pNeighbor->col] = p;
                 PriorityQueueChangePrioSpecificSearch(queue, pNeighbor, tmpDist, (int (*)(T, T)) areEqualsPosition);
             }
         }
     }
-
+    fprintf(info, "DEB algo");
+    fflush(info);
+    
     arrivals = getAllArrivals(map);
     tmpDist = INT_MAX;
     position* best;

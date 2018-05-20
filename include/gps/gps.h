@@ -25,6 +25,8 @@
 
 vector* createVector(int x, int y);
 
+vector* vectorSpeed(position* src, position* dest);
+
 vector* calculateVector(car* car, position* dest);
 
 float getVectorNorm(vector* v);
