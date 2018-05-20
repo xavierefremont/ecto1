@@ -9,6 +9,7 @@
  * @brief GPS file : Calculate the car movement with algorithm
  */
 
+#include "../../include/util/Stack.h"
 #include "../../include/util/ArrayList.h"
 #include "../../include/util/PriorityQueue.h"
 #include "../../include/gps/map.h"
@@ -27,6 +28,7 @@ vector* createVector(int x, int y){
     v->y = y;
 
     return v;
+
 }
 
 
@@ -63,45 +65,45 @@ ArrayList getPossibleMoves(FILE* info, vector* speed, position* current, map* ma
     position* p = NULL;
 
 
-        if(current->col + falseSpeed->x < map->size->x && current->col + falseSpeed->x >= 0
-                && current->row + falseSpeed->y < map->size->y && current->row + falseSpeed->y >= 0){
-            p = map->plan[current->row + falseSpeed->y][current->col + falseSpeed->x];
-            if(isCorrectPosition(map, p)){
-                ArrayListAppend(possibleMoves, p);
-            }
+    if(current->col + falseSpeed->x < map->size->x && current->col + falseSpeed->x >= 0
+       && current->row + falseSpeed->y < map->size->y && current->row + falseSpeed->y >= 0){
+        p = map->plan[current->row + falseSpeed->y][current->col + falseSpeed->x];
+        if(isCorrectPosition(map, p)){
+            ArrayListAppend(possibleMoves, p);
         }
+    }
 
-        if(current->col + falseSpeed->x + 1 < map->size->x && current->col + falseSpeed->x + 1 >= 0
-           && current->row + falseSpeed->y < map->size->y && current->row + falseSpeed->y >= 0) {
-            p = map->plan[current->row + falseSpeed->y][current->col + falseSpeed->x + 1];
-            if (isCorrectPosition(map, p)) {
-                ArrayListAppend(possibleMoves, p);
-            }
+    if(current->col + falseSpeed->x + 1 < map->size->x && current->col + falseSpeed->x + 1 >= 0
+       && current->row + falseSpeed->y < map->size->y && current->row + falseSpeed->y >= 0) {
+        p = map->plan[current->row + falseSpeed->y][current->col + falseSpeed->x + 1];
+        if (isCorrectPosition(map, p)) {
+            ArrayListAppend(possibleMoves, p);
         }
+    }
 
-        if(current->col + falseSpeed->x - 1 < map->size->x && current->col + falseSpeed->x - 1 >= 0
-           && current->row + falseSpeed->y < map->size->y && current->row + falseSpeed->y >= 0) {
-            p = map->plan[current->row + falseSpeed->y][current->col + falseSpeed->x - 1];
-            if (isCorrectPosition(map, p)) {
-                ArrayListAppend(possibleMoves, p);
-            }
+    if(current->col + falseSpeed->x - 1 < map->size->x && current->col + falseSpeed->x - 1 >= 0
+       && current->row + falseSpeed->y < map->size->y && current->row + falseSpeed->y >= 0) {
+        p = map->plan[current->row + falseSpeed->y][current->col + falseSpeed->x - 1];
+        if (isCorrectPosition(map, p)) {
+            ArrayListAppend(possibleMoves, p);
         }
+    }
 
-        if(current->col + falseSpeed->x < map->size->x && current->col + falseSpeed->x >= 0
-           && current->row + falseSpeed->y + 1 < map->size->y && current->row + falseSpeed->y + 1 >= 0) {
-            p = map->plan[current->row + falseSpeed->y + 1][current->col + falseSpeed->x];
-            if (isCorrectPosition(map, p)) {
-                ArrayListAppend(possibleMoves, p);
-            }
+    if(current->col + falseSpeed->x < map->size->x && current->col + falseSpeed->x >= 0
+       && current->row + falseSpeed->y + 1 < map->size->y && current->row + falseSpeed->y + 1 >= 0) {
+        p = map->plan[current->row + falseSpeed->y + 1][current->col + falseSpeed->x];
+        if (isCorrectPosition(map, p)) {
+            ArrayListAppend(possibleMoves, p);
         }
+    }
 
-        if(current->col + falseSpeed->x < map->size->x && current->col + falseSpeed->x >= 0
-           && current->row + falseSpeed->y < map->size->y - 1 && current->row + falseSpeed->y - 1 >= 0) {
-            p = map->plan[current->row + falseSpeed->y - 1][current->col + falseSpeed->x];
-            if (isCorrectPosition(map, p)) {
-                ArrayListAppend(possibleMoves, p);
-            }
+    if(current->col + falseSpeed->x < map->size->x && current->col + falseSpeed->x >= 0
+       && current->row + falseSpeed->y < map->size->y - 1 && current->row + falseSpeed->y - 1 >= 0) {
+        p = map->plan[current->row + falseSpeed->y - 1][current->col + falseSpeed->x];
+        if (isCorrectPosition(map, p)) {
+            ArrayListAppend(possibleMoves, p);
         }
+    }
 
     if(current->type != '~'){
 
@@ -168,7 +170,10 @@ ArrayList getAllArrivals(map* map){
 }
 
 
-ArrayList calculateDijkstra(FILE* info, map* map, car* car){
+Stack calculateDijkstra(FILE* info, map* map, car* car){
+
+    fprintf(info, "CALCUL\n");
+    fflush(info);
 
     clock_t begin = clock();
     int x, y, i, tmpDist;
@@ -179,7 +184,7 @@ ArrayList calculateDijkstra(FILE* info, map* map, car* car){
     PriorityQueue queue =  newPriorityQueue();
     ArrayList neighbors = NULL;
     ArrayList arrivals = NULL;
-    ArrayList path = newArrayList(sizeof(position));
+    Stack path = newStack();
 
 
     /*Initialisation of the algorithm*/
@@ -232,8 +237,8 @@ ArrayList calculateDijkstra(FILE* info, map* map, car* car){
 
     p = best;
 
-    while(p != NULL){
-        ArrayListAppend(path, p);
+    while(previous[p->row][p->col] != NULL){
+        StackAdd(path, p);
         p = previous[p->row][p->col];
     }
 

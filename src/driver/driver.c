@@ -115,16 +115,15 @@ vector* playRound(FILE* info, car* car, map* map){
     position* p = NULL;
 
     if (moves == NULL ) { 
-      moves = calculateDijkstra(info, map, car);
+        moves = calculateDijkstra(info, map, car);
     }
 
-    p = (position*) ArrayListGet(moves, ArrayListGetLength(moves)-2);
-    if (car->previousPosition == car->currentPosition || !isCorrectPosition(StackPop(moves))) {
-      moves = calculateDijkstra(info, map, car);
+    p = (position*) StackPop(moves);
+    if (car->previousPosition == car->currentPosition || !isCorrectPosition(map, p)) {
+        moves = calculateDijkstra(info, map, car);
         p = (position*) StackPop(moves);
     }
-    
-    fprintf(info, "DEST : %d %d \n", p->col, p->row);
+
 
     acceleration = calculateVector(car, p);
 

@@ -20,6 +20,7 @@
 #include <float.h>
 #include <time.h>
 
+#include "../../include/util/Stack.h"
 #include "../../include/structs.h"
 
 vector* createVector(int x, int y);
@@ -32,7 +33,7 @@ ArrayList getPossibleMoves(FILE* info, vector* speed, position* current, map* ma
 
 ArrayList getAllArrivals(map* map);
 
-ArrayList calculateDijkstra(FILE* info, map* map, car* car);
+Stack calculateDijkstra(FILE* info, map* map, car* car);
 
 void destroyVector(vector* v);
 
