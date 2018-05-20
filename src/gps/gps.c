@@ -57,68 +57,104 @@ ArrayList getPossibleMoves(FILE* info, vector* speed, position* current, map* ma
 
     //TODO : Get the real possible position and not all
 
+    vector* falseSpeed = createVector(0,0);
+    vector* currentSpeed = createVector(0,0);
+
     ArrayList possibleMoves = newArrayList(sizeof(position));
     position* p = NULL;
 
-    p = map->plan[current->row][current->col ];
+    if(current->type == '~'){
 
-    if(isCorrectPosition(map, p)){
-        ArrayListAppend(possibleMoves, p);
+        p = map->plan[current->row + falseSpeed->y][current->col + falseSpeed->x];
+        if(isCorrectPosition(map, p)){
+            ArrayListAppend(possibleMoves, p);
+        }
+
+        p = map->plan[ current->row + falseSpeed->y ][current->col + falseSpeed->x + 1];
+        if(isCorrectPosition(map, p)){
+            ArrayListAppend(possibleMoves, p);
+        }
+
+        p = map->plan[current->row + falseSpeed->y][current->col + falseSpeed->x - 1];
+        if(isCorrectPosition(map, p)){
+            ArrayListAppend(possibleMoves, p);
+        }
+
+        p = map->plan[current->row + falseSpeed->y + 1][current->col + falseSpeed->x];
+        if(isCorrectPosition(map, p)){
+            ArrayListAppend(possibleMoves, p);
+        }
+
+        p = map->plan[current->row + falseSpeed->y - 1][current->col + falseSpeed->x];
+        if(isCorrectPosition(map, p)){
+            ArrayListAppend(possibleMoves, p);
+        }
+
+    }else{
+
+        p = map->plan[current->row + falseSpeed->y][current->col + falseSpeed->y];
+
+        if(isCorrectPosition(map, p)){
+            ArrayListAppend(possibleMoves, p);
+        }
+        p = map->plan[ current->row ][current->col + 1];
+
+        if(isCorrectPosition(map, p)){
+            ArrayListAppend(possibleMoves, p);
+        }
+        p = map->plan[current->row + 1][current->col + 1];
+
+        if(isCorrectPosition(map, p)){
+            ArrayListAppend(possibleMoves, p);
+        }
+
+        p = map->plan[current->row - 1][current->col + 1];
+
+        if(isCorrectPosition(map, p)){
+            ArrayListAppend(possibleMoves, p);
+        }
+
+        p = map->plan[current->row ][current->col  - 1];
+
+        if(isCorrectPosition(map, p)){
+            ArrayListAppend(possibleMoves, p);
+        }
+
+        p = map->plan[current->row  + 1][current->col  - 1];
+
+        if(isCorrectPosition(map, p)){
+            ArrayListAppend(possibleMoves, p);
+        }
+
+        p = map->plan[current->row  - 1][current->col  - 1];
+
+        if(isCorrectPosition(map, p)){
+            ArrayListAppend(possibleMoves, p);
+        }
+
+        p = map->plan[current->row - 1][current->col ];
+
+        if(isCorrectPosition(map, p)){
+            ArrayListAppend(possibleMoves, p);
+        }
+
+        p = map->plan[current->row + 1][current->col ];
+
+        if(isCorrectPosition(map, p)){
+            ArrayListAppend(possibleMoves, p);
+        }
+
     }
-    p = map->plan[ current->row ][current->col + 1];
 
-    if(isCorrectPosition(map, p)){
-        ArrayListAppend(possibleMoves, p);
-    }
-    p = map->plan[current->row + 1][current->col + 1];
-
-    if(isCorrectPosition(map, p)){
-        ArrayListAppend(possibleMoves, p);
-    }
-
-    p = map->plan[current->row - 1][current->col + 1];
-
-    if(isCorrectPosition(map, p)){
-        ArrayListAppend(possibleMoves, p);
-    }
-
-    p = map->plan[current->row ][current->col  - 1];
-
-    if(isCorrectPosition(map, p)){
-        ArrayListAppend(possibleMoves, p);
-    }
-
-    p = map->plan[current->row  + 1][current->col  - 1];
-
-    if(isCorrectPosition(map, p)){
-        ArrayListAppend(possibleMoves, p);
-    }
-
-    p = map->plan[current->row  - 1][current->col  - 1];
-
-    if(isCorrectPosition(map, p)){
-        ArrayListAppend(possibleMoves, p);
-    }
-
-    p = map->plan[current->row - 1][current->col ];
-
-    if(isCorrectPosition(map, p)){
-        ArrayListAppend(possibleMoves, p);
-    }
-
-    p = map->plan[current->row + 1][current->col ];
-
-    if(isCorrectPosition(map, p)){
-        ArrayListAppend(possibleMoves, p);
-    }
+    free(falseSpeed);
+    free(currentSpeed);
 
     //TODO : Take care if the car is in sand and check the vector norm
 
     return possibleMoves;
 
-    /*p = map->plan[current->row + speed->y + 1][current->col + speed->x];*/
-
 }
+
 
 ArrayList getAllArrivals(map* map){
 
@@ -203,8 +239,8 @@ ArrayList calculateDijkstra(FILE* info, map* map, car* car){
 
     p = best;
 
-    while(previous[p->row][p->col] != NULL){
-        ArrayListAppend(path, previous[p->row][p->col]);
+    while(p != NULL){
+        ArrayListAppend(path, p);
         p = previous[p->row][p->col];
     }
 
