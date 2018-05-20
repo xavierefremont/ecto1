@@ -30,9 +30,11 @@ void debug_print(char* text){
 }
 
 
-void readDatas(){
+void readDatas(FILE* info){
     char c;
-    while (fread(&c, sizeof(char), 1, stdin) == 1 && c != '\n');
+    while (fread(&c, sizeof(char), 1, stdin) == 1 && c != '\n'){
+        fprintf(info, "c : %c\n", c);
+    }
 }
 
 
@@ -91,7 +93,7 @@ int main(){
         acceleration = playRound(info, car, map);
         fprintf(info, "\t -> supposed acceleration (%d,%d)  \n", acceleration->x, acceleration->y);
         fflush(info);
-        /*updateGame(car, map, acceleration);*/
+        updateGame(car, map, acceleration);
         sendDatas(acceleration);
 
         clock_t end = clock();
