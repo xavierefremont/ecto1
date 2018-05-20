@@ -16,14 +16,6 @@
 #include "../../include/car/car.h"
 #include "../../include/gps/gps.h"
 
-/**
- * Buffer that contain all action to be sent to the main program
- */
-static char action[100];
-
-//Remove next line (just for tests)
-static int debug = 0;
-
 
 /**
  * Initialize the game by reading map and car datas
@@ -78,12 +70,14 @@ void initRound(car* car, map* map){
     position* rival1Position;
     position* rival2Position;
     int ax, ay, bx, by, cx, cy;
+    char c;
 
     /* Read current cars position */
-    fscanf(stdin, "%d %d\t%d %d\t%d %d\n",
+    fscanf(stdin, "%d %d\t%d %d\t%d %d",
            &ax, &ay,
            &bx, &by,
            &cx, &cy);
+    while (fread(&c, sizeof(char), 1, stdin) == 1 && c != '\n');
 
     carPosition = map->plan[ay][ax];
     rival1Position = map->plan[by][bx];
@@ -157,9 +151,8 @@ void updateGame(car* car, map* map, vector* acceleration){
  */
 void sendDatas(vector* acceleration){
 
-    sprintf(action, "%d %d", acceleration->x, acceleration->y);
-    fprintf(stdout, "%s\n", action);
-    fflush(stdout);
+   fprintf(stdout, "%d %d\n", acceleration->x, acceleration->y);
+   fflush(stdout);
 
 }
 

@@ -83,8 +83,6 @@ int main(){
 
     while (!feof(stdin)) {
 
-        clock_t begin = clock();
-
         fprintf(info, " ---> Tour %d \n", tour);
         fflush(info);
         initRound(car, map);
@@ -102,6 +100,8 @@ int main(){
         fprintf(info, "\t -> Tour over : %f s \n", time_spent);
         fflush(info);
         tour++;
+
+        begin = clock();
 
     }
 
