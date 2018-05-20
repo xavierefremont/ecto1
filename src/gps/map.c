@@ -100,7 +100,7 @@ int isPositionFree(map* map, position* target){
 
   if(target->type == '#' || target->type == '~' || target->type == '='
      || target->type == '1' || target->type == '2' || target->type == '3'){
-	if ( !areEqualsPosition(target, map->rival1) ||
+	if ( !areEqualsPosition(target, map->rival1) &&
 	     !areEqualsPosition(target, map->rival2)) {
 	  return 1;
 	}
