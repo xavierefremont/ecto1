@@ -18,6 +18,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <float.h>
 
 
 map* readMapFromFile(FILE* fp){
@@ -81,12 +82,12 @@ int main(){
         exit(-1);
     }
 
+    printf("MAX : %l\n", DBL_MAX);
+
     displayMap(map);
 
     car = createCar(50);
     car->currentPosition = map->plan[5][3];
-    printf("A %d %d\n", car->currentPosition->col, car->currentPosition->row);
-    printf("B %d %d\n", map->plan[car->currentPosition->row][car->currentPosition->col]->col, map->plan[car->currentPosition->row][car->currentPosition->col]->row);
     car->currentSpeed = createVector(0,0);
 
     FILE* info = fopen("etc/save.log", "w");

@@ -29,7 +29,7 @@ vector* createVector(int x, int y);
 
 vector* vectorSpeed(position* src, position* dest);
 
-vector* calculateVector(car* car, position* dest);
+vector* calculateAcceleration(position* src, position* dest, vector* speed);
 
 float getVectorNorm(vector* v);
 
@@ -37,11 +37,15 @@ ArrayList getPossibleMoves(FILE* info, vector* speeed, position* current, map* m
 
 ArrayList getAllArrivals(map* map);
 
-Stack calculateDijkstra(FILE* info, map* map, car* car);
+ArrayList calculateDijkstra(FILE* info, map* map, car* car);
 
 void destroyVector(vector* v);
 
 int getDistance(position* p, position* p2);
 
+Stack getPathWithSpeed(FILE* info, map* map, car* car, ArrayList path);
+
+int checkMove(FILE* info, map* map, position* current, vector* speed, int fuel,
+              ArrayList path, int step, position*** previous);
 
 #endif //__GPS_H

@@ -17,7 +17,9 @@
 #include "../../include/car/car.h"
 #include "../../include/gps/gps.h"
 
-static Stack moves = NULL;
+static ArrayList moves = NULL;
+static Stack realPath = NULL;
+static int currentMove;
 /**
  * Initialize the game by reading map and car datas
  * @param a pointer to a structure position containing the map size
@@ -114,18 +116,27 @@ vector* playRound(FILE* info, car* car, map* map){
     vector* acceleration = NULL;
     position* p = NULL;
 
-    if (moves == NULL ) { 
+    if (moves == NULL && realPath == NULL) {
         moves = calculateDijkstra(info, map, car);
+        realPath = getPathWithSpeed(info, map, car, moves);
+        currentMove = ArrayListGetLength(moves)-1;
     }
 
-    p = (position*) StackPop(moves);
+    p = (position *) StackPop(realPath);
+    fprintf(info, "DONC : %d %d\n", p->col, p->row);
+    fflush(info);
+    //p = (position*) ArrayListGet(moves, currentMove);
     if (car->previousPosition == car->currentPosition || !isCorrectPosition(map, p)) {
         moves = calculateDijkstra(info, map, car);
-        p = (position*) StackPop(moves);
+        realPath = getPathWithSpeed(info, map, car, moves);
+        currentMove = ArrayListGetLength(moves)-1;
+        p = (position *) StackPop(realPath);
+        //p = (position*) ArrayListGet(moves, currentMove);
     }
 
+    currentMove--;
 
-    acceleration = calculateVector(car, p);
+    acceleration = calculateAcceleration(car->currentPosition, p, car->currentSpeed);
 
     //TODO : Maybe verificate before sending datas
 

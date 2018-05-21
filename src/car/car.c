@@ -60,7 +60,7 @@ void currentFuel(car* car) {
  * the value is négative
  * @param Car structure 
  */
-void calculatePresumedFuel(car* car, vector* acc, vector* spe, position* dest) {
+int calculatePresumedFuel(car* car, vector* acc, vector* spe, position* dest) {
   //TODO dans sable
   int accX = acc->x;
   int accY = acc->y;
@@ -70,7 +70,8 @@ void calculatePresumedFuel(car* car, vector* acc, vector* spe, position* dest) {
   valeur += (int)(sqrt(velX * velX + velY * velY) * 3.0 / 2.0);
   if (dest->type == '~')
     valeur += 1;
-  car->presumedFuel = car->fuel - valeur;
+  //car->presumedFuel = car->fuel - valeur;
+  return valeur;
 }
 
 /**

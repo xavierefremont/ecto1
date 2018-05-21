@@ -42,7 +42,7 @@ void currentFuel(car* car);
  * @param acceleration vector
  * @param speed vector
  */
-void calculatePresumedFuel(car* car, vector* acc, vector* spe,  position* dest);
+int calculatePresumedFuel(car* car, vector* acc, vector* spe,  position* dest);
 
 
 

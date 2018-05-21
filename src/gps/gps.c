@@ -53,14 +53,17 @@ vector* vectorSpeed(position* src, position* dest) {
     int yMove = dest->row - src->row;
 
     vector* vMove = createVector(xMove, yMove);
+
+    return vMove;
+
 }
 
-vector* calculateVector(car* car, position* dest){
+vector* calculateAcceleration(position* src, position* dest, vector* speed){
 
-  vector* vMove = vectorSpeed(car->currentPosition, dest);
+    vector* vMove = vectorSpeed(src, dest);
 
-    int xSpeed = vMove->x - car->currentSpeed->x;
-    int ySpeed = vMove->y - car->currentSpeed->y;
+    int xSpeed = vMove->x - speed->x;
+    int ySpeed = vMove->y - speed->y;
     vector* vSpeed = createVector(xSpeed, ySpeed);
     return vSpeed;
 
@@ -81,7 +84,7 @@ ArrayList getPossibleMoves(FILE* info, vector* speeed, position* current, map* m
     ArrayList possibleMoves = newArrayList(sizeof(position));
     position* p = NULL;
 
-   /* vector* speeed = createVector(0,0);*/
+    //speeed = createVector(0,0);
     vector* v = NULL;
 
 
@@ -194,7 +197,7 @@ ArrayList getAllArrivals(map* map){
 }
 
 
-Stack calculateDijkstra(FILE* info, map* map, car* car){
+ArrayList calculateDijkstra(FILE* info, map* map, car* car){
 
     fprintf(info, "CALCUL\n");
     fflush(info);
@@ -210,8 +213,10 @@ Stack calculateDijkstra(FILE* info, map* map, car* car){
     PriorityQueue queue =  newPriorityQueue();
     ArrayList neighbors = NULL;
     ArrayList arrivals = NULL;
-    Stack path = newStack();
+    ArrayList path = newArrayList(sizeof(struct position));
 
+    //for step by step
+    s = createVector(0, 0);
 
     /*Initialisation of the algorithm*/
     distance = malloc(sizeof(int*) * map->size->y);
@@ -225,10 +230,10 @@ Stack calculateDijkstra(FILE* info, map* map, car* car){
         for (x = 0; x < map->size->x; x++) {
             p = map->plan[y][x];
             previous[y][x] = NULL;
-	    speed[y][x] = NULL;
+	        speed[y][x] = NULL;
             if(areEqualsPosition(car->currentPosition, p)){
                 distance[y][x] = 0;
-		speed[y][x] = car->currentSpeed;
+		        speed[y][x] = car->currentSpeed;
             }else{
                 distance[y][x] = INT_MAX;
             }
@@ -242,29 +247,21 @@ Stack calculateDijkstra(FILE* info, map* map, car* car){
     /*Algorithm*/
     while(!PriorityQueueIsEmpty(queue)){
         p = (position*) PriorityQueuePop(queue);
-	s = speed[p->row][p->col];
-	fprintf(info, "p %dcol %drow --> sx %d, sy %d\n", p->col, p->row, s->x, s->y);
-	fflush(info);
+        //s = speed[p->row][p->col];
         neighbors = getPossibleMoves(info, s, p, map);
-	if(!ArrayListGetLength(neighbors)) {
-	   fprintf(info, "CALCULnexxxxx\n");
-    fflush(info);
-	  s = createVector(0,0);
-	  neighbors = getPossibleMoves(info, s, p, map);
-	}
         for(i=0; i<ArrayListGetLength(neighbors); i++){
             pNeighbor = (position*) ArrayListGet(neighbors, i);
             tmpDist = distance[p->row][p->col] +  getDistance(p, pNeighbor);
             if(tmpDist < distance[pNeighbor->row][pNeighbor->col] && !areEqualsPosition(p, pNeighbor)){
-	      speed[pNeighbor->row][pNeighbor->col] = vectorSpeed(p, pNeighbor);
+                speed[pNeighbor->row][pNeighbor->col] = vectorSpeed(p, pNeighbor);
                 distance[pNeighbor->row][pNeighbor->col] = tmpDist;
                 previous[pNeighbor->row][pNeighbor->col] = p;
                 PriorityQueueChangePrioSpecificSearch(queue, pNeighbor, tmpDist, (int (*)(T, T)) areEqualsPosition);
             }
         }
+
+
     }
-    fprintf(info, "DEB algo");
-    fflush(info);
     
     arrivals = getAllArrivals(map);
     tmpDist = INT_MAX;
@@ -281,24 +278,111 @@ Stack calculateDijkstra(FILE* info, map* map, car* car){
     p = best;
 
     while(previous[p->row][p->col] != NULL){
-        StackAdd(path, p);
+        ArrayListAppend(path, p);
         p = previous[p->row][p->col];
     }
 
     clock_t end = clock();
     double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
-    /*printf("TEMPS EXEC : %f\n", time_spent);*/
+    fprintf(info, "TEMPS EXEC : %f\n", time_spent);
+    fflush(info);
 
     return path;
 
 }
 
 int getDistance(position* p1, position* p2){
-    float dist;
+    /*float dist;
     dist = sqrt(pow(p2->row - p1->row,2) + pow(p2->col - p1->col,2));
     if(dist == 1){
         return 2;
     }else{
         return 3;
+    }*/
+    vector* v = vectorSpeed(p1, p2);
+    return abs(v->x) + abs(v->y);
+}
+
+
+Stack getPathWithSpeed(FILE* info, map* map, car* car, ArrayList path){
+
+    int y;
+    Stack finalPath = newStack();
+    position*** previous;
+    position* p = NULL;
+
+    previous = malloc(sizeof(position**) * map->size->y);
+    for(y = 0; y < map->size->y; y++) {
+        previous[y] = malloc(sizeof(position *) * map->size->x);
     }
+
+    for(int i=0; i<ArrayListGetLength(path); i++){
+        p = (position*) ArrayListGet(path, i);
+        fprintf(info, "%d %d\n", p->col, p->row);
+        fflush(info);
+    }
+    fprintf(info, "BEFORE\n");
+    fflush(info);
+
+    int step = checkMove(info, map, car->currentPosition, car->currentSpeed, car->fuel, path, 0, previous);
+    if(step == 0){
+        return NULL;
+    }
+
+    fprintf(info, "AFTER\n");
+    fflush(info);
+    p = ArrayListGet(path, 0);
+    while(previous[p->row][p->col]){
+        fprintf(info, "%d %d\n", p->col, p->row);
+        fflush(info);
+        StackAdd(finalPath, p);
+        p = previous[p->row][p->col];
+    }
+
+    return finalPath;
+
+}
+
+int checkMove(FILE* info, map* map, position* current, vector* speed, int fuel, ArrayList path, int step, position*** previous){
+
+    int i;
+    int tmp, tmpFuel;
+    int minValue = INT_MAX;
+    position* p = NULL;
+    vector* acceleration = NULL;
+    vector* newSpeed = NULL;
+
+    fprintf(info, "P : %d %d, S : %d %d, F : %d, N : %d\n", current->col, current->row, speed->x, speed->y, fuel, step);
+
+    if(current->type == '='){
+        fprintf(info, "ARR\n");
+        fflush(info);
+        return step;
+    }
+
+    ArrayList moves = getPossibleMoves(NULL, speed, current, map);
+    if(!ArrayListGetLength(moves)){
+        fprintf(info, "JEJ\n");
+        fflush(info);
+        return INT_MAX;
+    }else{
+        for(i=0; i<ArrayListGetLength(moves); i++){
+            p = (position *) ArrayListGet(moves, i);
+            fflush(info);
+            if(ArrayListContains(path, p) && !areEqualsPosition(current, p)){
+                newSpeed = vectorSpeed(current, p);
+                acceleration = calculateAcceleration(current, p, speed);
+                tmpFuel = fuel - calculatePresumedFuel(NULL, acceleration, newSpeed, p);
+                if(tmpFuel > 0){
+                    tmp = checkMove(info, map, p, newSpeed, tmpFuel, path, step+1, previous);
+                    if(minValue > tmp){
+                        minValue = tmp;
+                        previous[p->row][p->col] = current;
+                    }
+                }
+            }
+        }
+        return minValue;
+    }
+
 }
