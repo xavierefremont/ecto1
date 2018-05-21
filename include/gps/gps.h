@@ -48,4 +48,7 @@ Stack getPathWithSpeed(FILE* info, map* map, car* car, ArrayList path);
 int checkMove(FILE* info, map* map, position* current, vector* speed, int fuel,
               ArrayList path, int step, position*** previous);
 
+int getFinalMoves(FILE* info, map* map, position* current, vector* speed, int fuel, ArrayList path,
+                  position*** previous);
+
 #endif //__GPS_H

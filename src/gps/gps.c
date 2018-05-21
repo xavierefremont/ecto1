@@ -299,8 +299,13 @@ int getDistance(position* p1, position* p2){
     }else{
         return 3;
     }*/
+    int val;
     vector* v = vectorSpeed(p1, p2);
-    return abs(v->x) + abs(v->y);
+    val = abs(v->x) + abs(v->y);
+    if(p2->type == '~'){
+        val++;
+    }
+    return val;
 }
 
 
@@ -324,10 +329,14 @@ Stack getPathWithSpeed(FILE* info, map* map, car* car, ArrayList path){
     fprintf(info, "BEFORE\n");
     fflush(info);
 
+    /*
     int step = checkMove(info, map, car->currentPosition, car->currentSpeed, car->fuel, path, 0, previous);
     if(step == 0){
         return NULL;
     }
+    */
+
+    getFinalMoves(info, map, car->currentPosition, car->currentSpeed, car->fuel,  path, previous);
 
     fprintf(info, "AFTER\n");
     fflush(info);
@@ -343,7 +352,9 @@ Stack getPathWithSpeed(FILE* info, map* map, car* car, ArrayList path){
 
 }
 
-int checkMove(FILE* info, map* map, position* current, vector* speed, int fuel, ArrayList path, int step, position*** previous){
+
+int checkMove(FILE* info, map* map, position* current, vector* speed, int fuel,
+              ArrayList path, int step, position*** previous){
 
     int i;
     int tmp, tmpFuel;
@@ -385,4 +396,62 @@ int checkMove(FILE* info, map* map, position* current, vector* speed, int fuel, 
         return minValue;
     }
 
+}
+
+
+int getFinalMoves(FILE* info, map* map, position* current, vector* speed, int fuel, ArrayList path,
+                  position*** previous){
+
+    int result, tmpFuel, i;
+    float norm;
+    position* p = NULL;
+    vector* acceleration = NULL;
+    vector* newSpeed = NULL;
+    PriorityQueue queue = newPriorityQueue();
+
+    fprintf(info, "P : %d %d, S : %d %d, F : %d\n", current->col, current->row, speed->x, speed->y, fuel);
+
+    if(current->type == '=' && fuel >= 0){
+        fprintf(info, "ARR\n");
+        fflush(info);
+        return 1;
+    }
+    if(fuel < 0){
+        fprintf(info, "FUEL OFF\n");
+        fflush(info);
+        return 0;
+    }
+
+    ArrayList moves = getPossibleMoves(NULL, speed, current, map);
+    if(!ArrayListGetLength(moves)){
+        fprintf(info, "NO MOVES\n");
+        fflush(info);
+        return 0;
+    }else{
+        for(i=0; i<ArrayListGetLength(moves); i++){
+            p = (position *) ArrayListGet(moves, i);
+            if(ArrayListContains(path, p) && !areEqualsPosition(current, p)){
+                newSpeed = vectorSpeed(current, p);
+                norm = (abs(newSpeed->x) + abs(newSpeed->y));
+                if(norm <= 3){
+                    PriorityQueueAdd(queue, p, -norm);
+                }
+
+            }
+        }
+        while(!PriorityQueueIsEmpty(queue)){
+            p = (position*) PriorityQueuePop(queue);
+            newSpeed = vectorSpeed(current, p);
+            acceleration = calculateAcceleration(current, p, speed);
+            tmpFuel = fuel - calculatePresumedFuel(NULL, acceleration, newSpeed, p);
+            result = getFinalMoves(info, map, p, newSpeed, tmpFuel, path, previous);
+            if(result){
+                previous[p->row][p->col] = current;
+                return 1;
+            }
+
+        }
+
+    }
+    return 0;
 }

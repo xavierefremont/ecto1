@@ -116,22 +116,25 @@ vector* playRound(FILE* info, car* car, map* map){
     vector* acceleration = NULL;
     position* p = NULL;
 
-    if (moves == NULL && realPath == NULL) {
+    if (moves == NULL) {
         moves = calculateDijkstra(info, map, car);
         realPath = getPathWithSpeed(info, map, car, moves);
         currentMove = ArrayListGetLength(moves)-1;
     }
 
     p = (position *) StackPop(realPath);
-    fprintf(info, "DONC : %d %d\n", p->col, p->row);
-    fflush(info);
-    //p = (position*) ArrayListGet(moves, currentMove);
+    if(!p){
+        p = (position*) ArrayListGet(moves, currentMove);
+    }
+
     if (car->previousPosition == car->currentPosition || !isCorrectPosition(map, p)) {
         moves = calculateDijkstra(info, map, car);
         realPath = getPathWithSpeed(info, map, car, moves);
         currentMove = ArrayListGetLength(moves)-1;
         p = (position *) StackPop(realPath);
-        //p = (position*) ArrayListGet(moves, currentMove);
+        if(!p){
+            p = (position*) ArrayListGet(moves, currentMove);
+        }
     }
 
     currentMove--;

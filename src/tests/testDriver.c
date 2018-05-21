@@ -50,7 +50,7 @@ int main(){
 
     int verifyPosition;
 
-    info = fopen("ecto1/etc/testDriver2.log", "w");
+    info = fopen("ecto1/etc/testDriver.log", "w");
     debug_print("=====> START TESTDRIVER <=====\n");
 
     initGame(&x, &y, &fuel);
