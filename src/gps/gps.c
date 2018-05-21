@@ -16,6 +16,22 @@
 #include "../../include/car/car.h"
 #include "../../include/gps/gps.h"
 
+int verifyPath(map* map, position* p, vector* speed) {
+  int i,j;
+  i = p->row; 
+  j = p->col;
+  for ( i; i< (p->row+speed->y); i++ ) {
+    if( map->plan[i][j]->type == '.') {
+      return 0;
+    }
+  }
+  for ( j; j< (p->col+speed->x); j++ ) {
+    if( map->plan[i][j]->type == '.') {
+      return 0;
+    }
+  }
+  return 1;
+}
 
 vector* createVector(int x, int y){
 

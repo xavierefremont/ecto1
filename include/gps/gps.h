@@ -23,6 +23,8 @@
 #include "../../include/util/Stack.h"
 #include "../../include/structs.h"
 
+int verifyPath(map* map, position* p, vector* speed);
+
 vector* createVector(int x, int y);
 
 vector* vectorSpeed(position* src, position* dest);
