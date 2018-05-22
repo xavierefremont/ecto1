@@ -47,6 +47,7 @@ int main(){
     vector* mapSize;
     int fuel, x, y;
     int tour = 1;
+    int timeout = 0;
 
     int verifyPosition;
 
@@ -90,7 +91,7 @@ int main(){
         initRound(car, map);
         fprintf(info, "\t -> position (%d,%d)  \n", car->currentPosition->col, car->currentPosition->row);
         fflush(info);
-        acceleration = playRound(info, car, map);
+        acceleration = playRound(car, map);
         fprintf(info, "\t -> supposed acceleration (%d,%d)  \n", acceleration->x, acceleration->y);
         fprintf(info, "\t -> current speed (%d,%d)  \n", car->currentSpeed->x, car->currentSpeed->y);
         fprintf(info, "\t -> current fuel : %d \n", car->fuel);
@@ -106,9 +107,19 @@ int main(){
 
         fprintf(info, "\t -> Tour over : %f s \n", time_spent);
         fflush(info);
+
+        if(time_spent > 1){
+            fprintf(info,"TIMEOUT\n");
+            fflush(info);
+            timeout = 1;
+        }
+
         tour++;
 
-        begin = clock();
+
+
+
+
 
     }
 

@@ -18,8 +18,9 @@
 #include "../../include/gps/gps.h"
 
 static ArrayList moves = NULL;
-static Stack realPath = NULL;
+//static Stack realPath = NULL;
 static int currentMove;
+
 /**
  * Initializes the game by reading map and car datas
  * @param a pointer to the number of rows
@@ -111,51 +112,30 @@ void initRound(car* car, map* map){
  * @param the track map
  * @return the acceleration vector to send
  */
-vector* playRound(FILE* info, car* car, map* map){
+vector* playRound(car* car, map* map){
 
-    /* Calculate the acceleration vector */
     vector* acceleration = NULL;
     position* p = NULL;
 
     if (moves == NULL) {
-        fprintf(info, "LIST NULL\n");
-        fflush(info);
-        moves = calculateDijkstra(info, map, car);
-        realPath = getPathWithSpeed(info, map, car, moves);
-        fprintf(info, "Stack generated\n");
-        fflush(info);
+        moves = calculateDijkstra(map, car);
+        //realPath = getPathWithSpeed(map, car, moves);
         currentMove = ArrayListGetLength(moves)-1;
     }
 
-    if(realPath == NULL){
-        fprintf(info, "Stack NULL\n");
-        fflush(info);
-        p = (position*) ArrayListGet(moves, currentMove);
-    }else{
-        p = (position *) StackPop(realPath);
-    }
+    //p = (position *) StackPop(realPath);
+    p = (position*) ArrayListGet(moves, currentMove);
+
 
     if (car->previousPosition == car->currentPosition || !isCorrectPosition(map, p)) {
-        realPath = NULL;
-        moves = calculateDijkstra(info, map, car);
-        realPath = getPathWithSpeed(info, map, car, moves);
+        moves = calculateDijkstra(map, car);
+        //realPath = getPathWithSpeed(map, car, moves);
         currentMove = ArrayListGetLength(moves)-1;
-        p = (position *) StackPop(realPath);
-        if(realPath == NULL){
-            fprintf(info, "MOVE NULL 2\n");
-            fflush(info);
-            p = (position*) ArrayListGet(moves, currentMove);
-        }else{
-            p = (position *) StackPop(realPath);
-        }
+        //p = (position *) StackPop(realPath);
+        p = (position*) ArrayListGet(moves, currentMove);
     }
 
     currentMove--;
-
-    fprintf(info, "PROCHAIN : %d %d / %d %d / %d %d\n", car->currentPosition->col,car->currentPosition->row,
-    p->col, p->row, car->currentSpeed->x, car->currentSpeed->y);
-    fflush(info);
-
     acceleration = calculateAcceleration(car->currentPosition, p, car->currentSpeed);
 
     return acceleration;
@@ -169,9 +149,6 @@ vector* playRound(FILE* info, car* car, map* map){
  * @param acceleration's vector
  */
 void updateGame(car* car, map* map, vector* acceleration){
-
-    //todo : Update the car presumed position and fuel by sending datas to the car file
-    //todo : Update the map by sending new presumed position to the map file
 
     position* dest = map->plan[car->currentPosition->row + car->currentSpeed->y + acceleration->y]
             [car->currentPosition->col + car->currentSpeed->x + acceleration->x];

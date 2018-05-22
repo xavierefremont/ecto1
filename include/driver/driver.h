@@ -54,7 +54,7 @@ void initRound(car* car, map* map);
  * @param the track map
  * @return the acceleration vector to send
  */
-vector* playRound(FILE* info, car* car, map* map);
+vector* playRound(car* car, map* map);
 
 /**
  * Update the car and the map according to the acceleration

@@ -25,8 +25,6 @@ int main(){
     vector* acceleration;
     vector* mapSize;
     int fuel, x, y;
-    int tour = 1;
-    int verifyPosition;
 
     initGame(&x, &y, &fuel);
     mapSize = createVector(x, y);
@@ -34,9 +32,12 @@ int main(){
     car = initCar(fuel);
     while (!feof(stdin)) {
         initRound(car, map);
-        acceleration = playRound(info, car, map);
+        acceleration = playRound(car, map);
         updateGame(car, map, acceleration);
         sendDatas(acceleration);
-        tour++;
     }
+    destroyMap(map);
+    destroyCar(car);
+
+    return 0;
 }

@@ -62,7 +62,7 @@ float getVectorNorm(vector* v);
  * @param map
  * @return ArrayList of the moves
  */
-ArrayList getPossibleMoves(FILE* info, vector* speeed, position* current, map* map);
+ArrayList getPossibleMoves(vector* speeed, position* current, map* map);
 
 /**
  * Gets arrivals on the map
@@ -77,7 +77,7 @@ ArrayList getAllArrivals(map* map);
  * @car to have current position
  * @return ArrayList of positions containig the path
  */
-ArrayList calculateDijkstra(FILE* info, map* map, car* car);
+ArrayList calculateDijkstra(map* map, car* car);
 
 /**
  * Gets the distance from a position to another
@@ -94,7 +94,7 @@ int getDistance(position* p, position* p2);
  * @param path calculates with Dijkstra
  * @return Stack the final path
  */
-Stack getPathWithSpeed(FILE* info, map* map, car* car, ArrayList path);
+Stack getPathWithSpeed(map* map, car* car, ArrayList path);
 
 /**
  * Checks if the move is authorized
@@ -107,7 +107,7 @@ Stack getPathWithSpeed(FILE* info, map* map, car* car, ArrayList path);
  * @param previous three entry tab's of position 
  * @return int boolean if the path is correct
  */
-int checkMove(FILE* info, map* map, position* current, vector* speed, int fuel,
+int checkMove(map* map, position* current, vector* speed, int fuel,
               ArrayList path, int step, position*** previous);
 
 /**
@@ -121,7 +121,7 @@ int checkMove(FILE* info, map* map, position* current, vector* speed, int fuel,
  * @param previous three entry tab's of position 
  * @return int boolean if the path is correct
  */
-int getFinalMoves(FILE* info, map* map, position* current, vector* speed, int fuel, ArrayList path,
+int getFinalMoves(map* map, position* current, vector* speed, int fuel, ArrayList path,
                   position*** previous);
 
 #endif //__GPS_H
