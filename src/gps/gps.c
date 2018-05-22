@@ -18,7 +18,12 @@
 
 //TODO : CHANGE
 
-
+/**
+ * Initializes a new vector
+ * @param x
+ * @param y
+ * @return vector pointer's
+ */
 vector* createVector(int x, int y){
 
     vector* v = NULL;
@@ -33,6 +38,12 @@ vector* createVector(int x, int y){
 
 }
 
+/**
+ * Initializes a new speed vector
+ * @param src the origin's position
+ * @param dest the destination's position
+ * @return vector pointer's
+ */
 vector* vectorSpeed(position* src, position* dest) {
 
     int xMove = dest->col - src->col;
@@ -44,10 +55,15 @@ vector* vectorSpeed(position* src, position* dest) {
 
 }
 
+/**
+ * Calculates the acceleration
+ * @param src the origin's position
+ * @param dest the destination's position
+ * @param speed a vector
+ * @return vector pointer's
+ */
 vector* calculateAcceleration(position* src, position* dest, vector* speed){
-
     vector* vMove = vectorSpeed(src, dest);
-
     int xSpeed = vMove->x - speed->x;
     int ySpeed = vMove->y - speed->y;
     vector* vSpeed = createVector(xSpeed, ySpeed);
@@ -55,14 +71,24 @@ vector* calculateAcceleration(position* src, position* dest, vector* speed){
 
 }
 
-
+/**
+ * Gets the norme of a vector
+ * @param v the vector
+ * @return float the norm
+ */
 float getVectorNorm(vector* v){
 
     return sqrt(pow(v->x,2)+pow(v->y,2));
 
 }
 
-
+/**
+ * Gets the possible move of the car knowing the speed
+ * @param speed vector
+ * @param current position of the cap
+ * @param map
+ * @return ArrayList of the moves
+ */
 ArrayList getPossibleMoves(FILE* info, vector* speeed, position* current, map* map){
 
     //TODO : Get the real possible position and not all
@@ -164,6 +190,11 @@ ArrayList getPossibleMoves(FILE* info, vector* speeed, position* current, map* m
 }
 
 
+/**
+ * Gets arrivals on the map
+ * @param map
+ * @return ArrayList of arrivals
+ */
 ArrayList getAllArrivals(map* map){
 
     int x, y;
@@ -182,7 +213,12 @@ ArrayList getAllArrivals(map* map){
 
 }
 
-
+/**
+ * Gets the optimized path from the current position to arrival
+ * @param map
+ * @car to have current position
+ * @return ArrayList of positions containig the path
+ */
 ArrayList calculateDijkstra(FILE* info, map* map, car* car){
 
     fprintf(info, "CALCUL\n");
@@ -277,6 +313,12 @@ ArrayList calculateDijkstra(FILE* info, map* map, car* car){
 
 }
 
+/**
+ * Gets the distance from a position to another
+ * @param p pointer
+ * @param p2 pointer
+ * @return int the distance
+ */
 int getDistance(position* p1, position* p2){
     /*float dist;
     dist = sqrt(pow(p2->row - p1->row,2) + pow(p2->col - p1->col,2));
@@ -294,7 +336,13 @@ int getDistance(position* p1, position* p2){
     return val;
 }
 
-
+/**
+ * Gets the path using speed
+ * @param map
+ * @param car
+ * @param path calculates with Dijkstra
+ * @return Stack
+ */
 Stack getPathWithSpeed(FILE* info, map* map, car* car, ArrayList path){
 
     int y;
@@ -330,7 +378,17 @@ Stack getPathWithSpeed(FILE* info, map* map, car* car, ArrayList path){
 
 }
 
-
+/**
+ * Checks if the move is authorized
+ * @param map
+ * @param current position of the car
+ * @param speed vector's
+ * @param fuel
+ * @param path arraylist of positions
+ * @param step
+ * @param previous three entry tab's of position 
+ * @return int boolean if the path is correct
+ */
 int checkMove(FILE* info, map* map, position* current, vector* speed, int fuel,
               ArrayList path, int step, position*** previous){
 
@@ -370,7 +428,17 @@ int checkMove(FILE* info, map* map, position* current, vector* speed, int fuel,
 
 }
 
-
+/**
+ * Gets final moves of the path
+ * @param map
+ * @param current position
+ * @param speed vector's
+ * @param fuel
+ * @param path arraylist of positions
+ * @param step
+ * @param previous three entry tab's of position 
+ * @return int boolean if the path is correct
+ */
 int getFinalMoves(FILE* info, map* map, position* current, vector* speed, int fuel, ArrayList path,
                   position*** previous){
 

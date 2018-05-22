@@ -24,7 +24,7 @@
  * Creates a structure map initializing the size sent by the driver
  * @param width of the map
  * @param height of the map
- * @return the new map
+ * @return map pointerthe new map
  */
 map* createMap(vector* mapSize);
 
@@ -81,8 +81,13 @@ void line(int x1, int y1, int x2, int y2, infoLine *data);
  */
 int nextPoint(infoLine *data, pos2Dint *point, int sens);
 
-
-int verifyPath(map* map, position* p, vector* speed);
+/**
+ * Verifies if the path has no collision
+ * @param map to have the path
+ * @param p the current position of the car
+ * @param speed the vector to reach the destination
+ */
+int isCorrectMove(map* map, position* p, vector* speed);
 
 
 /**

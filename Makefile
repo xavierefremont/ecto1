@@ -11,8 +11,6 @@ CNONE = \033[0m
 all:
 	@for dir in $(SUBDIR) ; do make -s -C $$dir ; done
 	@make -s -C $(SRCDIR);
-	@mv bin/ecto1 ../drivers/
-	@echo "$(CDIR)ecto1$(CNONE) moved in $(CDIR)drivers$(CNONE)"
 
 tests:
 	@for dir in $(SUBDIR) ; do make test -s -C $$dir ; done

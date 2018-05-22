@@ -14,13 +14,10 @@
 #include "../../include/gps/gps.h"
 #include "../../include/car/car.h"
 
-
-
-
 /**
- * Initialize a car structure
- * @param pointer on Car structure to initialize
- * @param the fuel value
+ * Initialize a new car using starts' datas
+ * @param the start car fuel value
+ * @return pointer on the created Car structure
  */
 car* createCar(int fuel) {
 
@@ -58,7 +55,9 @@ void currentFuel(car* car) {
  * Calculates the fuel wich would be used if the motion is done
  * it calculation is realized before trying the motion in the race
  * the value is négative
- * @param Car structure 
+ * @param Car structure
+ * @param acceleration vector
+ * @param speed vector
  */
 int calculatePresumedFuel(vector* acc, vector* spe, position* dest) {
   //TODO dans sable
@@ -101,6 +100,10 @@ int areEqualsPosition(position* p1, position* p2){
 
 }
 
+/**
+ * Destroy a car structure
+ * @param the car to destroy
+ */
 void destroyCar(car* car){
     car->currentPosition = NULL;
     car->currentSpeed = NULL;

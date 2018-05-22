@@ -21,8 +21,9 @@ static ArrayList moves = NULL;
 static Stack realPath = NULL;
 static int currentMove;
 /**
- * Initialize the game by reading map and car datas
- * @param a pointer to a structure position containing the map size
+ * Initializes the game by reading map and car datas
+ * @param a pointer to the number of rows
+ * @param a pointer to the number of columns
  * @param a pointer to the start fuel amount
  */
 void initGame(int* x, int* y, int* fuel){
@@ -38,8 +39,8 @@ void initGame(int* x, int* y, int* fuel){
 }
 
 /**
- * Initialize the map by sending all datas to the map file
- * @param the structure position containing the map size
+ * Initializes the map by sending all datas to the map file
+ * @param the structure vector containing the map size
  * @return the map created
  */
 map* initMap(vector* mapSize){
@@ -51,8 +52,8 @@ map* initMap(vector* mapSize){
 }
 
 /**
- * Initialize the car by sending all datas to the car file
- * @param the structure position containing the map size
+ * Initializes the car by sending all datas to the car file
+ * @param fuel at the begining
  * @return the map created
  */
 car* initCar(int fuel){
@@ -63,9 +64,9 @@ car* initCar(int fuel){
 }
 
 /**
- * Initialize the round by reading current position
- * @param car : the game car
- * @param map : the track map
+ * Initializes the round by reading current position
+ * @param car the game car
+ * @param map the track map
  */
 void initRound(car* car, map* map){
 
@@ -106,8 +107,8 @@ void initRound(car* car, map* map){
 
 /**
  * Calculate the acceleration and send it to the race program
- * @param car : the game car
- * @param map : the track map
+ * @param car the game car
+ * @param the track map
  * @return the acceleration vector to send
  */
 vector* playRound(FILE* info, car* car, map* map){
@@ -161,9 +162,9 @@ vector* playRound(FILE* info, car* car, map* map){
 
 /**
  * Update the car and the map according to the acceleration
- * @param car : the game car
- * @param map : the game map
- * @param acceleration : the acceleration vector
+ * @param car the game car
+ * @param map the game map
+ * @param acceleration's vector
  */
 void updateGame(car* car, map* map, vector* acceleration){
 
@@ -181,7 +182,8 @@ void updateGame(car* car, map* map, vector* acceleration){
 
 
 /**
- * Send datas through stdout
+ * Sends datas through stdout
+ * @param acceleration's vector
  */
 void sendDatas(vector* acceleration){
 

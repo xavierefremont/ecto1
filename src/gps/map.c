@@ -31,6 +31,12 @@ position* createPosition(int col, int row, char roadType) {
 
 }
 
+/**
+ * Creates a structure map initializing the size sent by the driver
+ * @param width of the map
+ * @param height of the map
+ * @return map pointerthe new map
+ */
 map* createMap(vector* mapSize) {
 
   map* map = NULL;
@@ -84,7 +90,12 @@ void setPosition(map* map, position* rival1, position* rival2) {
   map->rival2 = rival2;
 }
 
-
+/**
+ * Verify if a position on the map is correct to move into
+ * @param the map structure
+ * @param the target position to check in the map
+ * @return 1 if the position is correct, else 0
+ */
 int isCorrectPosition(map* map, position* target){
 
   if(isPositionFree(map, target)){
@@ -95,7 +106,12 @@ int isCorrectPosition(map* map, position* target){
 
 }
 
-
+/**
+ * Verify if a position is free i.e a road or sable without car
+ * @param the map structure
+ * @param the target position to check in the map
+ * @return 1 if the position is in the free, else 0
+ */
 int isPositionFree(map* map, position* target){
 
   if(target->type == '#' || target->type == '~' || target->type == '='
@@ -108,14 +124,6 @@ int isPositionFree(map* map, position* target){
   return 0;
 
 }
-
-
-int isMoveCorrect(position* source, position* target){
-
-  return 0;
-
-}
-
 
 void destroyMap(map* map){
 
@@ -144,7 +152,9 @@ void destroyPosition(position* p){
 
 }
 
-
+/**
+ * @brief Definition d'un segment entre deux points
+ */
 void line(int x1, int y1, int x2, int y2, infoLine *data) {
   data->posStart.x = x1;
   data->posStart.y = y1;
@@ -167,7 +177,10 @@ void line(int x1, int y1, int x2, int y2, infoLine *data) {
   data->delta.y = ((float)dyi) / data->len;
 }
 
-
+/**
+ * @brief Deplacement sur un segment dans un sens donne (+1 vers la fin, et -1
+ * vers le debut)
+ */
 int nextPoint(infoLine *data, pos2Dint *point, int sens) {
   if (sens > 0) {
     if (data->pos == data->len) {
@@ -201,13 +214,12 @@ int nextPoint(infoLine *data, pos2Dint *point, int sens) {
 
 
 /**
- * Verify if the path has no collision
- * @param map
- * @param p
- * @param speed
- * @return
+ * Verifies if the path has no collision
+ * @param map to have the path
+ * @param p the current position of the car
+ * @param speed the vector to reach the destination
  */
-int verifyPath(map* map, position* p, vector* speed) {
+int isCorrectMove(map* map, position* p, vector* speed) {
 
   int res = 1;
   int posX0 = p->col;
