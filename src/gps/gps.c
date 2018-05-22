@@ -16,22 +16,8 @@
 #include "../../include/car/car.h"
 #include "../../include/gps/gps.h"
 
-int verifyPath(map* map, position* p, vector* speed) {
-  int i,j;
-  i = p->row; 
-  j = p->col;
-  for ( i; i< (p->row+speed->y); i++ ) {
-    if( map->plan[i][j]->type == '.') {
-      return 0;
-    }
-  }
-  for ( j; j< (p->col+speed->x); j++ ) {
-    if( map->plan[i][j]->type == '.') {
-      return 0;
-    }
-  }
-  return 1;
-}
+//TODO : CHANGE
+
 
 vector* createVector(int x, int y){
 
@@ -383,7 +369,7 @@ int checkMove(FILE* info, map* map, position* current, vector* speed, int fuel,
             if(ArrayListContains(path, p) && !areEqualsPosition(current, p)){
                 newSpeed = vectorSpeed(current, p);
                 acceleration = calculateAcceleration(current, p, speed);
-                tmpFuel = fuel - calculatePresumedFuel(NULL, acceleration, newSpeed, p);
+                tmpFuel = fuel - calculatePresumedFuel(acceleration, newSpeed, p);
                 if(tmpFuel > 0){
                     tmp = checkMove(info, map, p, newSpeed, tmpFuel, path, step+1, previous);
                     if(minValue > tmp){
@@ -443,12 +429,16 @@ int getFinalMoves(FILE* info, map* map, position* current, vector* speed, int fu
             p = (position*) PriorityQueuePop(queue);
             newSpeed = vectorSpeed(current, p);
             acceleration = calculateAcceleration(current, p, speed);
-            tmpFuel = fuel - calculatePresumedFuel(NULL, acceleration, newSpeed, p);
-            result = getFinalMoves(info, map, p, newSpeed, tmpFuel, path, previous);
-            if(result){
-                previous[p->row][p->col] = current;
-                return 1;
+            tmpFuel = fuel - calculatePresumedFuel(acceleration, speed, p);
+            if(verifyPath(map, current, newSpeed)){
+                result = getFinalMoves(info, map, p, newSpeed, tmpFuel, path, previous);
+                if(result){
+                    previous[p->row][p->col] = current;
+                    return 1;
+                }
             }
+
+
 
         }
 

@@ -71,6 +71,21 @@ position* createPosition(int col, int row, char roadType);
 
 
 /**
+ * @brief Definition d'un segment entre deux points
+ */
+void line(int x1, int y1, int x2, int y2, infoLine *data);
+
+/**
+ * @brief Deplacement sur un segment dans un sens donne (+1 vers la fin, et -1
+ * vers le debut)
+ */
+int nextPoint(infoLine *data, pos2Dint *point, int sens);
+
+
+int verifyPath(map* map, position* p, vector* speed);
+
+
+/**
  * Destroy a map structure
  * @param the map to destroy
  */
@@ -82,6 +97,8 @@ void destroyMap(map* map);
  * @param the position to destroy
  */
 void destroyPosition(position* p);
+
+
 
 
 #endif //__MAP_H

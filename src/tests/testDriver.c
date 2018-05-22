@@ -93,6 +93,10 @@ int main(){
         acceleration = playRound(info, car, map);
         fprintf(info, "\t -> supposed acceleration (%d,%d)  \n", acceleration->x, acceleration->y);
         fprintf(info, "\t -> current speed (%d,%d)  \n", car->currentSpeed->x, car->currentSpeed->y);
+        fprintf(info, "\t -> current fuel : %d \n", car->fuel);
+        position* kek = map->plan[car->currentPosition->row + car->currentSpeed->y + acceleration->y]
+                [car->currentPosition->col + car->currentSpeed->x + acceleration->x];
+        fprintf(info, "\t -> supposed move : (%d %d) \n", kek->col, kek->row);
         fflush(info);
         updateGame(car, map, acceleration);
         sendDatas(acceleration);

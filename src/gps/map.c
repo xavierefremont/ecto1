@@ -144,3 +144,88 @@ void destroyPosition(position* p){
 
 }
 
+
+void line(int x1, int y1, int x2, int y2, infoLine *data) {
+  data->posStart.x = x1;
+  data->posStart.y = y1;
+  data->posActual.x = x1 + 0.5;
+  data->posActual.y = y1 + 0.5;
+  data->posEnd.x = x2;
+  data->posEnd.y = y2;
+  int adxi, adyi, dxi, dyi;
+  adxi = dxi = x2 - x1;
+  adyi = dyi = y2 - y1;
+  if (adxi < 0)
+    adxi = -dxi;
+  if (adyi < 0)
+    adyi = -dyi;
+  data->pos = 0;
+  data->len = adxi;
+  if (adyi > adxi)
+    data->len = adyi;
+  data->delta.x = ((float)dxi) / data->len;
+  data->delta.y = ((float)dyi) / data->len;
+}
+
+
+int nextPoint(infoLine *data, pos2Dint *point, int sens) {
+  if (sens > 0) {
+    if (data->pos == data->len) {
+      point->x = data->posEnd.x;
+      point->y = data->posEnd.y;
+      return -1; // La fin de la ligne est atteinte
+    }
+    data->posActual.x += data->delta.x;
+    data->posActual.y += data->delta.y;
+    point->x = ((int)data->posActual.x);
+    point->y = ((int)data->posActual.y);
+    data->pos++;
+    return 1; // un nouveau point est déterminé.
+  }
+  if (sens < 0) {
+    if (data->pos == 0) {
+      point->x = data->posStart.x;
+      point->y = data->posStart.y;
+      return -1; // La fin de la ligne est atteinte
+    }
+    data->posActual.x -= data->delta.x;
+    data->posActual.y -= data->delta.y;
+    point->x = ((int)data->posActual.x);
+    point->y = ((int)data->posActual.y);
+    data->pos--;
+
+    return 1; // un nouveau point est déterminé.
+  }
+  return 1; // Avec sens==0, il n'y a pas de déplacement
+}
+
+
+/**
+ * Verify if the path has no collision
+ * @param map
+ * @param p
+ * @param speed
+ * @return
+ */
+int verifyPath(map* map, position* p, vector* speed) {
+
+  int res = 1;
+  int posX0 = p->col;
+  int posY0 = p->row;
+  int velX = speed->x;
+  int velY = speed->y;
+  int posX1 = posX0 + velX;
+  int posY1 = posY0 + velY;
+  infoLine vline;
+  line(posX0, posY0, posX1, posY1, &vline);
+  pos2Dint pos;
+  while (nextPoint(&vline, &pos, +1) > 0) {
+    if (pos.x == posX0 && pos.y == posY0)
+      continue;
+    if (!isCorrectPosition(map, map->plan[pos.y][pos.x])) {
+      res = 0;
+      break;
+    }
+  }
+  return res;
+}

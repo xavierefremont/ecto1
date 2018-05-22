@@ -158,6 +158,9 @@ void updateGame(car* car, map* map, vector* acceleration){
     //todo : Update the car presumed position and fuel by sending datas to the car file
     //todo : Update the map by sending new presumed position to the map file
 
+    position* dest = map->plan[car->currentPosition->row + car->currentSpeed->y + acceleration->y]
+            [car->currentPosition->col + car->currentSpeed->x + acceleration->x];
+    car->fuel -= calculatePresumedFuel(acceleration, car->currentSpeed, dest);
     car->currentSpeed->x = car->currentSpeed->x + acceleration->x;
     car->currentSpeed->y = car->currentSpeed->y + acceleration->y;
     car->previousPosition = car->currentPosition;
