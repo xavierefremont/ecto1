@@ -309,12 +309,7 @@ Stack getPathWithSpeed(FILE* info, map* map, car* car, ArrayList path){
 
     for(int i=0; i<ArrayListGetLength(path); i++){
         p = (position*) ArrayListGet(path, i);
-        fprintf(info, "%d %d\n", p->col, p->row);
-        fflush(info);
     }
-    fprintf(info, "BEFORE\n");
-    fflush(info);
-
     /*
     int step = checkMove(info, map, car->currentPosition, car->currentSpeed, car->fuel, path, 0, previous);
     if(step == 0){
@@ -324,12 +319,9 @@ Stack getPathWithSpeed(FILE* info, map* map, car* car, ArrayList path){
 
     getFinalMoves(info, map, car->currentPosition, car->currentSpeed, car->fuel,  path, previous);
 
-    fprintf(info, "AFTER\n");
     fflush(info);
     p = ArrayListGet(path, 0);
     while(previous[p->row][p->col]){
-        fprintf(info, "%d %d\n", p->col, p->row);
-        fflush(info);
         StackAdd(finalPath, p);
         p = previous[p->row][p->col];
     }
@@ -349,18 +341,12 @@ int checkMove(FILE* info, map* map, position* current, vector* speed, int fuel,
     vector* acceleration = NULL;
     vector* newSpeed = NULL;
 
-    fprintf(info, "P : %d %d, S : %d %d, F : %d, N : %d\n", current->col, current->row, speed->x, speed->y, fuel, step);
-
     if(current->type == '='){
-        fprintf(info, "ARR\n");
-        fflush(info);
         return step;
     }
 
     ArrayList moves = getPossibleMoves(NULL, speed, current, map);
     if(!ArrayListGetLength(moves)){
-        fprintf(info, "JEJ\n");
-        fflush(info);
         return INT_MAX;
     }else{
         for(i=0; i<ArrayListGetLength(moves); i++){
@@ -395,23 +381,23 @@ int getFinalMoves(FILE* info, map* map, position* current, vector* speed, int fu
     vector* newSpeed = NULL;
     PriorityQueue queue = newPriorityQueue();
 
-    fprintf(info, "P : %d %d, S : %d %d, F : %d\n", current->col, current->row, speed->x, speed->y, fuel);
+    //fprintf(info, "P : %d %d, S : %d %d, F : %d\n", current->col, current->row, speed->x, speed->y, fuel);
 
-    if(current->type == '=' && fuel >= 0){
-        fprintf(info, "ARR\n");
-        fflush(info);
+    if(current->type == '=' && fuel > 0){
+        //fprintf(info, "ARR\n");
+        //fflush(info);
         return 1;
     }
     if(fuel < 0){
-        fprintf(info, "FUEL OFF\n");
-        fflush(info);
+        //fprintf(info, "FUEL OFF\n");
+        //fflush(info);
         return 0;
     }
 
     ArrayList moves = getPossibleMoves(NULL, speed, current, map);
     if(!ArrayListGetLength(moves)){
-        fprintf(info, "NO MOVES\n");
-        fflush(info);
+        //fprintf(info, "NO MOVES\n");
+        //fflush(info);
         return 0;
     }else{
         for(i=0; i<ArrayListGetLength(moves); i++){
@@ -422,7 +408,6 @@ int getFinalMoves(FILE* info, map* map, position* current, vector* speed, int fu
                 if(norm <= 3){
                     PriorityQueueAdd(queue, p, -norm);
                 }
-
             }
         }
         while(!PriorityQueueIsEmpty(queue)){
@@ -437,8 +422,6 @@ int getFinalMoves(FILE* info, map* map, position* current, vector* speed, int fu
                     return 1;
                 }
             }
-
-
 
         }
 
