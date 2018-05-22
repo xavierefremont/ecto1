@@ -30,24 +30,12 @@ CFILE = \033[0;34m
 
 all: $(OBJ)
 
-test: $(BINDIR)$(EXEC)
-
-$(BINDIR)$(EXEC): $(OBJDIR)$(EXEC).o $(OBJDIR)car.o
-	@$(CC) $^ -I $(ROOT)include/car -o $@ $(LDFLAGS)
-	@echo  "\t$(CEXEC)$(EXEC)$(CNONE) Compiled in $(CDIR)$(BINDIR:$(ROOT)%=%)$(CNONE)"
-
-
-$(OBJDIR)$(EXEC).o: $(TESTSDIR)$(EXEC).c
-	@$(CC) -o $@ -I $(ROOT)include/car -c $< $(CFLAGS) $(LDFLAGS)
-	@echo "$(CFILE)$(@:$(OBJDIRMAIN)%=%)$(CNONE) from $(CFILE)$<$(CNONE)"
-
-
 $(OBJDIR)car.o: $(SRCDIR)car/car.c
-	@$(CC) -o $@ -I $(ROOT)include/car -c $< $(CFLAGS) $(LDFLAGS)
-	@echo "$(CFILE)$(@:$(OBJDIRMAIN)%=%)$(CNONE) from $(CFILE)$<$(CNONE)"
+	$(CC) -o $@ -c $< $(CFLAGS) $(LDFLAGS)
+	echo "$(CFILE)$(@:$(OBJDIRMAIN)%=%)$(CNONE) from $(CFILE)$<$(CNONE)"
 
 clean:
-	@rm -rf $(OBJDIRMAIN)*.o *~
+	rm -rf $(OBJDIRMAIN)*.o *~
 
 mrproper: clean
-	@rm -rf $(BINDIR)$(EXEC) $(BINDIR)$(TEST)
+	rm -rf $(BINDIR)$(EXEC) $(BINDIR)$(TEST)

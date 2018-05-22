@@ -25,14 +25,12 @@ CFILE = \033[0;34m
 
 all: $(OBJ) $(LIBDIR)libCCollection.a
 
-test: $(OBJ) $(LIBDIR)libCCollection.a
-
 $(OBJDIR)%.o: $(UTILDIR)%.c
 	@$(CC) -o $@ -c $< $(CFLAGS)
 	@echo "$(CFILE)$(@:$(OBJDIR)%=%)$(CNONE) from $(CFILE)$<$(CNONE)"
 
 $(LIBDIR)libCCollection.a:
-	ar rcs $@ $(OBJDIR)ArrayList.o $(OBJDIR)LinkedList.o $(OBJDIR)PriorityQueue.o $(OBJDIR)Stack.o $(OBJDIR)Queue.o $(OBJDIR)CompareTo.o
+	ar rcs $@ $(OBJDIR)ArrayList.o $(OBJDIR)PriorityQueue.o $(OBJDIR)Stack.o $(OBJDIR)CompareTo.o
 
 clean:
 	rm -rf $(OBJDIR)/*.o *~

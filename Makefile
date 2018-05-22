@@ -3,6 +3,7 @@
 #DIRECTORIES
 SRCDIR = src/
 SUBDIR = $(addprefix $(SRCDIR), util car gps driver)
+TESTDIR = $(SRCDIR)tests
 
 #COLORS
 CDIR = \033[0;36m
@@ -13,17 +14,17 @@ all:
 	@make -s -C $(SRCDIR);
 
 tests:
-	@for dir in $(SUBDIR) ; do make test -s -C $$dir ; done
+	make -s -C $(TESTDIR);
 
 doc:
-	@doxygen Doxyfile
-	@echo "Documentation generated in $(CDIR)doc$(CNONE)"
+	doxygen Doxyfile
+	echo "Documentation generated in $(CDIR)doc$(CNONE)"
 
 clean:
-	@for dir in $(SUBDIR) ; do make -s -C $$dir clean ; done
-	@(cd $(SRCDIR)$(MAINDIR) && make -s clean)
-	@rm -rf $(OBJDIR)*.o
-	@echo "project cleaned"
+	for dir in $(SUBDIR) ; do make -s -C $$dir clean ; done
+	(cd $(SRCDIR)$(MAINDIR) && make -s clean)
+	rm -rf $(OBJDIR)*.o
+	echo "project cleaned"
 
 mrproper: clean
-	@(cd $(SRCDIR)$(MAINDIR) && make -s mrproper)
+	(cd $(SRCDIR)$(MAINDIR) && make -s mrproper)

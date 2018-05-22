@@ -19,9 +19,6 @@ OBJ  = $(SRC:%.c=$(OBJDIR)%.o)
 OTHOBJ = $(wildcard $(OBJDIR)*.o)
 
 #MAIN'S SOURCES
-TESTGPS = testGPS
-TESTMAP = testMap
-TESTDIJKSTRA = testDijkstra
 
 #DISPLAY
 CEXEC = \033[0;32m
@@ -31,50 +28,25 @@ CFILE = \033[0;34m
 
 all: $(OBJ)
 
-test: $(BINDIR)$(TESTMAP) $(BINDIR)$(TESTGPS) $(BINDIR)$(TESTDIJKSTRA)
-
-$(BINDIR)$(TESTMAP): $(OBJDIR)$(TESTMAP).o $(OBJDIR)driver.o $(OBJDIR)car.o $(OBJDIR)map.o $(OBJDIR)gps.o
-	@$(CC) $^ -I $(ROOT)include/gps -o $@ $(LDFLAGS)
-	@echo  "\t$(CEXEC)$(TESTMAP)$(CNONE) Compiled in $(CDIR)$(BINDIR:$(ROOT)%=%)$(CNONE)"
-
-$(BINDIR)$(TESTGPS): $(OBJDIR)$(TESTGPS).o $(OBJDIR)driver.o $(OBJDIR)car.o $(OBJDIR)map.o $(OBJDIR)gps.o
-	@$(CC) $^ -I $(ROOT)include/gps -o $@ $(LDFLAGS)
-	@echo  "\t$(CEXEC)$(TESTGPS)$(CNONE) Compiled in $(CDIR)$(BINDIR:$(ROOT)%=%)$(CNONE)"
-	@mv $(BINDIR)$(TESTGPS) $(ROOT)/../drivers;
-
-$(BINDIR)$(TESTDIJKSTRA): $(OBJDIR)$(TESTDIJKSTRA).o $(OBJDIR)driver.o $(OBJDIR)car.o $(OBJDIR)map.o $(OBJDIR)gps.o
-	@$(CC) $^ -I $(ROOT)include/gps -o $@ $(LDFLAGS)
-	@echo  "\t$(CEXEC)$(TESTALGO)$(CNONE) Compiled in $(CDIR)$(BINDIR:$(ROOT)%=%)$(CNONE)"
-
-$(OBJDIR)$(TESTMAP).o: $(TESTSDIR)$(TESTMAP).c
-	@$(CC) -o $@ -I $(ROOT)include/gps -c $< $(CFLAGS) $(LDFLAGS)
-	@echo "$(CFILE)$(@:$(OBJDIRMAIN)%=%)$(CNONE) from $(CFILE)$<$(CNONE)"
-
-$(OBJDIR)$(TESTGPS).o: $(TESTSDIR)$(TESTGPS).c
-	@$(CC) -o $@ -I $(ROOT)include/gps -c $< $(CFLAGS) $(LDFLAGS)
-	@echo "$(CFILE)$(@:$(OBJDIRMAIN)%=%)$(CNONE) from $(CFILE)$<$(CNONE)"
-
-$(OBJDIR)$(TESTDIJKSTRA).o: $(TESTSDIR)$(TESTDIJKSTRA).c
-	@$(CC) -o $@ -I $(ROOT)include/gps -c $< $(CFLAGS) $(LDFLAGS)
-	@echo "$(CFILE)$(@:$(OBJDIRMAIN)%=%)$(CNONE) from $(CFILE)$<$(CNONE)"
-
 $(OBJDIR)gps.o: $(SRCDIR)gps/gps.c
-	@$(CC) -o $@ -I $(ROOT)include/gps -c $< $(CFLAGS) $(LDFLAGS)
-	@echo "$(CFILE)$(@:$(OBJDIRMAIN)%=%)$(CNONE) from $(CFILE)$<$(CNONE)"
+	$(CC) -o $@ -I $(ROOT)include/gps -c $< $(CFLAGS) $(LDFLAGS)
+	echo "$(CFILE)$(@:$(OBJDIRMAIN)%=%)$(CNONE) from $(CFILE)$<$(CNONE)"
 
 
 $(OBJDIR)map.o: $(SRCDIR)gps/map.c
-	@$(CC) -o $@ -I $(ROOT)include/gps -c $< $(CFLAGS) $(LDFLAGS)
-	@echo "$(CFILE)$(@:$(OBJDIRMAIN)%=%)$(CNONE) from $(CFILE)$<$(CNONE)"
+	$(CC) -o $@ -I $(ROOT)include/gps -c $< $(CFLAGS) $(LDFLAGS)
+	echo "$(CFILE)$(@:$(OBJDIRMAIN)%=%)$(CNONE) from $(CFILE)$<$(CNONE)"
+
 
 $(OBJDIR)driver.o:
-	@(cd ../driver/; make ../../obj/driver.o;)
+	(cd ../driver/; make ../../obj/driver.o;)
+
 
 $(OBJDIR)car.o:
-	@(cd ../car/; make ../../obj/car.o;)
+	(cd ../car/; make ../../obj/car.o;)
 
 clean:
-	@rm -rf $(OBJDIRMAIN)*.o *~
+	rm -rf $(OBJDIRMAIN)*.o *~
 
 mrproper: clean
-	@rm -rf $(BINDIR)$(EXEC) $(BINDIR)$(TEST)
+	rm -rf $(BINDIR)$(EXEC) $(BINDIR)$(TEST)

@@ -152,9 +152,11 @@ vector* playRound(FILE* info, car* car, map* map){
 
     currentMove--;
 
-    acceleration = calculateAcceleration(car->currentPosition, p, car->currentSpeed);
+    fprintf(info, "PROCHAIN : %d %d / %d %d / %d %d\n", car->currentPosition->col,car->currentPosition->row,
+    p->col, p->row, car->currentSpeed->x, car->currentSpeed->y);
+    fflush(info);
 
-    //TODO : Maybe verificate before sending datas
+    acceleration = calculateAcceleration(car->currentPosition, p, car->currentSpeed);
 
     return acceleration;
 

@@ -8,11 +8,11 @@
  * @brief Ecto1 file :  Main program of Formula 1 project
  */
 
-#include "../../include/util/ArrayList.h"
-#include "../../include/driver/driver.h"
-#include "../../include/gps/gps.h"
-#include "../../include/gps/map.h"
-#include "../../include/car/car.h"
+#include "../include/util/ArrayList.h"
+#include "../include/driver/driver.h"
+#include "../include/gps/gps.h"
+#include "../include/gps/map.h"
+#include "../include/car/car.h"
 
 #include <math.h>
 #include <stdio.h>

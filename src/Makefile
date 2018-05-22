@@ -14,7 +14,7 @@ OBJDIR = $(ROOT)obj/
 #COMPILERS MACRO
 CC = gcc
 CFLAGS = -W -Wall -pedantic
-LDFLAGS = -L$(LIBDIR) -lEcto1 -lm
+LDFLAGS = -L$(LIBDIR) -lCCollection -lm
 
 #SOURCES & BINARIES
 SRC  = $(wildcard *.c)
@@ -33,29 +33,29 @@ CFILE = \033[0;34m
 all: $(BINDIR)$(EXEC)
 
 $(BINDIR)$(EXEC): $(OBJDIR)$(EXEC).o $(OBJDIR)driver.o $(OBJDIR)car.o $(OBJDIR)map.o $(OBJDIR)gps.o
-	@$(CC) $^ -o $@ $(LDFLAGS)
-	@echo  "\t$(CEXEC)$(EXEC)$(CNONE) Compiled in $(CDIR)$(BINDIR:$(ROOT)%=%)$(CNONE)"
+	$(CC) $^ -o $@ $(LDFLAGS)
+	echo  "\t$(CEXEC)$(EXEC)$(CNONE) Compiled in $(CDIR)$(BINDIR:$(ROOT)%=%)$(CNONE)"
 
 
 $(OBJDIR)$(EXEC).o: $(SRCDIR)$(EXEC).c
-	@$(CC) -o $@ -I $(ROOT)include/driver -c $< $(CFLAGS) $(LDFLAGS)
-	@echo "$(CFILE)$(@:$(OBJDIRMAIN)%=%)$(CNONE) from $(CFILE)$<$(CNONE)"
+	$(CC) -o $@ -c $< $(CFLAGS) $(LDFLAGS)
+	echo "$(CFILE)$(@:$(OBJDIRMAIN)%=%)$(CNONE) from $(CFILE)$<$(CNONE)"
 
 
 $(OBJDIR)driver.o:
-	@make -s -C $(SRCDIR)/driver;
+	make -s -C $(SRCDIR)/driver;
 
 $(OBJDIR)car.o:
-	@make -s -C $(SRCDIR)/car;
+	make -s -C $(SRCDIR)/car;
 
 $(OBJDIR)map.o:
-	@make -s -C $(SRCDIR)/gps;
+	make -s -C $(SRCDIR)/gps;
 
 $(OBJDIR)gps.o:
-	@make -s -C $(SRCDIR)/gps;
+	make -s -C $(SRCDIR)/gps;
 
 clean:
-	@rm -rf $(OBJDIRMAIN)*.o *~
+	rm -rf $(OBJDIRMAIN)*.o *~
 
 mrproper: clean
-	@rm -rf $(BINDIR)$(EXEC) $(BINDIR)$(TEST)
+	rm -rf $(BINDIR)$(EXEC) $(BINDIR)$(TEST)

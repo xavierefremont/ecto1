@@ -151,7 +151,7 @@ ArrayList getPossibleMoves(FILE* info, vector* speeed, position* current, map* m
            && current->row + speeed->y + 1 < map->size->y && current->row + speeed->y + 1 >= 0) {
             p = map->plan[current->row + speeed->y + 1][current->col + speeed->x + 1];
             v = createVector(speeed->x + 1, speeed->y + 1);
-            if(getVectorNorm(v) < 5 && isCorrectPosition(map, p)){
+            if(getVectorNorm(v) < 2 && isCorrectPosition(map, p)){
                 ArrayListAppend(possibleMoves, p);
             }
         }
@@ -160,7 +160,7 @@ ArrayList getPossibleMoves(FILE* info, vector* speeed, position* current, map* m
            && current->row + speeed->y - 1 < map->size->y && current->row + speeed->y - 1 >= 0) {
             p = map->plan[current->row + speeed->y - 1][current->col + speeed->x + 1];
             v = createVector(speeed->x + 1, speeed->y - 1);
-            if(getVectorNorm(v) < 5 && isCorrectPosition(map, p)){
+            if(getVectorNorm(v) < 2 && isCorrectPosition(map, p)){
                 ArrayListAppend(possibleMoves, p);
             }
         }
@@ -169,7 +169,7 @@ ArrayList getPossibleMoves(FILE* info, vector* speeed, position* current, map* m
            && current->row + speeed->y + 1 < map->size->y && current->row + speeed->y + 1 >= 0) {
             p = map->plan[current->row + speeed->y + 1][current->col + speeed->x - 1];
             v = createVector(speeed->x - 1, speeed->y + 1);
-            if(getVectorNorm(v) < 5 && isCorrectPosition(map, p)){
+            if(getVectorNorm(v) < 2 && isCorrectPosition(map, p)){
                 ArrayListAppend(possibleMoves, p);
             }
         }
@@ -178,7 +178,7 @@ ArrayList getPossibleMoves(FILE* info, vector* speeed, position* current, map* m
            && current->row + speeed->y - 1 < map->size->y && current->row + speeed->y - 1 >= 0) {
             p = map->plan[current->row + speeed->y - 1][current->col + speeed->x - 1];
             v = createVector(speeed->x - 1, speeed->y - 1);
-            if(getVectorNorm(v) < 5 && isCorrectPosition(map, p)){
+            if(getVectorNorm(v) < 2 && isCorrectPosition(map, p)){
                 ArrayListAppend(possibleMoves, p);
             }
         }
@@ -331,7 +331,7 @@ int getDistance(position* p1, position* p2){
     vector* v = vectorSpeed(p1, p2);
     val = abs(v->x) + abs(v->y);
     if(p2->type == '~'){
-        val++;
+        val += 3;
     }
     return val;
 }
@@ -452,20 +452,20 @@ int getFinalMoves(FILE* info, map* map, position* current, vector* speed, int fu
     //fprintf(info, "P : %d %d, S : %d %d, F : %d\n", current->col, current->row, speed->x, speed->y, fuel);
 
     if(current->type == '=' && fuel > 0){
-        //fprintf(info, "ARR\n");
-        //fflush(info);
+       // fprintf(info, "ARR\n");
+       // fflush(info);
         return 1;
     }
-    if(fuel < 0){
-        //fprintf(info, "FUEL OFF\n");
-        //fflush(info);
+    if(fuel < 2){
+       // fprintf(info, "FUEL OFF\n");
+       // fflush(info);
         return 0;
     }
 
     ArrayList moves = getPossibleMoves(NULL, speed, current, map);
     if(!ArrayListGetLength(moves)){
         //fprintf(info, "NO MOVES\n");
-        //fflush(info);
+       // fflush(info);
         return 0;
     }else{
         for(i=0; i<ArrayListGetLength(moves); i++){
@@ -483,7 +483,7 @@ int getFinalMoves(FILE* info, map* map, position* current, vector* speed, int fu
             newSpeed = vectorSpeed(current, p);
             acceleration = calculateAcceleration(current, p, speed);
             tmpFuel = fuel - calculatePresumedFuel(acceleration, speed, p);
-            if(verifyPath(map, current, newSpeed)){
+            if(isCorrectMove(map, current, newSpeed)){
                 result = getFinalMoves(info, map, p, newSpeed, tmpFuel, path, previous);
                 if(result){
                     previous[p->row][p->col] = current;
