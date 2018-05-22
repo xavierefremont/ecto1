@@ -8,24 +8,35 @@
  * @brief Ecto1 file :  Main program of Formula 1 project
  */
 
-#include "../include/car/car.h"
-#include "../include/gps/map.h"
-#include "../include/driver/driver.h"
+#include "../../include/util/ArrayList.h"
+#include "../../include/driver/driver.h"
+#include "../../include/gps/gps.h"
+#include "../../include/gps/map.h"
+#include "../../include/car/car.h"
 
-int main() {
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-    car* car;
-    map* map;
+int main(){
+    map* map = NULL;
+    car* car = NULL;
+    vector* acceleration;
+    vector* mapSize;
+    int fuel, x, y;
+    int tour = 1;
+    int verifyPosition;
 
-    initGame(car, map);
-
+    initGame(&x, &y, &fuel);
+    mapSize = createVector(x, y);
+    map = initMap(mapSize);
+    car = initCar(fuel);
     while (!feof(stdin)) {
-
         initRound(car, map);
-        playRound(car, map);
-
+        acceleration = playRound(info, car, map);
+        updateGame(car, map, acceleration);
+        sendDatas(acceleration);
+        tour++;
     }
-
-    return EXIT_SUCCESS;
-
 }
